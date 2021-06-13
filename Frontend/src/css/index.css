@@ -29,6 +29,15 @@
     top: 2.6%;
     margin: 0;
     padding: 0;
+
+}
+#db_btn_sign_a{
+    text-decoration: none;
+    color: black;
+}
+#db_btn_regi_a{
+    text-decoration: none;
+    color: black;
 }
 #db_btn_regi{
     width: 120px;
