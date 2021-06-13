@@ -1,0 +1,88 @@
+#db_navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #aa6600;
+}
+
+#db_logo {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    left: 1%;
+    top: -1.6%;
+    background-size: cover;
+    z-index: 1000;
+}
+
+#db_title_name {
+    position: fixed;
+    color: white;
+    font-size: 1.2rem;
+    top: 3.1%;
+    left: 8.7%;
+}
+#db_btn_signIn {
+    width: 110px;
+    height: 35px;
+    position: fixed;
+    left: 82%;
+    top: 2.6%;
+    margin: 0;
+    padding: 0;
+}
+#db_btn_regi{
+    width: 120px;
+    height: 35px;
+    position: fixed;
+    left: 91%;
+    top: 2.6%;
+    margin: 0;
+    padding: 0;
+}
+
+#db_wallpaper_section {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    background-color: #000000;
+    z-index: 1000;
+}
+
+#db_wall {
+    position: fixed;
+    top: 10%;
+    width: 100vw;
+}
+
+#db_center_h1_text{
+    position: fixed;
+    color: white;
+    top: 46%;
+    left: 16%;
+    font-size: 5rem;
+}
+#db_up_line{
+    position: fixed;
+    width: 1020px;
+    height: 5px;
+    top: 47%;
+    left: 16%;
+    background-color: white;
+}
+#db_down_line{
+    position: fixed;
+    width: 1020px;
+    height: 5px;
+    top: 58%;
+    left: 16%;
+    background-color: white;
+}
+
+#db_center_h3_text{
+    position: fixed;
+    color: white;
+    top: 60%;
+    left: 37%;
+    font-size: 2rem;
+}
