@@ -1,0 +1,11 @@
+.bgColor{
+    background-image: url("../../src/assets/img/1179806.jpg");
+    background-size: cover;
+    opacity: 90%;
+}
+.btnColor{
+    background-color: #18dcff;
+}
+body{
+    margin: 65px;
+}

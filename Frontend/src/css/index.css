@@ -1,7 +1,8 @@
+
 #db_navbar {
     width: 100%;
     height: 80px;
-    background-color: #aa6600;
+    background-color: #f39c12;
 }
 
 #db_logo {
@@ -73,15 +74,15 @@
 }
 #db_up_line{
     position: fixed;
-    width: 1020px;
+    width: 1060px;
     height: 5px;
-    top: 47%;
+    top: 46%;
     left: 16%;
     background-color: white;
 }
 #db_down_line{
     position: fixed;
-    width: 1020px;
+    width: 1060px;
     height: 5px;
     top: 58%;
     left: 16%;

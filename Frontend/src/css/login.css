@@ -1,0 +1,11 @@
+.login_bgColor{
+    background-image: url("../../src/assets/img/1179806.jpg");
+    background-size: cover;
+    opacity: 90%;
+}
+.login_btn_color{
+    background-color: #ff7979;
+}
+body{
+    margin: 50px;
+}
