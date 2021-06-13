@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
@@ -24,14 +35,14 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.7" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.7" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.7" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.7" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.7" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.7" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.7" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.7" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.3" level="project" />
