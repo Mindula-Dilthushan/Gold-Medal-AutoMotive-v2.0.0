@@ -1,3 +1,6 @@
+//Alpha X Software Company
+//Mindula Dilthushan
+//GMA v2.0.0
 package lk.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
