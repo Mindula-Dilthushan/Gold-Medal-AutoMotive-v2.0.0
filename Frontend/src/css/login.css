@@ -1,11 +1,17 @@
 .login_bgColor{
-    background-image: url("../../src/assets/img/1179806.jpg");
-    background-size: cover;
-    opacity: 90%;
+    /*background-image: url("../../src/assets/img/1179806.jpg");*/
+    /*background-size: cover;*/
+    /*opacity: 90%;*/
 }
 .login_btn_color{
-    background-color: #ff7979;
+    background-color: #f39c12;
 }
 body{
     margin: 50px;
+    padding: 35px;
+}
+
+#btn_Login {
+    text-decoration: none;
+    color: white;
 }

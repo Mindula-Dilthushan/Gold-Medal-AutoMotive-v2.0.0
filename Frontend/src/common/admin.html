@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=1">
+    <title>GMA - Admin</title>
+    <link rel="icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<div id="wrapper">
+    <nav class="navbar  align-items-start sidebar accordion p-0">
+        <div class="container-fluid d-flex flex-column p-0">
+            <div class="m-0 p-0"><img id="admin_logo" src="../assets/img/logo.png"></div>
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0 p-0"
+               href="admin.html">
+                <div class="sidebar-brand-text">Gold Medal<br>AutoMotive</div>
+            </a>
+            <ul class="nav navbar-nav mt-3">
+                <li class="nav-item"><a class="text-white nav-link" href="">Dashboard</a></li>
+                <li class="nav-item"><a class="text-white nav-link" href=""><span>Profile</span></a></li>
+                <li class="nav-item"><a class="text-white nav-link" href=""><span>Customers</span></a></li>
+                <li class="nav-item"><a class="text-white nav-link" href=""><span>Cars</span></a></li>
+                <li class="nav-item"><a class="text-white nav-link" href=""><span>Drivers</span></a></li>
+                <li class="nav-item"><a class="text-white nav-link" href=""><span>Orders</span></a></li>
+                <li class="nav-item"><a class="text-white nav-link" href=""><span>Payments</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                <div class="container-fluid">
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" type="button"></button>
+                    <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
+                                                        placeholder="Search for ...">
+                            <div class="input-group-append">
+                                <button class="btn py-0" type="button"><img src="../assets/icon/icons8_search.ico">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                                               aria-expanded="false" href="#">
+                        <span class="d-none d-lg-inline mr-2 text-gray-600 small" style="font-size: 1rem">Mindula Dilthushan</span>
+                        <img class="rounded-circle img-profile" src="../assets/icon/icons8_businessman_32.png"></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid">
+                <h3 class="text-dark mb-4">Admin Panel</h3>
+                <div class="row">
+                    <div class="col-md-6 col-xl-3 mb-4">
+                        <div class="card shadow border-left-warning py-2">
+                            <div class="card-body">
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col mr-2">
+                                        <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Customers</span>
+                                        </div>
+                                        <div class="text-dark font-weight-bold h5 mb-0"><span>0000</span></div>
+                                    </div>
+                                    <div class="col-auto"><img id="custom_pic"
+                                                               src="../assets/icon/icons8_customer_64.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 mb-4">
+                        <div class="card shadow border-left-warning py-2">
+                            <div class="card-body">
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col mr-2">
+                                        <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Cars</span>
+                                        </div>
+                                        <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>
+                                    </div>
+                                    <div class="col-auto"><img id="car_pic" src="../assets/icon/icons8_car_64.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 mb-4">
+                        <div class="card shadow border-left-warning py-2">
+                            <div class="card-body">
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col mr-2">
+                                        <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                            <span>Drivers</span></div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto"><img id="driver_pic"
+                                                               src="../assets/icon/icons8_driver_64.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 mb-4">
+                        <div class="card shadow border-left-warning py-2">
+                            <div class="card-body">
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col mr-2">
+                                        <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Orders</span>
+                                        </div>
+                                        <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>
+                                    </div>
+                                    <div class="col-auto"><img id="order_pic"
+                                                               src="../assets/icon/icons8_purchase_order_64.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

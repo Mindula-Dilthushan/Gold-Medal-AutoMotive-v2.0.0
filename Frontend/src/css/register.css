@@ -1,11 +1,18 @@
-.bgColor{
-    background-image: url("../../src/assets/img/1179806.jpg");
-    background-size: cover;
-    opacity: 90%;
+.bgColor {
+    /*background-image: url("../../src/assets/img/1179806.jpg");*/
+    /*background-size: cover;*/
+    /*opacity: 90%;*/
 }
-.btnColor{
-    background-color: #18dcff;
+
+.btnColor {
+    background-color: #f39c12;
 }
-body{
+
+body {
     margin: 65px;
+}
+
+#btn_Register {
+    text-decoration: none;
+    color: white;
 }
