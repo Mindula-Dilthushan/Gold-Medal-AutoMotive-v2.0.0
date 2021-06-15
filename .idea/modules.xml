@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Backend/Backend.iml" filepath="$PROJECT_DIR$/Backend/Backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Frontend/Frontend.iml" filepath="$PROJECT_DIR$/Frontend/Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GMA-Backend/GMA-Backend.iml" filepath="$PROJECT_DIR$/GMA-Backend/GMA-Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GMA-Frontend/GMA-Frontend.iml" filepath="$PROJECT_DIR$/GMA-Frontend/GMA-Frontend.iml" />
     </modules>
   </component>
 </project>

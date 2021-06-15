@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Backend" />
+        <module name="GMA-Backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Backend" target="1.5" />
+      <module name="GMA-Backend" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

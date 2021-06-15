@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GMA-Backend:war">
+    <output-path>$PROJECT_DIR$/GMA-Backend/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>GMA-Backend</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="GMA-Backend-1.0.0.war">
+      <element id="artifact" artifact-name="GMA-Backend:war exploded" />
+    </root>
+  </artifact>
+</component>
