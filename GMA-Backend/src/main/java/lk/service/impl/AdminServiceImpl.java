@@ -52,6 +52,10 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void deleteAdmin(String id) {
+        if (!adminRepo.existsById(id)) {
+            throw new ValidateException("No Admin for Delete..!");
+        }
+        adminRepo.deleteById(id);
     }
 
     @Override

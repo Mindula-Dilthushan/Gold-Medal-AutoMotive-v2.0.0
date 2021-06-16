@@ -49,4 +49,10 @@ public class AdminController {
         return new ResponseEntity(new StandardResponse("200", "Done", adminDTO), HttpStatus.OK);
     }
 
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteAdmin(@RequestParam String id) {
+        adminService.deleteAdmin(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
+
 }
