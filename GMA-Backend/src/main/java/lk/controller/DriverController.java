@@ -4,7 +4,6 @@
 //21-06-16
 package lk.controller;
 
-import lk.dto.CustomerDTO;
 import lk.dto.DriverDTO;
 import lk.exeption.NotFoundException;
 import lk.service.DriverService;
@@ -14,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
 
 @RestController
 @CrossOrigin
@@ -53,6 +53,12 @@ public class DriverController {
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity deleteDriver(@RequestParam String id) {
         driverService.deleteDriver(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllDrivers() {
+        ArrayList<DriverDTO> driverDTOArrayList = driverService.getAllDrivers();
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 }
