@@ -49,4 +49,10 @@ public class DriverController {
         driverService.updateDriver(driverDTO);
         return new ResponseEntity(new StandardResponse("200", "Done", driverDTO), HttpStatus.OK);
     }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteDriver(@RequestParam String id) {
+        driverService.deleteDriver(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
 }
