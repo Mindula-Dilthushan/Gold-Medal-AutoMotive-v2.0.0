@@ -4,6 +4,7 @@
 //21-06-16
 package lk.service.impl;
 
+import lk.dto.CustomerDTO;
 import lk.dto.DriverDTO;
 import lk.entity.Customer;
 import lk.entity.Driver;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -39,6 +41,10 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public DriverDTO searchDriver(String id) {
+        Optional<Driver> driverOptional = driverRepo.findById(id);
+        if (driverOptional.isPresent()){
+            return modelMapper.map(driverOptional.get(), DriverDTO.class);
+        }
         return null;
     }
 
