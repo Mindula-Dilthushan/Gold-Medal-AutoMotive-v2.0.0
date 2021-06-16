@@ -39,4 +39,14 @@ public class AdminController {
         adminService.saveAdmin(adminDTO);
         return new ResponseEntity(new StandardResponse("201", "Done",adminDTO), HttpStatus.CREATED);
     }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateAdmin(@RequestBody AdminDTO adminDTO) {
+        if (adminDTO.getAdminId().trim().length() <= 0) {
+            throw new NotFoundException("No id provided to update");
+        }
+        adminService.updateAdmin(adminDTO);
+        return new ResponseEntity(new StandardResponse("200", "Done", adminDTO), HttpStatus.OK);
+    }
+
 }
