@@ -4,6 +4,7 @@
 //21-06-16
 package lk.controller;
 
+import lk.dto.AdminDTO;
 import lk.dto.CustomerDTO;
 import lk.exeption.NotFoundException;
 import lk.service.CustomerService;
@@ -38,5 +39,14 @@ public class CustomerController {
                 new StandardResponse(
                         "200","Done",customerDTO),HttpStatus.OK
         );
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateCustomer(@RequestBody CustomerDTO customerDTO) {
+        if (customerDTO.getCustomerId().trim().length() <= 0) {
+            throw new NotFoundException("No id provided to update");
+        }
+        customerService.updateCustomer(customerDTO);
+        return new ResponseEntity(new StandardResponse("200", "Done", customerDTO), HttpStatus.OK);
     }
 }
