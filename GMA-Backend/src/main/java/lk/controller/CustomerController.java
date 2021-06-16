@@ -30,4 +30,13 @@ public class CustomerController {
         customerService.saveCustomer(customerDTO);
         return new ResponseEntity(new StandardResponse("201","Done",customerDTO), HttpStatus.CREATED);
     }
+
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchCustomer(@PathVariable String id){
+        CustomerDTO customerDTO = customerService.searchCustomer(id);
+        return new ResponseEntity(
+                new StandardResponse(
+                        "200","Done",customerDTO),HttpStatus.OK
+        );
+    }
 }
