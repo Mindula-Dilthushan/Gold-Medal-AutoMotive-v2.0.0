@@ -49,4 +49,10 @@ public class CustomerController {
         customerService.updateCustomer(customerDTO);
         return new ResponseEntity(new StandardResponse("200", "Done", customerDTO), HttpStatus.OK);
     }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteCustomer(@RequestParam String id) {
+        customerService.deleteCustomer(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
 }
