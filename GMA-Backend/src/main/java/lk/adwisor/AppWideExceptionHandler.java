@@ -20,20 +20,27 @@ public class AppWideExceptionHandler {
     public ResponseEntity handleException(Exception e){
         return new ResponseEntity(
                 new StandardResponse
-                        ("500","Error", e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+                        ("500",
+                                "Error", e.getMessage()),
+                HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity handleNotFoundException(NotFoundException notFoundException){
         return new ResponseEntity(
                 new StandardResponse(
-                        "404","Error", notFoundException.getMessage()), HttpStatus.NOT_FOUND);
+                        "404",
+                        "Error",
+                        notFoundException.getMessage()),
+                HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ValidateException.class)
     public ResponseEntity handleValidationException(ValidateException validateException){
         return new ResponseEntity(
                 new StandardResponse(
-                        "400","Ërror",validateException.getMessage()),HttpStatus.BAD_REQUEST);
+                        "400",
+                        "Error",
+                        validateException.getMessage()),HttpStatus.BAD_REQUEST);
     }
 }
