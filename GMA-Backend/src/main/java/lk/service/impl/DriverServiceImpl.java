@@ -57,7 +57,9 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void deleteDriver(String id) {
-
+        if (!driverRepo.existsById(id)){
+            throw new ValidateException("No Driver for Delete..!");
+        }
     }
 
     @Override
