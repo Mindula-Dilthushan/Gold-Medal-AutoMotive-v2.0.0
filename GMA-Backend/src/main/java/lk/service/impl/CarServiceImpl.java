@@ -10,10 +10,13 @@ import lk.exeption.ValidateException;
 import lk.repo.CarRepo;
 import lk.service.CarServices;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -36,21 +39,32 @@ public class CarServiceImpl implements CarServices {
 
     @Override
     public void updateCars(CarDTO carDTO) {
-
+        if (carRepo.existsById(carDTO.getCarId())) {
+            carRepo.save(modelMapper.map(carDTO, Car.class));
+        }
     }
 
     @Override
     public void deleteCars(String id) {
-
+        if (!carRepo.existsById(id)) {
+            throw new ValidateException("No Car for Delete..!");
+        }
+        carRepo.deleteById(id);
     }
 
     @Override
     public CarDTO searchCars(String id) {
+        Optional<Car> carOptional = carRepo.findById(id);
+        if (carOptional.isPresent()){
+            return modelMapper.map(carOptional.get(), CarDTO.class);
+        }
         return null;
     }
 
     @Override
     public ArrayList<CarDTO> getAllCars() {
-        return null;
+        List<Car> carList = carRepo.findAll();
+        return modelMapper.map(carList, new TypeToken<ArrayList<CarDTO>>() {
+        }.getType());
     }
 }
