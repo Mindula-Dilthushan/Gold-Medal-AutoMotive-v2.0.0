@@ -4,7 +4,6 @@
 //21-06-16
 package lk.controller;
 
-import lk.dto.AdminDTO;
 import lk.dto.CustomerDTO;
 import lk.exeption.NotFoundException;
 import lk.service.CustomerService;
@@ -14,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
 
 @RestController
 @CrossOrigin
@@ -53,6 +53,12 @@ public class CustomerController {
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity deleteCustomer(@RequestParam String id) {
         customerService.deleteCustomer(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllCustomers() {
+        ArrayList<CustomerDTO> customerDTOArrayList = customerService.getAllCustomers();
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 }
