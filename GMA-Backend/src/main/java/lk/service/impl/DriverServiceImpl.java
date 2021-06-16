@@ -4,9 +4,7 @@
 //21-06-16
 package lk.service.impl;
 
-import lk.dto.CustomerDTO;
 import lk.dto.DriverDTO;
-import lk.entity.Customer;
 import lk.entity.Driver;
 import lk.exeption.ValidateException;
 import lk.repo.DriverRepo;
