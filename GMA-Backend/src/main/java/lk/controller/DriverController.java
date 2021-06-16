@@ -4,6 +4,7 @@
 //21-06-16
 package lk.controller;
 
+import lk.dto.CustomerDTO;
 import lk.dto.DriverDTO;
 import lk.exeption.NotFoundException;
 import lk.service.DriverService;
@@ -38,5 +39,14 @@ public class DriverController {
                 new StandardResponse(
                         "200","Done",driverDTO),HttpStatus.OK
         );
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateDriver(@RequestBody DriverDTO driverDTO) {
+        if (driverDTO.getDriverId().trim().length() <= 0) {
+            throw new NotFoundException("No id provided to update");
+        }
+        driverService.updateDriver(driverDTO);
+        return new ResponseEntity(new StandardResponse("200", "Done", driverDTO), HttpStatus.OK);
     }
 }
