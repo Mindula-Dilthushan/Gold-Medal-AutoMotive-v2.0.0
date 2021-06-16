@@ -30,4 +30,13 @@ public class DriverController {
         driverService.saveDriver(driverDTO);
         return new ResponseEntity(new StandardResponse("201","Done",driverDTO), HttpStatus.CREATED);
     }
+
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchDriver(@PathVariable String id){
+        DriverDTO driverDTO = driverService.searchDriver(id);
+        return new ResponseEntity(
+                new StandardResponse(
+                        "200","Done",driverDTO),HttpStatus.OK
+        );
+    }
 }
