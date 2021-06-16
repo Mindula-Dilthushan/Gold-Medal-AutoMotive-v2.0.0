@@ -14,6 +14,7 @@ import lombok.ToString;
 @ToString
 public class AdminDTO {
     private String adminId;
+    private String adminEmail;
     private String adminName;
     private String adminPassword;
 }
