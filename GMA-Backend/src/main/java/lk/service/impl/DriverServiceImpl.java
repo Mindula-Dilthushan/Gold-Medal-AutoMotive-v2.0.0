@@ -52,7 +52,9 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void updateDriver(DriverDTO driverDTO) {
-
+        if (driverRepo.existsById(driverDTO.getDriverId())){
+            driverRepo.save(modelMapper.map(driverDTO,Driver.class));
+        }
     }
 
     @Override
