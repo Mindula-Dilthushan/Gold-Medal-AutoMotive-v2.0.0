@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -29,11 +30,16 @@ public class AdminServiceImpl implements AdminService {
         if (adminRepo.existsById(adminDTO.getAdminId())) {
             throw new ValidateException("Admin Already Exist");
         }
+        System.out.println(adminDTO);
         adminRepo.save(modelMapper.map(adminDTO, Admin.class));
     }
 
     @Override
     public AdminDTO searchAdmin(String id) {
+        Optional<Admin> optionalAdmin = adminRepo.findById(id);
+        if (optionalAdmin.isPresent()){
+            return modelMapper.map(optionalAdmin.get(),AdminDTO.class);
+        }
         return null;
     }
 

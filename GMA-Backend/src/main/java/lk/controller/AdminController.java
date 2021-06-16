@@ -22,9 +22,13 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @GetMapping
-    public String getAdmin() {
-        return "get Admin";
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchAdmin(@PathVariable String id){
+        AdminDTO adminDTO = adminService.searchAdmin(id);
+        return new ResponseEntity(
+                new StandardResponse(
+                        "200","Done",adminDTO),HttpStatus.OK
+                );
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
