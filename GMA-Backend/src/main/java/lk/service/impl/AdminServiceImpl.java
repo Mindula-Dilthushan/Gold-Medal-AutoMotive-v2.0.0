@@ -9,10 +9,12 @@ import lk.exeption.ValidateException;
 import lk.repo.AdminRepo;
 import lk.service.AdminService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -60,6 +62,8 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public ArrayList<AdminDTO> getAllAdmin() {
-        return null;
+        List<Admin> adminList = adminRepo.findAll();
+        return modelMapper.map(adminList, new TypeToken<ArrayList<AdminDTO>>() {
+        }.getType());
     }
 }

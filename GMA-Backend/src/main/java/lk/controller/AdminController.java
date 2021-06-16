@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
 
 
 @RestController
@@ -54,5 +55,9 @@ public class AdminController {
         adminService.deleteAdmin(id);
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
-
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllAdmin() {
+        ArrayList<AdminDTO> adminDTOArrayList = adminService.getAllAdmin();
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
 }
