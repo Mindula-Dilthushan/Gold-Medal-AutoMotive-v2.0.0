@@ -8,10 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
@@ -35,4 +33,9 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "carid", referencedColumnName = "carId", nullable = false)
     private Car car;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "driverid", referencedColumnName = "DriverId",nullable = false)
+    private Driver driver;
+
 }
