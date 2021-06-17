@@ -18,9 +18,10 @@
     position: fixed;
     color: white;
     font-size: 1.2rem;
-    top: 3.1%;
+    top: 3.6%;
     left: 8.7%;
 }
+
 #db_btn_signIn {
     width: 110px;
     height: 35px;
@@ -31,15 +32,18 @@
     padding: 0;
 
 }
-#db_btn_sign_a{
+
+#db_btn_sign_a {
     text-decoration: none;
-    color: black;
+    color: #f39c12;
 }
-#db_btn_regi_a{
+
+#db_btn_regi_a {
     text-decoration: none;
-    color: black;
+    color: #f39c12;
 }
-#db_btn_regi{
+
+#db_btn_regi {
     width: 120px;
     height: 35px;
     position: fixed;
@@ -49,49 +53,132 @@
     padding: 0;
 }
 
-#db_wallpaper_section {
-    overflow: hidden;
+.caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
-    display: inline-flex;
-    background-color: #000000;
-    z-index: 1000;
+    color: #ffffff;
 }
 
-#db_wall {
-    position: fixed;
-    top: 10%;
-    width: 100vw;
+#db_mainWall {
+    height: 100vh;
+    background: url('../assets/img/wall.jpg') no-repeat;
+    background-size: cover;
 }
 
-#db_center_h1_text{
-    position: fixed;
-    color: white;
-    top: 46%;
-    left: 16%;
-    font-size: 5rem;
-}
-#db_up_line{
-    position: fixed;
-    width: 1060px;
-    height: 5px;
-    top: 46%;
-    left: 16%;
-    background-color: white;
-}
-#db_down_line{
-    position: fixed;
-    width: 1060px;
-    height: 5px;
-    top: 58%;
-    left: 16%;
-    background-color: white;
+.slider {
+    width: 100%;
 }
 
-#db_center_h3_text{
-    position: fixed;
-    color: white;
-    top: 60%;
-    left: 37%;
-    font-size: 2rem;
+#db_mainCaption {
+    height: 600px;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+#db_h1 {
+    font-size: 4.5rem;
+}
+
+#db_p {
+    font-size: 2.4rem;
+}
+
+/*........................*/
+.sectionArea {
+    padding: 80px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.featuresBody .container {
+    justify-content: space-between;
+}
+
+#db_newCarReviews {
+    color: #f39c12;
+}
+
+.col3 {
+    flex-grow: 1;
+    width: 33.33%;
+}
+
+.featuresTop {
+    text-align: center;
+}
+
+.item {
+    padding: 10px 20px;
+}
+
+.zoom {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+
+.zoom img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: all .5s ease;
+}
+
+.item .itemText {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid white;
+}
+
+.item:hover .zoom img {
+
+    transform: scale(1.25);
+}
+
+.item:hover h3 {
+    color: #fff;
+}
+
+.item:hover .itemText {
+    background: #f39c12;
+    color: #fff;
+    transition: all .5s ease;
+}
+
+.btnDetails {
+    color: #f39c12;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #f39c12;
+    transition: all .5s ease;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.item:hover .btnDetails {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.itemText p {
+    margin: 20px 0;
+}
+
+#db_car1 {
+    text-decoration: none;
+}
+
+#db_car2 {
+    text-decoration: none;
+}
+
+#db_car3 {
+    text-decoration: none;
 }
