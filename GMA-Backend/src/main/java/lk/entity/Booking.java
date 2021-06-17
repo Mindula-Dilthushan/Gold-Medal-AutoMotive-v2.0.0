@@ -38,4 +38,7 @@ public class Booking {
     @JoinColumn(name = "driverid", referencedColumnName = "DriverId",nullable = false)
     private Driver driver;
 
+    @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
+    private BookingReturn bookingReturn;
+
 }
