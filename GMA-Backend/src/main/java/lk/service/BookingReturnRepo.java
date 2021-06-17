@@ -4,5 +4,8 @@
 //21-06-17
 package lk.service;
 
-public interface BookingReturnRepo {
+import lk.entity.BookingReturn;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookingReturnRepo extends JpaRepository<BookingReturn,String> {
 }
