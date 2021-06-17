@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,4 +16,7 @@ import lombok.ToString;
 @Data
 public class BookingReturnDTO {
 
+    private String bookingReturnId;
+    private Date bookingReturnDate;
+    private double bookingReturnNoOfKm;
 }
