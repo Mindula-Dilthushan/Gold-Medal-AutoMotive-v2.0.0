@@ -48,7 +48,10 @@ public class BookingReturnServiceImpl implements BookingReturnService {
 
     @Override
     public void deleteBookingReturn(String id) {
-
+        if (!bookingReturnRepo.existsById(id)) {
+            throw new ValidateException("No Booking Return for Delete..!");
+        }
+        bookingReturnRepo.deleteById(id);
     }
 
     @Override
