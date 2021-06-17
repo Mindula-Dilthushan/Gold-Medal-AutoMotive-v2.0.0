@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -48,6 +49,12 @@ public class BookingReturnController {
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity deleteBookingReturn(@RequestParam String id) {
         bookingReturnService.deleteBookingReturn(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllBookingReturns() {
+        List<BookingReturnDTO> bookingReturnDTOArrayList = bookingReturnService.getAllBookingReturns();
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 }
