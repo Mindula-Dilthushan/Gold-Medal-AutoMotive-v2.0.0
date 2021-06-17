@@ -11,9 +11,11 @@ import lk.repo.BookingRepo;
 import lk.repo.BookingReturnRepo;
 import lk.service.BookingReturnService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,6 +68,8 @@ public class BookingReturnServiceImpl implements BookingReturnService {
 
     @Override
     public List<BookingReturnDTO> getAllBookingReturns() {
-        return null;
+        List<BookingReturn> bookingReturnList = bookingReturnRepo.findAll();
+        return modelMapper.map(bookingReturnList, new TypeToken<ArrayList<BookingReturnDTO>>() {
+        }.getType());
     }
 }
