@@ -17,6 +17,7 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 public class BookingReturn {
+
     @Id
     private String bookingReturnId;
     private Date bookingReturnDate;
