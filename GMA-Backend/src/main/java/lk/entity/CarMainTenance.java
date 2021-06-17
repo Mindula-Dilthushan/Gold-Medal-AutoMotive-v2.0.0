@@ -22,7 +22,7 @@ public class CarMainTenance {
     private Date mainTenanceDate;
     private String mainTenanceDescription;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "carid",referencedColumnName = "carId",nullable = false)
-    private Car car;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "carid",referencedColumnName = "carId",nullable = false)
+//    private Car car;
 }

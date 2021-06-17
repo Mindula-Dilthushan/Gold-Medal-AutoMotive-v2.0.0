@@ -23,8 +23,8 @@ public class Payment {
     private String paymentType;
     private double paymentAmount;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "bookingreturnid",referencedColumnName = "bookingReturnId",nullable = false)
-    private BookingReturn bookingReturn;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "bookingreturnid",referencedColumnName = "bookingReturnId",nullable = false)
+//    private BookingReturn bookingReturn;
 
 }

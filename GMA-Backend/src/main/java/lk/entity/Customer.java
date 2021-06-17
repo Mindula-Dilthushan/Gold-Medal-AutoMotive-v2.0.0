@@ -32,7 +32,7 @@ public class Customer {
     private String CustomerNIC;
     private String CustomerDrivingLIC;
 
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Booking> bookingList = new ArrayList<>();
+//    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+//    @JsonIgnore
+//    private List<Booking> bookingList = new ArrayList<>();
 }

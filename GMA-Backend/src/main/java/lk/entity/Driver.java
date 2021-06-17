@@ -29,8 +29,8 @@ public class Driver {
     private String DriverContact;
     private String DriverNIC;
 
-    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Booking> bookingList = new ArrayList<>();
+//    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
+//    @JsonIgnore
+//    private List<Booking> bookingList = new ArrayList<>();
 
 }

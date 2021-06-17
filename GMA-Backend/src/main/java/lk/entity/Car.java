@@ -38,10 +38,10 @@ public class Car {
     private double carFreeMillagePrice;
     private String carFreeMillageDuration;
 
-    @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Booking> bookingList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
-    private List<CarMainTenance> carMainTenanceList = new ArrayList<>();
+//    @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
+//    @JsonIgnore
+//    private List<Booking> bookingList = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "car",cascade = CascadeType.ALL)
+//    private List<CarMainTenance> carMainTenanceList = new ArrayList<>();
 }
