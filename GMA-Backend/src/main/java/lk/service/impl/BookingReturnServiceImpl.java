@@ -41,7 +41,9 @@ public class BookingReturnServiceImpl implements BookingReturnService {
 
     @Override
     public void updateBookingReturn(BookingReturnDTO bookingReturnDTO) {
-
+        if (bookingReturnRepo.existsById(bookingReturnDTO.getBookingReturnId())) {
+            bookingReturnRepo.save(modelMapper.map(bookingReturnDTO, BookingReturn.class));
+        }
     }
 
     @Override
