@@ -41,4 +41,15 @@ public class Booking {
     @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
     private BookingReturn bookingReturn;
 
+    public Booking(String bookingId, String bookingDate, String bookingPickDate, String bookingStatus, String bookingNote, String bookingReturnDate, Customer customer, Car car, Driver driver) {
+        this.bookingId = bookingId;
+        this.bookingDate = bookingDate;
+        this.bookingPickDate = bookingPickDate;
+        this.bookingStatus = bookingStatus;
+        this.bookingNote = bookingNote;
+        this.bookingReturnDate = bookingReturnDate;
+        this.customer = customer;
+        this.car = car;
+        this.driver = driver;
+    }
 }
