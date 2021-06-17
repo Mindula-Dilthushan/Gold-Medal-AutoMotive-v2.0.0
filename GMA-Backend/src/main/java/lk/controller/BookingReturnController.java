@@ -44,4 +44,10 @@ public class BookingReturnController {
         bookingReturnService.updateBookingReturn(bookingReturnDTO);
         return new ResponseEntity(new StandardResponse("200", "Done", bookingReturnDTO), HttpStatus.OK);
     }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteBookingReturn(@RequestParam String id) {
+        bookingReturnService.deleteBookingReturn(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
 }
