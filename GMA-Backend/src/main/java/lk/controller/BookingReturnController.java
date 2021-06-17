@@ -35,4 +35,13 @@ public class BookingReturnController {
                         "200","Done",bookingReturnDTO),HttpStatus.OK
         );
     }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateBookingReturn(@RequestBody BookingReturnDTO bookingReturnDTO) {
+        if (bookingReturnDTO.getBookingReturnId().trim().length() <= 0) {
+            throw new NotFoundException("No id provided to update");
+        }
+        bookingReturnService.updateBookingReturn(bookingReturnDTO);
+        return new ResponseEntity(new StandardResponse("200", "Done", bookingReturnDTO), HttpStatus.OK);
+    }
 }
