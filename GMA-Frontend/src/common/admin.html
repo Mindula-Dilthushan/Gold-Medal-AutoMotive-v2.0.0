@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/admin.css">
 </head>
+<body class="overflow-hidden">
 <div id="wrapper">
     <nav class="navbar  align-items-start sidebar accordion p-0">
         <div class="container-fluid d-flex flex-column p-0">
@@ -28,9 +29,9 @@
         </div>
     </nav>
 
-    <div class="d-flex flex-column" id="content-wrapper">
-        <div id="content">
-            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+    <div class="d-flex flex-column bg-light" id="content-wrapper" >
+        <div id="content" class="m-0 p-0">
+            <nav class="navbar navbar-light navbar-expand bg-white shadow topbar static-top">
                 <div class="container-fluid">
                     <button class="btn btn-link d-md-none rounded-circle mr-3" type="button"></button>
                     <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -49,113 +50,151 @@
                     </div>
                 </div>
             </nav>
-
-            <div class="main-panal" style="overflow:hidden">
-                <h3 class="text-dark mb-4 ml-4">Admin Panel</h3>
-                <div class="container-fluid">
-
-                    <div id="Main_Page">
-                        <div class="row">
-                            <div class="col-md-6 col-xl-3 mb-4">
-                                <div class="card shadow border-left-warning py-2">
-                                    <div class="card-body">
-                                        <div class="row align-items-center no-gutters">
-                                            <div class="col mr-2">
-                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                                                    <span>Customers</span>
-                                                </div>
-                                                <div class="text-dark font-weight-bold h5 mb-0"><span>0000</span></div>
-                                            </div>
-                                            <div class="col-auto"><img id="custom_pic"
-                                                                       src="../assets/icon/icons8_customer_64.png">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3 mb-4">
-                                <div class="card shadow border-left-warning py-2">
-                                    <div class="card-body">
-                                        <div class="row align-items-center no-gutters">
-                                            <div class="col mr-2">
-                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                                                    <span>Cars</span>
-                                                </div>
-                                                <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>
-                                            </div>
-                                            <div class="col-auto"><img id="car_pic"
-                                                                       src="../assets/icon/icons8_car_64.png">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3 mb-4">
-                                <div class="card shadow border-left-warning py-2">
-                                    <div class="card-body">
-                                        <div class="row align-items-center no-gutters">
-                                            <div class="col mr-2">
-                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                                                    <span>Drivers</span></div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="text-dark font-weight-bold h5 mb-0"><span>000</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto"><img id="driver_pic"
-                                                                       src="../assets/icon/icons8_driver_64.png"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3 mb-4">
-                                <div class="card shadow border-left-warning py-2">
-                                    <div class="card-body">
-                                        <div class="row align-items-center no-gutters">
-                                            <div class="col mr-2">
-                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                                                    <span>Orders</span>
-                                                </div>
-                                                <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>
-                                            </div>
-                                            <div class="col-auto"><img id="order_pic"
-                                                                       src="../assets/icon/icons8_purchase_order_64.png">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="Customers_Page">
-                        <div class="table-box" style="height: 250px; overflow: no-display">
-                            <div class="table-responsive-lg">
-                                <table class="table table-hover">
-                                    <thead class="text-white" id="tblCustomerHeader">
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Nic No</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Driving Licence No</th>
-                                        <th scope="col">Verify</th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
-    </div>
+
+<!--    <div class="col-12 d-flex  panel m-0 p-0 bg-light">-->
+
+        <div class="main-panel bg-light m-0 p-0 ">
+
+<!--            <div class="container-fluid">-->
+                <div style="display: none"  id="admin_Home_Page">
+                    <h1>admin home page</h1>
+                </div>
+
+                <div style="display: none" id="admin_profile_Page">
+                    <h1>admin profile page</h1>
+                </div>
+
+                <div style="display: none" id="admin_Customer_Page">
+                    <h1>admin Customer Page</h1>
+                </div>
+
+<!--            </div>-->
+        </div>
+<!--    </div>-->
 </div>
+</div>
+
+<!--            <div class="main-panal" style="overflow:hidden">-->
+<!--                <h3 class="text-dark mb-4 ml-4">Admin Panel</h3>-->
+<!--                <div class="container-fluid">-->
+
+<!--                    <div id="Main_Page">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
+<!--                                <div class="card shadow border-left-warning py-2">-->
+<!--                                    <div class="card-body">-->
+<!--                                        <div class="row align-items-center no-gutters">-->
+<!--                                            <div class="col mr-2">-->
+<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
+<!--                                                    <span>Customers</span>-->
+<!--                                                </div>-->
+<!--                                                <div class="text-dark font-weight-bold h5 mb-0"><span>0000</span></div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-auto"><img id="custom_pic"-->
+<!--                                                                       src="../assets/icon/icons8_customer_64.png">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
+<!--                                <div class="card shadow border-left-warning py-2">-->
+<!--                                    <div class="card-body">-->
+<!--                                        <div class="row align-items-center no-gutters">-->
+<!--                                            <div class="col mr-2">-->
+<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
+<!--                                                    <span>Cars</span>-->
+<!--                                                </div>-->
+<!--                                                <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-auto"><img id="car_pic"-->
+<!--                                                                       src="../assets/icon/icons8_car_64.png">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
+<!--                                <div class="card shadow border-left-warning py-2">-->
+<!--                                    <div class="card-body">-->
+<!--                                        <div class="row align-items-center no-gutters">-->
+<!--                                            <div class="col mr-2">-->
+<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
+<!--                                                    <span>Drivers</span></div>-->
+<!--                                                <div class="row no-gutters align-items-center">-->
+<!--                                                    <div class="col-auto">-->
+<!--                                                        <div class="text-dark font-weight-bold h5 mb-0"><span>000</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-auto"><img id="driver_pic"-->
+<!--                                                                       src="../assets/icon/icons8_driver_64.png"></div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
+<!--                                <div class="card shadow border-left-warning py-2">-->
+<!--                                    <div class="card-body">-->
+<!--                                        <div class="row align-items-center no-gutters">-->
+<!--                                            <div class="col mr-2">-->
+<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
+<!--                                                    <span>Orders</span>-->
+<!--                                                </div>-->
+<!--                                                <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-auto"><img id="order_pic"-->
+<!--                                                                       src="../assets/icon/icons8_purchase_order_64.png">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--&lt;!&ndash;                    <div id="Customers_Page">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="table-box" style="height: 250px; overflow: no-display">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="table-responsive-lg">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <table class="table table-hover">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <thead class="text-white" id="tblCustomerHeader">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <th scope="col">ID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <th scope="col">Nic No</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <th scope="col">Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <th scope="col">Address</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <th scope="col">Email</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <th scope="col">Driving Licence No</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <th scope="col">Verify</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </table>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--                </div>-->
+<!--            </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="../js/jquery.min.js"></script>
+<script src="../js/Admin.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

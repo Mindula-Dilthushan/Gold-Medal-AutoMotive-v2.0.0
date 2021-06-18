@@ -35,3 +35,21 @@
 #tblProfile_Page{
     background-color: #f39c12;
 }
+/*.......................*/
+.main-panel {
+    width: 100%;
+    height: 95%;
+    background: whitesmoke;
+    margin-top: 5vh;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.main-panel::-webkit-scrollbar {
+    display: none;
+}
+.panel {
+    /*padding-left: 0;*/
+    margin: 0;
+    padding: 0;
+    /*padding-right: 0;*/
+}
