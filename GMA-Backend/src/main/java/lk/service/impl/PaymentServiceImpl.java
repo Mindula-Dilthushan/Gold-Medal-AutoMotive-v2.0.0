@@ -10,10 +10,12 @@ import lk.exeption.ValidateException;
 import lk.repo.PaymentRepo;
 import lk.service.PaymentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -62,6 +64,8 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public ArrayList<PaymentDTO> getAllPayments() {
-        return null;
+        List<Payment> paymentList = paymentRepo.findAll();
+        return modelMapper.map(paymentList,new TypeToken<ArrayList<PaymentDTO>>(){
+        }.getType());
     }
 }
