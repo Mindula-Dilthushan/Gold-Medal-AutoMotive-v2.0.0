@@ -5,7 +5,11 @@
 package lk.service.impl;
 
 import lk.dto.PaymentDTO;
+import lk.entity.Payment;
+import lk.exeption.ValidateException;
+import lk.repo.PaymentRepo;
 import lk.service.PaymentService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -15,9 +19,21 @@ import java.util.ArrayList;
 @Transactional
 public class PaymentServiceImpl implements PaymentService {
 
+    @Autowired
+    private PaymentRepo paymentRepo;
+
+    @Autowired
+    private ModelMapper modelMapper;
+
     @Override
     public void savePayment(PaymentDTO paymentDTO) {
-
+        if (paymentRepo.existsById(paymentDTO.getPaymentId())){
+            throw new ValidateException("Payment Already Exist");
+        }
+        System.out.println(paymentDTO);
+        paymentRepo.save(
+                modelMapper.map(paymentDTO, Payment.class)
+        );
     }
 
     @Override
