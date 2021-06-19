@@ -53,3 +53,66 @@
     padding: 0;
     /*padding-right: 0;*/
 }
+/*Profile page*/
+#admin_btn_change_pic{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminSave{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminDelete{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminUpdate{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminGetAll{
+    background-color: #f39c12;
+    color: white;
+}
+#admin_name_title{
+    color: #f39c12;
+}
+#tblAdmin{
+    background-color: #f39c12;
+}
+#btnAdminCustomerDelete{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminCustomerSave{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminCustomerGetAll{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminCustomerUpdate{
+    background-color: #f39c12;
+    color: white;
+}
+#tblCarHeader{
+    background-color: #f39c12;
+}
+#btnAdminCarUpdate{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminCarSave{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminCarDelete{
+     background-color: #f39c12;
+     color: white;
+}
+#btnAdminCarGetAll{
+      background-color: #f39c12;
+      color: white;
+  }
+

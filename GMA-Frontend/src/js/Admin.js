@@ -33,9 +33,3 @@
 //         'display': 'none'
 //     });
 // });
-
-$('#btn_mainPage').click(() => {
-    $('#btn_mainPage').addClass('btn-custom-selected');
-    $('#admin_Home_Page').fadeIn(1000);
-
-});

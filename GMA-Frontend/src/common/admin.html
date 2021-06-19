@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/admin.css">
 </head>
-<body class="overflow-hidden">
+<body>
 <div id="wrapper">
     <nav class="navbar  align-items-start sidebar accordion p-0">
         <div class="container-fluid d-flex flex-column p-0">
@@ -18,9 +18,12 @@
                 <div class="sidebar-brand-text">Gold Medal<br>AutoMotive</div>
             </a>
             <ul class="nav navbar-nav mt-3">
-                <li class="nav-item"><a class="text-white nav-link btn-custom btn-custom-selected" href="" id="btn_mainPage">Dashboard</a></li>
-                <li class="nav-item"><a class="text-white nav-link btn-custom" href="" id="btn_ProfilePage"><span>Profile</span></a></li>
-                <li class="nav-item"><a class="text-white nav-link btn-custom" href="" id="btn_CustomerPage"><span>Customers</span></a></li>
+                <li class="nav-item"><a class="text-white nav-link btn-custom btn-custom-selected" href=""
+                                        id="btn_mainPage">Dashboard</a></li>
+                <li class="nav-item"><a class="text-white nav-link btn-custom" href="" id="btn_ProfilePage"><span>Profile</span></a>
+                </li>
+                <li class="nav-item"><a class="text-white nav-link btn-custom" href="" id="btn_CustomerPage"><span>Customers</span></a>
+                </li>
                 <li class="nav-item"><a class="text-white nav-link" href=""><span>Cars</span></a></li>
                 <li class="nav-item"><a class="text-white nav-link" href=""><span>Drivers</span></a></li>
                 <li class="nav-item"><a class="text-white nav-link" href=""><span>Orders</span></a></li>
@@ -29,7 +32,7 @@
         </div>
     </nav>
 
-    <div class="d-flex flex-column bg-light" id="content-wrapper" >
+    <div class="d-flex flex-column bg-light" id="content-wrapper">
         <div id="content" class="m-0 p-0">
             <nav class="navbar navbar-light navbar-expand bg-white shadow topbar static-top">
                 <div class="container-fluid">
@@ -52,145 +55,529 @@
             </nav>
         </div>
 
-<!--    <div class="col-12 d-flex  panel m-0 p-0 bg-light">-->
 
         <div class="main-panel bg-light m-0 p-0 ">
 
-<!--            <div class="container-fluid">-->
-                <div style="display: none"  id="admin_Home_Page">
-                    <h1>admin home page</h1>
+            <!--  Start Admin Home Page-->
+            <div style="display: none" id="admin_Home_Page">
+                <div class="container-fluid">
+                    <div class="row mt-4">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Customers</span>
+                                            </div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>0000</span></div>
+                                        </div>
+                                        <div class="col-auto"><img id="custom_pic"
+                                                                   src="../assets/icon/icons8_customer_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Cars</span>
+                                            </div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>
+                                        </div>
+                                        <div class="col-auto"><img id="car_pic"
+                                                                   src="../assets/icon/icons8_car_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Drivers</span></div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark font-weight-bold h5 mb-0"><span>000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><img id="driver_pic"
+                                                                   src="../assets/icon/icons8_driver_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                                <span>Orders</span>
+                                            </div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>
+                                        </div>
+                                        <div class="col-auto"><img id="order_pic"
+                                                                   src="../assets/icon/icons8_purchase_order_64.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Home Page-->
+
+            <!--  Start Admin Profile Page-->
+            <div style="display: none" id="admin_profile_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Profile</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
+                            <div class="card mb-3">
+                                <div class="card-body text-center shadow">
+                                    <img class="rounded-circle mb-3 mt-4" src="../assets/img/me/me.jpg" width="170"
+                                         height="170"/>
+                                    <div class="mb-3">
+                                        <button class="btn btn-sm mb-2 mt-2" type="button" id="admin_btn_change_pic">
+                                            Change Photo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="m-0 font-weight-bold" id="admin_name_title">Admin Profile
+                                                Settings</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>ID</strong></label>
+                                                            <input
+                                                                    class="form-control"
+                                                                    type="text"
+                                                                    placeholder="A###"
+                                                                    name="adminId">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Email Address</strong></label>
+                                                            <input class="form-control"
+                                                                   type="email"
+                                                                   placeholder="user@example.com"
+                                                                   name="email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong> User Name</strong></label>
+                                                            <input class="form-control"
+                                                                   type="text"
+                                                                   placeholder="user.name"
+                                                                   name="username">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label><strong>Password</strong></label>
+                                                            <input class="form-control"
+                                                                   type="password"
+                                                                   placeholder="######"
+                                                                   name="password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mb-2">
+                                                    <button id="btnAdminSave" class="btn  btn-sm" type="submit"> Save
+                                                    </button>
+                                                    <button id="btnAdminUpdate" class="btn  btn-sm" type="submit">
+                                                        Update
+                                                    </button>
+                                                    <button id="btnAdminDelete" class="btn  btn-sm" type="submit">
+                                                        Delete
+                                                    </button>
+                                                    <button id="btnAdminGetAll" class="btn  btn-sm" type="submit"> Get
+                                                        All
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-hover">
+                        <thead class="text-white" id="tblAdmin">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">User Name</th>
+                        </tr>
+                        </thead>
+                    </table>
                 </div>
 
-                <div style="display: none" id="admin_profile_Page">
-                    <h1>admin profile page</h1>
-                </div>
+            </div>
+            <!--  End Admin Profile Page-->
 
-                <div style="display: none" id="admin_Customer_Page">
-                    <h1>admin Customer Page</h1>
-                </div>
+            <!--  Start Admin Customer Page-->
+            <div style="display: none" id="admin_Customer_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Customers</h3>
+                    <div class="col-lg-12 p-0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow mb-3">
+                                    <div class="card-header py-3">
+                                        <p class="m-0 font-weight-bold">Customer Settings</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>ID</strong></label>
+                                                        <input
+                                                                class="form-control"
+                                                                type="text"
+                                                                placeholder="C###"
+                                                                name="id">
+                                                    </div>
+                                                </div>
 
-<!--            </div>-->
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Name</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="user.name"
+                                                               name="name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Address</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="user.address"
+                                                               name="address">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Email</strong></label>
+                                                        <input class="form-control"
+                                                               type="email"
+                                                               placeholder="user@example.com"
+                                                               name="email">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>NIC</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="user.nic"
+                                                               name="nic">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Driving License</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="user.driving license"
+                                                               name="drivinglic">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Contact</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="07# #######"
+                                                               name="password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <button id="btnAdminCustomerSave" class="btn  btn-sm" type="submit">Save
+                                                </button>
+                                                <button id="btnAdminCustomerUpdate" class="btn  btn-sm" type="submit">
+                                                    Update
+                                                </button>
+                                                <button id="btnAdminCustomerDelete" class="btn  btn-sm" type="submit">
+                                                    Delete
+                                                </button>
+                                                <button id="btnAdminCustomerGetAll" class="btn  btn-sm" type="submit">
+                                                    Get
+                                                    All
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblCustomerHeader">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nic No</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Driving Licence No</th>
+                                    <th scope="col">Contact</th>
+                                    <th scope="col">Verify</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Customer Page-->
+
+            <!--  Start Admin Car Page-->
+            <div style="display: none" id="admin_Car_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Cars</h3>
+                    <div class="col-lg-12 p-0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow mb-3">
+                                    <div class="card-header py-3">
+                                        <p class="m-0 font-weight-bold">Cars Settings</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>ID</strong></label>
+                                                        <input
+                                                                class="form-control"
+                                                                type="text"
+                                                                placeholder="C###"
+                                                                name="id">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Brand</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.brand"
+                                                               name="brand">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Color</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.color"
+                                                               name="color">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Type</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.type"
+                                                               name="type">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Passengers</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.passengers"
+                                                               name="passengers">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Transmission Type</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.transmission"
+                                                               name="transmission">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Fuel Type</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.fuel type"
+                                                               name="fuel">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Price For Extra KM</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.extra km"
+                                                               name="extra_km">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Registration No</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.reg"
+                                                               name="reg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Loss Damage Waiver</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.damage"
+                                                               name="damage">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Daily Rate</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.daily"
+                                                               name="daily">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Monthly Rate</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.monthly"
+                                                               name="monthly">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Free Millage Price</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.millage"
+                                                               name="millage">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Free Millage Duration</strong></label>
+                                                        <input class="form-control"
+                                                               type="text"
+                                                               placeholder="car.duration"
+                                                               name="duration">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-2">
+                                                <button id="btnAdminCarSave" class="btn  btn-sm" type="submit">Save
+                                                </button>
+                                                <button id="btnAdminCarUpdate" class="btn  btn-sm" type="submit">
+                                                    Update
+                                                </button>
+                                                <button id="btnAdminCarDelete" class="btn  btn-sm" type="submit">
+                                                    Delete
+                                                </button>
+                                                <button id="btnAdminCarGetAll" class="btn  btn-sm" type="submit"> Get
+                                                    All
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblCarHeader">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Reg No</th>
+                                    <th scope="col">Brand</th>
+                                    <th scope="col">No Of Passengers</th>
+                                    <th scope="col">Transmission</th>
+                                    <th scope="col">Car Type</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col">Fuel Type</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Car Page-->
+
         </div>
-<!--    </div>-->
+    </div>
 </div>
-</div>
-
-<!--            <div class="main-panal" style="overflow:hidden">-->
-<!--                <h3 class="text-dark mb-4 ml-4">Admin Panel</h3>-->
-<!--                <div class="container-fluid">-->
-
-<!--                    <div id="Main_Page">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
-<!--                                <div class="card shadow border-left-warning py-2">-->
-<!--                                    <div class="card-body">-->
-<!--                                        <div class="row align-items-center no-gutters">-->
-<!--                                            <div class="col mr-2">-->
-<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
-<!--                                                    <span>Customers</span>-->
-<!--                                                </div>-->
-<!--                                                <div class="text-dark font-weight-bold h5 mb-0"><span>0000</span></div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-auto"><img id="custom_pic"-->
-<!--                                                                       src="../assets/icon/icons8_customer_64.png">-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
-<!--                                <div class="card shadow border-left-warning py-2">-->
-<!--                                    <div class="card-body">-->
-<!--                                        <div class="row align-items-center no-gutters">-->
-<!--                                            <div class="col mr-2">-->
-<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
-<!--                                                    <span>Cars</span>-->
-<!--                                                </div>-->
-<!--                                                <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-auto"><img id="car_pic"-->
-<!--                                                                       src="../assets/icon/icons8_car_64.png">-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
-<!--                                <div class="card shadow border-left-warning py-2">-->
-<!--                                    <div class="card-body">-->
-<!--                                        <div class="row align-items-center no-gutters">-->
-<!--                                            <div class="col mr-2">-->
-<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
-<!--                                                    <span>Drivers</span></div>-->
-<!--                                                <div class="row no-gutters align-items-center">-->
-<!--                                                    <div class="col-auto">-->
-<!--                                                        <div class="text-dark font-weight-bold h5 mb-0"><span>000</span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-auto"><img id="driver_pic"-->
-<!--                                                                       src="../assets/icon/icons8_driver_64.png"></div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-6 col-xl-3 mb-4">-->
-<!--                                <div class="card shadow border-left-warning py-2">-->
-<!--                                    <div class="card-body">-->
-<!--                                        <div class="row align-items-center no-gutters">-->
-<!--                                            <div class="col mr-2">-->
-<!--                                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">-->
-<!--                                                    <span>Orders</span>-->
-<!--                                                </div>-->
-<!--                                                <div class="text-dark font-weight-bold h5 mb-0"><span>000</span></div>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-auto"><img id="order_pic"-->
-<!--                                                                       src="../assets/icon/icons8_purchase_order_64.png">-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--&lt;!&ndash;                    <div id="Customers_Page">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="table-box" style="height: 250px; overflow: no-display">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="table-responsive-lg">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <table class="table table-hover">&ndash;&gt;-->
-<!--&lt;!&ndash;                                    <thead class="text-white" id="tblCustomerHeader">&ndash;&gt;-->
-<!--&lt;!&ndash;                                    <tr>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <th scope="col">ID</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <th scope="col">Nic No</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <th scope="col">Name</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <th scope="col">Address</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <th scope="col">Email</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <th scope="col">Driving Licence No</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <th scope="col">Verify</th>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </tr>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </thead>&ndash;&gt;-->
-<!--&lt;!&ndash;                                </table>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-
-<!--                </div>-->
-<!--            </div>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script src="../js/jquery.min.js"></script>
