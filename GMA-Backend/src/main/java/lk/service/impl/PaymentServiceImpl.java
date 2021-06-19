@@ -44,7 +44,9 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void updatePayment(PaymentDTO paymentDTO) {
-
+        if (paymentRepo.existsById(paymentDTO.getPaymentId())){
+            paymentRepo.save(modelMapper.map(paymentDTO, Payment.class));
+        }
     }
 
     @Override
