@@ -45,7 +45,9 @@ public class CarMainTenanceServiceImpl implements CarMainTenanceService {
 
     @Override
     public void updateCarMainTenance(CarMainTenanceDTO carMainTenanceDTO) {
-
+        if (carMainTenanceRepo.existsById(carMainTenanceDTO.getMainTenanceId())){
+            carMainTenanceRepo.save(modelMapper.map(carMainTenanceDTO, CarMainTenance.class));
+        }
     }
 
     @Override
