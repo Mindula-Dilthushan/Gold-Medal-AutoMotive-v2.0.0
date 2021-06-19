@@ -28,7 +28,7 @@ public class CarMainTenanceServiceImpl implements CarMainTenanceService {
     @Override
     public void saveCarMainTenance(CarMainTenanceDTO carMainTenanceDTO) {
         if (carMainTenanceRepo.existsById(carMainTenanceDTO.getMainTenanceId())){
-            throw new ValidateException("Payment Already Exist");
+            throw new ValidateException("CarMainTenance Already Exist");
         }
         System.out.println(carMainTenanceDTO);
         carMainTenanceRepo.save(
