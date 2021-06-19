@@ -38,7 +38,9 @@ public class CarMainTenanceServiceImpl implements CarMainTenanceService {
 
     @Override
     public void deleteCarMainTenance(String id) {
-
+        if (!carMainTenanceRepo.existsById(id)){
+            throw new ValidateException("No CarMainTenance for Delete..!");
+        }
     }
 
     @Override
