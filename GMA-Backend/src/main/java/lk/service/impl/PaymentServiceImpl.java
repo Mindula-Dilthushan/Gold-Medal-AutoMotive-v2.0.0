@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -48,6 +49,10 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public PaymentDTO searchPayment(String id) {
+        Optional<Payment> paymentOptional = paymentRepo.findById(id);
+        if (paymentOptional.isPresent()){
+            return modelMapper.map(paymentOptional.get(), PaymentDTO.class);
+        }
         return null;
     }
 
