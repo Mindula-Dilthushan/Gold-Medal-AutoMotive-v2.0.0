@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -52,6 +53,10 @@ public class CarMainTenanceServiceImpl implements CarMainTenanceService {
 
     @Override
     public CarMainTenanceDTO searchCarMainTenance(String id) {
+        Optional<CarMainTenance> carMainTenanceOptional = carMainTenanceRepo.findById(id);
+        if (carMainTenanceOptional.isPresent()){
+            return modelMapper.map(carMainTenanceOptional.get(), CarMainTenanceDTO.class);
+        }
         return null;
     }
 
