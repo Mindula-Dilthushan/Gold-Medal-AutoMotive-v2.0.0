@@ -10,10 +10,12 @@ import lk.exeption.ValidateException;
 import lk.repo.CarMainTenanceRepo;
 import lk.service.CarMainTenanceService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -62,6 +64,8 @@ public class CarMainTenanceServiceImpl implements CarMainTenanceService {
 
     @Override
     public ArrayList<CarMainTenanceDTO> getCarMainTenance() {
-        return null;
+        List<CarMainTenance> carMainTenanceList = carMainTenanceRepo.findAll();
+        return modelMapper.map(carMainTenanceList,new TypeToken<ArrayList<CarMainTenanceDTO>>(){
+        }.getType());
     }
 }
