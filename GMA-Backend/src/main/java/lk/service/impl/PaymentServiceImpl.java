@@ -38,8 +38,10 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public void deletePayment(PaymentDTO paymentDTO) {
-
+    public void deletePayment(String id) {
+        if (!paymentRepo.existsById(id)){
+            throw new ValidateException("No Payment for Delete..!");
+        }
     }
 
     @Override

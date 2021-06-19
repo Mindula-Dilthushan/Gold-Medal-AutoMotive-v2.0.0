@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public interface PaymentService {
     void savePayment(PaymentDTO paymentDTO);
-    void deletePayment(PaymentDTO paymentDTO);
+    void deletePayment(String id);
     void updatePayment(PaymentDTO paymentDTO);
     PaymentDTO searchPayment(String id);
     ArrayList<PaymentDTO> getAllPayments();
