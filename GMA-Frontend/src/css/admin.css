@@ -110,5 +110,25 @@
 #btnAdminCarGetAll{
       background-color: #f39c12;
       color: white;
-  }
+}
 
+#btnAdminDriverSave{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminDriverUpdate{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminDriverDelete{
+    background-color: #f39c12;
+    color: white;
+}
+#btnAdminDriverGetAll{
+    background-color: #f39c12;
+    color: white;
+}
+#tblDriver{
+    background-color: #f39c12;
+    color: white;
+}

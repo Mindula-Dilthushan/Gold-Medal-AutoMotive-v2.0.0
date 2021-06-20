@@ -184,11 +184,11 @@
                                                         <div class="form-group">
                                                             <label><strong>Email Address</strong></label>
                                                             <input
-                                                                   id="adminEmail"
-                                                                   class="form-control"
-                                                                   type="email"
-                                                                   placeholder="user@example.com"
-                                                                   name="email">
+                                                                    id="adminEmail"
+                                                                    class="form-control"
+                                                                    type="email"
+                                                                    placeholder="user@example.com"
+                                                                    name="email">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -199,9 +199,9 @@
                                                             <input
                                                                     id="adminName"
                                                                     class="form-control"
-                                                                   type="text"
-                                                                   placeholder="user.name"
-                                                                   name="username">
+                                                                    type="text"
+                                                                    placeholder="user.name"
+                                                                    name="username">
                                                         </div>
                                                     </div>
                                                     <div class="col">
@@ -210,9 +210,9 @@
                                                             <input
                                                                     id="adminPassword"
                                                                     class="form-control"
-                                                                   type="password"
-                                                                   placeholder="######"
-                                                                   name="password">
+                                                                    type="password"
+                                                                    placeholder="######"
+                                                                    name="password">
                                                         </div>
                                                     </div>
 
@@ -220,7 +220,7 @@
                                                         <div class="form-group">
                                                             <label><strong>Confirm Password</strong></label>
                                                             <input id="adminConfirmPassword"
-                                                                    class="form-control"
+                                                                   class="form-control"
                                                                    type="password"
                                                                    placeholder="######"
                                                                    name="confirm_password">
@@ -250,7 +250,7 @@
             <!--  End Admin Profile Page-->
 
             <!--  Start Admin Customer Page-->
-            <div style="display: block" id="admin_Customer_Page">
+            <div style="display: none" id="admin_Customer_Page">
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4 mt-4">Customers</h3>
                     <div class="col-lg-12 p-0">
@@ -266,19 +266,19 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label><strong>ID</strong></label>
-                                                        <input  id="adCustId"
-                                                                class="form-control"
-                                                                type="text"
-                                                                placeholder="C###"
-                                                                name="id">
+                                                        <input id="adCustId"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="C###"
+                                                               name="id">
                                                     </div>
                                                 </div>
 
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label><strong>Name</strong></label>
-                                                        <input  id="adCustName"
-                                                                class="form-control"
+                                                        <input id="adCustName"
+                                                               class="form-control"
                                                                type="text"
                                                                placeholder="user.name"
                                                                name="name">
@@ -289,7 +289,7 @@
                                                     <div class="form-group">
                                                         <label><strong>Address</strong></label>
                                                         <input id="adCustAddress"
-                                                                class="form-control"
+                                                               class="form-control"
                                                                type="text"
                                                                placeholder="user.address"
                                                                name="address">
@@ -300,7 +300,7 @@
                                                     <div class="form-group">
                                                         <label><strong>Email</strong></label>
                                                         <input id="adCustEmail"
-                                                                class="form-control"
+                                                               class="form-control"
                                                                type="email"
                                                                placeholder="user@example.com"
                                                                name="email">
@@ -313,7 +313,7 @@
                                                     <div class="form-group">
                                                         <label><strong>NIC</strong></label>
                                                         <input id="adCustNic"
-                                                                class="form-control"
+                                                               class="form-control"
                                                                type="text"
                                                                placeholder="user.nic"
                                                                name="nic">
@@ -323,7 +323,7 @@
                                                     <div class="form-group">
                                                         <label><strong>Driving License</strong></label>
                                                         <input id="adCustDl"
-                                                                class="form-control"
+                                                               class="form-control"
                                                                type="text"
                                                                placeholder="user.driving license"
                                                                name="drivinglic">
@@ -333,7 +333,7 @@
                                                     <div class="form-group">
                                                         <label><strong>Contact</strong></label>
                                                         <input id="adCustContact"
-                                                                class="form-control"
+                                                               class="form-control"
                                                                type="text"
                                                                placeholder="07# #######"
                                                                name="contact">
@@ -590,6 +590,109 @@
             </div>
             <!--  End Admin Car Page-->
 
+            <!-- Start Admin Driver Page -->
+            <div style="display: block" id="admin_Driver_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Driver</h3>
+                    <div class="col-lg-12 p-0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow mb-3">
+                                    <div class="card-header py-3">
+                                        <p class="m-0 font-weight-bold">Driver Settings</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>ID</strong></label>
+                                                        <input id="adDriverId"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="D###"
+                                                               name="id">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Name</strong></label>
+                                                        <input id="adDriverName"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="driver.name"
+                                                               name="name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>NIC</strong></label>
+                                                        <input id="adDriverNIC"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="driver.nic"
+                                                               name="nic">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Contact</strong></label>
+                                                        <input id="adDriverContact"
+                                                               class="form-control"
+                                                               type="text"
+                                                               placeholder="07#"
+                                                               name="contact">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group mb-2">
+                                                <button id="btnAdminDriverSave" class="btn  btn-sm" type="button">Save
+                                                </button>
+                                                <button id="btnAdminDriverUpdate" class="btn  btn-sm" type="button">
+                                                    Update
+                                                </button>
+                                                <button id="btnAdminDriverDelete" class="btn  btn-sm" type="button">
+                                                    Delete
+                                                </button>
+                                                <button id="btnAdminDriverGetAll" class="btn  btn-sm" type="button">
+                                                    Get
+                                                    All
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblDriver">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">NIC</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblDriverBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Customer Page-->
+
         </div>
     </div>
 </div>
@@ -599,6 +702,7 @@
 <script src="../js/Admin.js"></script>
 <script src="../js/admin/AdminProfile.js"></script>
 <script src="../js/admin/AdminCustomers.js"></script>
+<script src="../js/admin/AdminDriver.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
