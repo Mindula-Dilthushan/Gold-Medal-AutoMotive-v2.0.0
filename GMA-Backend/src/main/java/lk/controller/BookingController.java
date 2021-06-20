@@ -1,0 +1,40 @@
+//Alpha X Software Company
+//Mindula Dilthushan
+//GMA v2.0.3
+//21-06-20
+package lk.controller;
+
+import lk.dto.BookingDTO;
+import lk.exeption.NotFoundException;
+import lk.service.BookingService;
+import lk.util.StandardResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/v2/booking")
+public class BookingController {
+
+    @Autowired
+    private BookingService bookingService;
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity saveBooking(@RequestBody BookingDTO bookingDTO){
+        if (bookingDTO.getBookingId().trim().length() <=0){
+            throw new NotFoundException("Booking Id cannot be Empty");
+        }
+        bookingService.saveBooking(bookingDTO);
+        return new ResponseEntity(
+                new StandardResponse(
+                        "201",
+                        "Done",
+                        bookingDTO
+                ),
+                HttpStatus.CREATED
+        );
+    }
+}
