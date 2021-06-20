@@ -37,4 +37,14 @@ public class BookingController {
                 HttpStatus.CREATED
         );
     }
+
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchBooking(@PathVariable String id){
+        BookingDTO bookingDTO = bookingService.searchBooking(id);
+        return new ResponseEntity(
+                new StandardResponse(
+                        "200","Done",bookingDTO
+                ),HttpStatus.OK
+        );
+    }
 }
