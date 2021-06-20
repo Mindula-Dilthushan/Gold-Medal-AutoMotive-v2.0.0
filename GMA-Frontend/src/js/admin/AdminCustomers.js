@@ -77,6 +77,7 @@ $('#btnAdminCustomerSave').click(() => {
             contentType: "application/json; charset=utf-8",
             success: function (res) {
                 if (res.message == 'Success') {
+                    loadCustomers();
                 }
             },
             error: function (ob, textStatus, error) {
@@ -88,7 +89,33 @@ $('#btnAdminCustomerSave').click(() => {
 
 
 
-
 //Start Get Admin Customer Section
-
+// $('#btnAdminCustomerGetAll').click(() => {
+//     loadCustomers();
+// });
+// function loadCustomers() {
+//     var i = 0;
+//     $('#tblCustomerBody').empty();
+//     $.ajax({
+//         url: 'http://localhost:8080/GMA/v2/cutomer',
+//         method: 'GET',
+//         success: function (res) {
+//             let values = res.data;
+//             for (i in values) {
+//                 let custID = values[i].customerId;
+//                 let custNIC = values[i].customerNIC;
+//                 let custName = values[i].customerName;
+//                 let custAdd = values[i].customerAddress;
+//                 let custEmail = values[i].customerEmail;
+//                 let custDL = values[i].customerDrivingLIC;
+//                 let custCont = values[i].customerContact;
+//
+//                 console.log(custID+custDL+custAdd+custCont+custEmail+custName+custNIC);
+//
+//                 $('#tblCustomerBody').append(`<tr><th>${custID}</th><td>${custNIC}</td><td>${custName}</td><td>${custAdd}</td><td>${custEmail}</td><td>${custDL}</td><td>${custCont}</td></tr>`)
+//             }
+//
+//         }
+//     });
+// }
 //End Get Admin Customer Section

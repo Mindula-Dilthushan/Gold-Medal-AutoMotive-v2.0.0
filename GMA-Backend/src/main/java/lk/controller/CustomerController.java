@@ -36,10 +36,12 @@ public class CustomerController {
     @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity searchCustomer(@PathVariable String id){
         CustomerDTO customerDTO = customerService.searchCustomer(id);
+        System.out.println("customerDTO controller= " + customerDTO);
         return new ResponseEntity(
                 new StandardResponse(
                         "200","Done",customerDTO),HttpStatus.OK
         );
+
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
@@ -60,6 +62,7 @@ public class CustomerController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllCustomers() {
         ArrayList<CustomerDTO> customerDTOArrayList = customerService.getAllCustomers();
+        System.out.println("all "+customerDTOArrayList);
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 }
