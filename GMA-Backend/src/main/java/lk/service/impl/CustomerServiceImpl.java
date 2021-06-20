@@ -37,6 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepo.save(
                 modelMapper.map(customerDTO, Customer.class)
         );
+        System.out.println("service");
     }
 
     @Override

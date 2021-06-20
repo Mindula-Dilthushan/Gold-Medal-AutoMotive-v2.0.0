@@ -29,6 +29,7 @@ public class CustomerController {
             throw new NotFoundException("Customer id cannot be empty");
         }
         customerService.saveCustomer(customerDTO);
+        System.out.println("controller");
         return new ResponseEntity(new StandardResponse("201","Done",customerDTO), HttpStatus.CREATED);
     }
 
