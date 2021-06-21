@@ -30,6 +30,7 @@ public class PaymentController {
         paymentService.savePayment(paymentDTO);
         return new ResponseEntity(new StandardResponse("201","Done",paymentDTO), HttpStatus.CREATED);
     }
+
     @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity searchPayment(@PathVariable String id){
         PaymentDTO paymentDTO = paymentService.searchPayment(id);
@@ -37,5 +38,14 @@ public class PaymentController {
                 new StandardResponse(
                         "200","Done",paymentDTO),HttpStatus.OK
         );
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updatePayment(@RequestBody PaymentDTO paymentDTO) {
+        if (paymentDTO.getPaymentId().trim().length() <= 0) {
+            throw new NotFoundException("No id provided to update");
+        }
+        paymentService.updatePayment(paymentDTO);
+        return new ResponseEntity(new StandardResponse("200", "Done", paymentDTO), HttpStatus.OK);
     }
 }
