@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -52,6 +53,10 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public LoginDTO searchLogin(String id) {
+        Optional<Login> loginOptional = loginRepo.findById(id);
+        if (loginOptional.isPresent()){
+            return modelMapper.map(loginOptional.get(), LoginDTO.class);
+        }
         return null;
     }
 
