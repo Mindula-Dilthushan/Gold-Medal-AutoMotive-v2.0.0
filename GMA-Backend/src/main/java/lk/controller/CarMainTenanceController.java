@@ -25,7 +25,7 @@ public class CarMainTenanceController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity saveMainTenance(@RequestBody CarMainTenanceDTO carMainTenanceDTO){
         if (carMainTenanceDTO.getMainTenanceId().trim().length() <=0){
-            throw new NotFoundException("Payment id cannot be empty");
+            throw new NotFoundException("Car Main Tenance id cannot be empty");
         }
         carMainTenanceService.saveCarMainTenance(carMainTenanceDTO);
         return new ResponseEntity(new StandardResponse("201","Done",carMainTenanceDTO), HttpStatus.CREATED);
@@ -38,5 +38,14 @@ public class CarMainTenanceController {
                 new StandardResponse(
                         "200","Done",carMainTenanceDTO),HttpStatus.OK
         );
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateCarMainTenance(@RequestBody CarMainTenanceDTO carMainTenanceDTO) {
+        if (carMainTenanceDTO.getMainTenanceId().trim().length() <= 0) {
+            throw new NotFoundException("No id provided to update");
+        }
+        carMainTenanceService.updateCarMainTenance(carMainTenanceDTO);
+        return new ResponseEntity(new StandardResponse("200", "Done", carMainTenanceDTO), HttpStatus.OK);
     }
 }
