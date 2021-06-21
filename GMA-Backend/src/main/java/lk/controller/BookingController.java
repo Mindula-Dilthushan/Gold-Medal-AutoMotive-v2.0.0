@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
 
 @RestController
 @CrossOrigin
@@ -61,6 +62,12 @@ public class BookingController {
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity deleteBooking(@RequestParam String id) {
         bookingService.deleteBooking(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllBooking() {
+        ArrayList<BookingDTO> bookingDTOArrayList = bookingService.getAllBooking();
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 }
