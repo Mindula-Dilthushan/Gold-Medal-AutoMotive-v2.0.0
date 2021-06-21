@@ -30,4 +30,13 @@ public class CarMainTenanceController {
         carMainTenanceService.saveCarMainTenance(carMainTenanceDTO);
         return new ResponseEntity(new StandardResponse("201","Done",carMainTenanceDTO), HttpStatus.CREATED);
     }
+
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchMainTenance(@PathVariable String id){
+        CarMainTenanceDTO carMainTenanceDTO = carMainTenanceService.searchCarMainTenance(id);
+        return new ResponseEntity(
+                new StandardResponse(
+                        "200","Done",carMainTenanceDTO),HttpStatus.OK
+        );
+    }
 }
