@@ -57,4 +57,10 @@ public class BookingController {
         bookingService.saveBooking(bookingDTO);
         return new ResponseEntity(new StandardResponse("200", "Done", bookingDTO), HttpStatus.OK);
     }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteBooking(@RequestParam String id) {
+        bookingService.deleteBooking(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
 }
