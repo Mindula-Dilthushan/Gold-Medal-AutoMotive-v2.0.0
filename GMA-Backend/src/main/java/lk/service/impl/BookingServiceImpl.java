@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -52,6 +53,10 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public BookingDTO searchBooking(String id) {
+        Optional<Booking> bookingOptional = bookingRepo.findById(id);
+        if (bookingOptional.isPresent()){
+            return modelMapper.map(bookingOptional.get(), BookingDTO.class);
+        }
         return null;
     }
 
