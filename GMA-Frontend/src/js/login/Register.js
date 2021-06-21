@@ -50,11 +50,10 @@ $('#btn_Register').click(() => {
             method: "POST",
             url: "http://localhost:8080/GMA/v2/login",
             data: JSON.stringify({
-                "customerId": loginFName,
-                "customerName": loginLName,
-                "customerAddress": loginEmail,
-                "customerEmail": loginPassword,
-                "customerNIC": loginConfirmPassword
+                "loginEmail": loginFName,
+                "loginFName": loginLName,
+                "loginLName": loginEmail,
+                "loginPassword": loginConfirmPassword
             }),
             dataType: 'Json',
             contentType: "application/json; charset=utf-8",
