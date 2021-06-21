@@ -38,7 +38,9 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public void deleteLogin(String id) {
-
+        if (!loginRepo.existsById(id)){
+            throw new ValidateException("No Login for Delete..!");
+        }
     }
 
     @Override
