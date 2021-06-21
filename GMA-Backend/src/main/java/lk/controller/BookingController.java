@@ -2,6 +2,7 @@
 //Mindula Dilthushan
 //GMA v2.0.3
 //21-06-20
+//21-06-21 (Add Method)
 package lk.controller;
 
 import lk.dto.BookingDTO;
@@ -46,5 +47,14 @@ public class BookingController {
                         "200","Done",bookingDTO
                 ),HttpStatus.OK
         );
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateBooking(@RequestBody BookingDTO bookingDTO) {
+        if (bookingDTO.getBookingId().trim().length() <= 0) {
+            throw new NotFoundException("No id provided to update");
+        }
+        bookingService.saveBooking(bookingDTO);
+        return new ResponseEntity(new StandardResponse("200", "Done", bookingDTO), HttpStatus.OK);
     }
 }
