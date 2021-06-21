@@ -41,11 +41,17 @@ public class CarMainTenanceController {
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity updateCarMainTenance(@RequestBody CarMainTenanceDTO carMainTenanceDTO) {
+    public ResponseEntity updateMainTenance(@RequestBody CarMainTenanceDTO carMainTenanceDTO) {
         if (carMainTenanceDTO.getMainTenanceId().trim().length() <= 0) {
             throw new NotFoundException("No id provided to update");
         }
         carMainTenanceService.updateCarMainTenance(carMainTenanceDTO);
         return new ResponseEntity(new StandardResponse("200", "Done", carMainTenanceDTO), HttpStatus.OK);
+    }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deleteMainTenance(@RequestParam String id) {
+        carMainTenanceService.deleteCarMainTenance(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 }
