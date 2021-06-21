@@ -45,7 +45,9 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public void updateLogin(LoginDTO loginDTO) {
-
+        if (loginRepo.existsById(loginDTO.getLoginEmail())){
+            loginRepo.save(modelMapper.map(loginDTO, Login.class));
+        }
     }
 
     @Override
