@@ -4,7 +4,6 @@
 //21-06-21
 package lk.controller;
 
-import lk.dto.AdminDTO;
 import lk.dto.PaymentDTO;
 import lk.exeption.NotFoundException;
 import lk.service.PaymentService;
@@ -14,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 
 @RestController
