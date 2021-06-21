@@ -30,4 +30,12 @@ public class PaymentController {
         paymentService.savePayment(paymentDTO);
         return new ResponseEntity(new StandardResponse("201","Done",paymentDTO), HttpStatus.CREATED);
     }
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchPayment(@PathVariable String id){
+        PaymentDTO paymentDTO = paymentService.searchPayment(id);
+        return new ResponseEntity(
+                new StandardResponse(
+                        "200","Done",paymentDTO),HttpStatus.OK
+        );
+    }
 }
