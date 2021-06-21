@@ -48,4 +48,10 @@ public class PaymentController {
         paymentService.updatePayment(paymentDTO);
         return new ResponseEntity(new StandardResponse("200", "Done", paymentDTO), HttpStatus.OK);
     }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity deletePayment(@RequestParam String id) {
+        paymentService.deletePayment(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
 }
