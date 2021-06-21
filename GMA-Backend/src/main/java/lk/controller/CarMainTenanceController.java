@@ -14,6 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/v2/maintenance")
@@ -52,6 +54,12 @@ public class CarMainTenanceController {
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity deleteMainTenance(@RequestParam String id) {
         carMainTenanceService.deleteCarMainTenance(id);
+        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllMainTenance() {
+        ArrayList<CarMainTenanceDTO> carMainTenanceDTOArrayList = carMainTenanceService.getCarMainTenance();
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 }
