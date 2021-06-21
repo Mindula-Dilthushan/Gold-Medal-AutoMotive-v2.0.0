@@ -44,7 +44,10 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void deleteBooking(String id) {
-
+        if (!bookingRepo.existsById(id)) {
+            throw new ValidateException("No Booking for Delete..!");
+        }
+        bookingRepo.deleteById(id);
     }
 
     @Override
