@@ -28,9 +28,6 @@ public class BookingReturnServiceImpl implements BookingReturnService {
     private BookingReturnRepo bookingReturnRepo;
 
     @Autowired
-    private BookingRepo bookingRepo;
-
-    @Autowired
     private ModelMapper modelMapper;
 
     @Override

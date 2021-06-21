@@ -2,9 +2,12 @@
 //Mindula Dilthushan
 //GMA v2.0.3
 //21-06-17
+//21-06-21 (Method Update)
 package lk.service.impl;
 
 import lk.dto.BookingDTO;
+import lk.entity.Booking;
+import lk.exeption.ValidateException;
 import lk.repo.BookingRepo;
 import lk.service.BookingService;
 import org.modelmapper.ModelMapper;
@@ -25,7 +28,11 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void saveBooking(BookingDTO bookingDTO) {
-
+        if (bookingRepo.existsById(bookingDTO.getBookingId())) {
+            throw new ValidateException("BookingReturn Already Exist");
+        }
+        System.out.println(bookingDTO);
+        bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
     }
 
     @Override
