@@ -37,7 +37,9 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void updateBooking(BookingDTO bookingDTO) {
-
+        if (bookingRepo.existsById(bookingDTO.getBookingId())) {
+            bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
+        }
     }
 
     @Override
