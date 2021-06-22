@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=1">
+    <title>GMA - Driver</title>
+    <link rel="icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../css/bootstrap/cust/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/driver.css">
+</head>
+<body>
+
+<div class="navbar m-0 p-0 bg-danger">
+    <div class="m-0 p-0 ml-2"><img id="admin_logo" src="../assets/img/logo.png"></div>
+    <div class="text-white position-absolute" id="title">Gold Medal AutoMotive</div>
+    <div><a href="" class="text-white" id="btnDriverProfile">Profile</a></div>
+    <div><a href="" class="text-white" id="btnDriverLogOut">Log Out</a></div>
+</div>
+
+<div class="main-panel bg-light m-0 p-0 ">
+
+    <!--Start Driver Profile Page-->
+    <div style="display: block" id="driverProfile" class="p-1">
+        <div class="container-fluid mt-1">
+            <h3 class="text-dark">My Profile</h3>
+            <div class="col-lg-12 p-0">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-3">
+                            <div class="card-header py-3">
+                                <p class="m-0 font-weight-bold">Profile Settings</p>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>ID</strong></label>
+                                                <input id="DriverID"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="D###"
+                                                       name="id">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Name</strong></label>
+                                                <input id="DriverName"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="driver.name"
+                                                       name="name">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>NIC</strong></label>
+                                                <input id="DriverNIC"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="driver.nic"
+                                                       name="nic">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Email</strong></label>
+                                                <input id="DriverEmail"
+                                                       class="form-control"
+                                                       type="email"
+                                                       placeholder="driver@example.com"
+                                                       name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Contact</strong></label>
+                                                <input id="DriverContact"
+                                                       class="form-control"
+                                                       type="text"
+                                                       placeholder="07# #######"
+                                                       name="contact">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Password</strong></label>
+                                                <input id="DriverPassword"
+                                                       class="form-control"
+                                                       type="password"
+                                                       placeholder="*****"
+                                                       name="password">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                                <div class="form-group mb-2">
+                                    <button id="btnDriverSave" class="btn  btn-sm" type="button">Save
+                                    </button>
+                                    <button id="btnDriverUpdate" class="btn  btn-sm" type="button">
+                                        Update
+                                    </button>
+                                    <button id="btnDriverDelete" class="btn  btn-sm" type="button">
+                                        Delete
+                                    </button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Driver Profile Page-->
+
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/driver/Driver.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

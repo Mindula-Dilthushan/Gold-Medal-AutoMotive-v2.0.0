@@ -1,0 +1,22 @@
+#admin_logo{
+    width: 80px;
+    height: 80px;
+}
+#title{
+    left: 7%;
+    font-size: 1.5rem;
+}
+#btnDriverProfile{
+    position: fixed;
+    top: 3.4%;
+    left: 67%;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+#btnDriverLogOut{
+    position: fixed;
+    top: 3.4%;
+    left: 93%;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
