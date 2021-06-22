@@ -31,6 +31,7 @@ public class Customer {
     private String customerEmail;
     private String customerNIC;
     private String customerDrivingLIC;
+    private String customerPassword;
 
 //    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
 //    @JsonIgnore

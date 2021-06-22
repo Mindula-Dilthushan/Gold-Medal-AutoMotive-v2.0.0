@@ -24,10 +24,12 @@ import java.util.List;
 public class Driver {
 
     @Id
-    private String DriverId;
-    private String DriverName;
-    private String DriverContact;
-    private String DriverNIC;
+    private String driverId;
+    private String driverName;
+    private String driverContact;
+    private String driverNIC;
+    private String driverEmail;
+    private String driverPassword;
 
 //    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
 //    @JsonIgnore

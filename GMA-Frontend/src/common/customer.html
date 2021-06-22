@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=1">
-    <title>GMA - Admin</title>
+    <title>GMA - Customer</title>
     <link rel="icon" href="../assets/img/logo.png">
     <link rel="stylesheet" href="../css/bootstrap/cust/bootstrap.min.css">
     <link rel="stylesheet" href="../css/customer.css">
@@ -38,7 +38,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label><strong>ID</strong></label>
-                                                <input id="adCustId"
+                                                <input id="custId"
                                                        class="form-control"
                                                        type="text"
                                                        placeholder="C###"
@@ -49,7 +49,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label><strong>Name</strong></label>
-                                                <input id="adCustName"
+                                                <input id="custName"
                                                        class="form-control"
                                                        type="text"
                                                        placeholder="user.name"
@@ -60,7 +60,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label><strong>Address</strong></label>
-                                                <input id="adCustAddress"
+                                                <input id="custAddress"
                                                        class="form-control"
                                                        type="text"
                                                        placeholder="user.address"
@@ -71,7 +71,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label><strong>Email</strong></label>
-                                                <input id="adCustEmail"
+                                                <input id="custEmail"
                                                        class="form-control"
                                                        type="email"
                                                        placeholder="user@example.com"
@@ -84,7 +84,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label><strong>NIC</strong></label>
-                                                <input id="adCustNic"
+                                                <input id="custNic"
                                                        class="form-control"
                                                        type="text"
                                                        placeholder="user.nic"
@@ -94,7 +94,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label><strong>Driving License</strong></label>
-                                                <input id="adCustDl"
+                                                <input id="custDl"
                                                        class="form-control"
                                                        type="text"
                                                        placeholder="user.driving license"
@@ -104,21 +104,31 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label><strong>Contact</strong></label>
-                                                <input id="adCustContact"
+                                                <input id="custContact"
                                                        class="form-control"
                                                        type="text"
                                                        placeholder="07# #######"
                                                        name="contact">
                                             </div>
                                         </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label><strong>Password</strong></label>
+                                                <input id="custPassword"
+                                                       class="form-control"
+                                                       type="password"
+                                                       placeholder="*****"
+                                                       name="password">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group mb-2">
-                                        <button id="btnAdminCustomerSave" class="btn  btn-sm" type="button">Save
+                                        <button id="btnCustSave" class="btn  btn-sm" type="button">Save
                                         </button>
-                                        <button id="btnAdminCustomerUpdate" class="btn  btn-sm" type="button">
+                                        <button id="btnCustomerUpdate" class="btn  btn-sm" type="button">
                                             Update
                                         </button>
-                                        <button id="btnAdminCustomerDelete" class="btn  btn-sm" type="button">
+                                        <button id="btnCustomerDelete" class="btn  btn-sm" type="button">
                                             Delete
                                         </button>
                                     </div>
@@ -203,8 +213,8 @@
     <!--End Customer Order Page-->
 </div>
 
-
 <script src="../js/jquery.min.js"></script>
+<script src="../js/customer/Customer.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

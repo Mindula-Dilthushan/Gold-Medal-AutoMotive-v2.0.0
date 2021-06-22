@@ -69,4 +69,13 @@ public class CustomerServiceImpl implements CustomerService {
         return modelMapper.map(customerList,new TypeToken<ArrayList<CustomerDTO>>(){
                 }.getType());
     }
+
+    @Override
+    public CustomerDTO customerLogin(String custEmail, String custPassword) {
+        Customer customer = customerRepo.customerLogin(custEmail,custPassword);
+        if (customer == null){
+            return null;
+        }
+        return modelMapper.map(customer,CustomerDTO.class);
+    }
 }

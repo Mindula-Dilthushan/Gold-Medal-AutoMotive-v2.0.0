@@ -30,4 +30,4 @@ public class LoginController {
         loginService.saveLogin(loginDTO);
         return new ResponseEntity(new StandardResponse("201","Done",loginDTO), HttpStatus.CREATED);
     }
-}
+    }

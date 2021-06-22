@@ -22,4 +22,5 @@ public class CustomerDTO {
     private String customerEmail;
     private String customerNIC;
     private String customerDrivingLIC;
+    private String customerPassword;
 }

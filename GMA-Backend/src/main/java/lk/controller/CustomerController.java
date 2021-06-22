@@ -13,6 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 @RestController
@@ -23,28 +27,28 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity saveCustomer(@RequestBody CustomerDTO customerDTO){
-        if (customerDTO.getCustomerId().trim().length() <=0){
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity saveCustomer(@RequestBody CustomerDTO customerDTO) {
+        if (customerDTO.getCustomerId().trim().length() <= 0) {
             throw new NotFoundException("Customer id cannot be empty");
         }
         customerService.saveCustomer(customerDTO);
-        System.out.println("controller");
-        return new ResponseEntity(new StandardResponse("201","Done",customerDTO), HttpStatus.CREATED);
+        return new ResponseEntity(new StandardResponse("201", "Done", customerDTO), HttpStatus.CREATED);
     }
 
-    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity searchCustomer(@PathVariable String id){
+
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity searchCustomer(@PathVariable String id) {
         CustomerDTO customerDTO = customerService.searchCustomer(id);
         System.out.println("customerDTO controller= " + customerDTO);
         return new ResponseEntity(
                 new StandardResponse(
-                        "200","Done",customerDTO),HttpStatus.OK
+                        "200", "Done", customerDTO), HttpStatus.OK
         );
 
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity updateCustomer(@RequestBody CustomerDTO customerDTO) {
         if (customerDTO.getCustomerId().trim().length() <= 0) {
             throw new NotFoundException("No id provided to update");
@@ -53,7 +57,7 @@ public class CustomerController {
         return new ResponseEntity(new StandardResponse("200", "Done", customerDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(params = {"id"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity deleteCustomer(@RequestParam String id) {
         customerService.deleteCustomer(id);
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
@@ -62,7 +66,45 @@ public class CustomerController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllCustomers() {
         ArrayList<CustomerDTO> customerDTOArrayList = customerService.getAllCustomers();
-        System.out.println("all "+customerDTOArrayList);
+        System.out.println("all " + customerDTOArrayList);
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "http://localhost:63342/")
+    @GetMapping(path = "/{custEmail}/{custPassword}")
+    public ResponseEntity login(@PathVariable("custEmail") String val1, @PathVariable("custPassword") String val2) {
+        val2 = hashPassword(val2);
+        CustomerDTO customerDTO = customerService.customerLogin(val1,val2);
+        if ( customerDTO!= null) {
+            customerDTO.setCustomerPassword("");
+            StandardResponse response = new StandardResponse("200", "customer", customerDTO);
+            return new ResponseEntity(response, HttpStatus.OK);
+        } else {
+            StandardResponse response = new StandardResponse("500", "Error", null);
+            return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
+    private String hashPassword(String password) {
+
+        String generatedPassword = null;
+
+        try {
+
+            MessageDigest md = MessageDigest.getInstance("SHA-512");
+            byte[] bytes = md.digest(password.getBytes());
+            BigInteger no = new BigInteger(1, bytes);
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            generatedPassword = hashtext;
+
+        }catch (NoSuchAlgorithmException ex){
+            System.out.println(ex);
+        }
+
+        return generatedPassword;
+
     }
 }
