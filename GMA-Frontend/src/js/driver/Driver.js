@@ -16,26 +16,50 @@ function checkValidationDriverProfile() {
                         if (driverProfilePassword) {
                             return true;
                         } else {
+                            $('#DriverContact').css({
+                                'border': '2px #FF0000FF solid'
+                            });
+                            $('#DriverContact').focus();
                             alert("Please Enter Password");
                             return false;
                         }
                     } else {
+                        $('#DriverPassword').css({
+                            'border': '2px #FF0000FF solid'
+                        });
+                        $('#DriverPassword').focus();
                         alert("Please Enter Contact");
                         return false;
                     }
                 } else {
+                    $('#DriverEmail').css({
+                        'border': '2px #FF0000FF solid'
+                    });
+                    $('#DriverEmail').focus();
                     alert("Please Enter Email");
                     return false;
                 }
             } else {
+                $('#DriverNIC').css({
+                    'border': '2px #FF0000FF solid'
+                });
+                $('#DriverNIC').focus();
                 alert("Please Enter Nic");
                 return false;
             }
         } else {
+            $('#DriverName').css({
+                'border': '2px #FF0000FF solid'
+            });
+            $('#DriverName').focus();
             alert("Please Enter Name");
             return false;
         }
     } else {
+        $('#DriverID').css({
+            'border': '2px #FF0000FF solid'
+        });
+        $('#DriverID').focus();
         alert("Please Enter id");
         return false;
     }

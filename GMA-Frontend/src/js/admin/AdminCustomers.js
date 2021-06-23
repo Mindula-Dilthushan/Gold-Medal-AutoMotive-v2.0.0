@@ -18,30 +18,58 @@ function checkValidationAdminCustomer() {
                             if (custContact) {
                                 return true;
                             } else {
+                                $('#adCustContact').css({
+                                    'border': '2px #FF0000FF solid'
+                                });
+                                $('#adCustContact').focus();
                                 alert("Please Enter Contact");
                                 return false;
                             }
                         } else {
+                            $('#adCustDl').css({
+                                'border': '2px #FF0000FF solid'
+                            });
+                            $('#adCustDl').focus();
                             alert("Please Enter Driver License");
                             return false;
                         }
                     } else {
+                        $('#adCustNic').css({
+                            'border': '2px #FF0000FF solid'
+                        });
+                        $('#adCustNic').focus();
                         alert("Please Enter Nic");
                         return false;
                     }
                 } else {
+                    $('#adCustEmail').css({
+                        'border': '2px #FF0000FF solid'
+                    });
+                    $('#adCustEmail').focus();
                     alert("Please Enter Email");
                     return false;
                 }
             } else {
+                $('#adCustAddress').css({
+                    'border': '2px #FF0000FF solid'
+                });
+                $('#adCustAddress').focus();
                 alert("Please Enter Address");
                 return false;
             }
         } else {
+            $('#adCustName').css({
+                'border': '2px #FF0000FF solid'
+            });
+            $('#adCustName').focus();
             alert("Please Enter Name");
             return false;
         }
     } else {
+        $('#adCustId').css({
+            'border': '2px #FF0000FF solid'
+        });
+        $('#adCustId').focus();
         alert("Please Enter Id");
         return false;
     }
@@ -77,7 +105,7 @@ $('#btnAdminCustomerSave').click(() => {
             contentType: "application/json; charset=utf-8",
             success: function (res) {
                 if (res.message == 'Success') {
-                    loadCustomers();
+                    loadAllCustomer();
                 }
             },
             error: function (ob, textStatus, error) {
@@ -88,34 +116,26 @@ $('#btnAdminCustomerSave').click(() => {
 //End Admin Save Section
 
 
-
 //Start Get Admin Customer Section
-// $('#btnAdminCustomerGetAll').click(() => {
-//     loadCustomers();
-// });
-// function loadCustomers() {
-//     var i = 0;
-//     $('#tblCustomerBody').empty();
-//     $.ajax({
-//         url: 'http://localhost:8080/GMA/v2/cutomer',
-//         method: 'GET',
-//         success: function (res) {
-//             let values = res.data;
-//             for (i in values) {
-//                 let custID = values[i].customerId;
-//                 let custNIC = values[i].customerNIC;
-//                 let custName = values[i].customerName;
-//                 let custAdd = values[i].customerAddress;
-//                 let custEmail = values[i].customerEmail;
-//                 let custDL = values[i].customerDrivingLIC;
-//                 let custCont = values[i].customerContact;
-//
-//                 console.log(custID+custDL+custAdd+custCont+custEmail+custName+custNIC);
-//
-//                 $('#tblCustomerBody').append(`<tr><th>${custID}</th><td>${custNIC}</td><td>${custName}</td><td>${custAdd}</td><td>${custEmail}</td><td>${custDL}</td><td>${custCont}</td></tr>`)
-//             }
-//
-//         }
-//     });
-// }
+function loadAllCustomer() {
+    $('#tblCustomerBody').empty();
+    $.ajax({
+        url: 'http://localhost:8080/GMA/v2/customer',
+        method: 'GET',
+        success: function (res) {
+            let values = res.data;
+            for (i in values) {
+                let cID = values[i].customerId;
+                let cNIC = values[i].customerNIC;
+                let cNAME = values[i].customerName;
+                let cAddress = values[i].customerAddress;
+                let cEmail = values[i].customerEmail;
+                let cDLIC = values[i].customerDrivingLIC;
+                let cContact = values[i].customerContact;
+
+                $('#tblCustomerBody').append(`<tr><th>${cID}</th><td>${cNIC}</td><td>${cNAME}</td><td>${cAddress}</td><td>${cEmail}</td><td>${cDLIC}</td><td>${cContact}</td></tr>`)
+            }
+        }
+    });
+}
 //End Get Admin Customer Section

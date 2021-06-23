@@ -32,58 +32,114 @@ function checkValidationAdminCar() {
                                                         if (adminCarDuration) {
                                                             return true;
                                                         } else {
+                                                            $('#adCarDuration').css({
+                                                                'border': '2px #FF0000FF solid'
+                                                            });
+                                                            $('#adCarDuration').focus();
                                                             alert("Please Enter Car Duration");
                                                             return false;
                                                         }
                                                     } else {
+                                                        $('#adCarMillagePrice').css({
+                                                            'border': '2px #FF0000FF solid'
+                                                        });
+                                                        $('#adCarMillagePrice').focus();
                                                         alert("Please Enter Car M Price");
                                                         return false;
                                                     }
                                                 } else {
+                                                    $('#adCarMonthlyRate').css({
+                                                        'border': '2px #FF0000FF solid'
+                                                    });
+                                                    $('#adCarMonthlyRate').focus();
                                                     alert("Please Enter adminCarMRate");
                                                     return false;
                                                 }
                                             } else {
+                                                $('#adCarDailyRate').css({
+                                                    'border': '2px #FF0000FF solid'
+                                                });
+                                                $('#adCarDailyRate').focus();
                                                 alert("Please Enter adminCarDRate");
                                                 return false;
                                             }
                                         } else {
+                                            $('#adCarDamage').css({
+                                                'border': '2px #FF0000FF solid'
+                                            });
+                                            $('#adCarDamage').focus();
                                             alert("Please Enter adminCarDam");
                                             return false;
                                         }
                                     } else {
+                                        $('#adCarRegistration').css({
+                                            'border': '2px #FF0000FF solid'
+                                        });
+                                        $('#adCarRegistration').focus();
                                         alert("Please Enter adminCarReg");
                                         return false;
                                     }
                                 } else {
+                                    $('#adCarExtraKm').css({
+                                        'border': '2px #FF0000FF solid'
+                                    });
+                                    $('#adCarExtraKm').focus();
                                     alert("Please Enter Driver adminCarExKm");
                                     return false;
                                 }
                             } else {
+                                $('#adCarFuel').css({
+                                    'border': '2px #FF0000FF solid'
+                                });
+                                $('#adCarFuel').focus();
                                 alert("Please Enter adminCarFuel");
                                 return false;
                             }
                         } else {
+                            $('#adCarTransmission').css({
+                                'border': '2px #FF0000FF solid'
+                            });
+                            $('#adCarTransmission').focus();
                             alert("Please Enter adminCarTran");
                             return false;
                         }
                     } else {
+                        $('#adCarPassengers').css({
+                            'border': '2px #FF0000FF solid'
+                        });
+                        $('#adCarPassengers').focus();
                         alert("Please Enter adminCarPass");
                         return false;
                     }
                 } else {
+                    $('#adCarType').css({
+                        'border': '2px #FF0000FF solid'
+                    });
+                    $('#adCarType').focus();
                     alert("Please Enter adminCarType");
                     return false;
                 }
             } else {
+                $('#adCarColor').css({
+                    'border': '2px #FF0000FF solid'
+                });
+                $('#adCarColor').focus();
                 alert("Please Enter adminCarColor");
                 return false;
             }
         } else {
+            $('#adCarBrand').css({
+                'border': '2px #FF0000FF solid'
+            });
+            $('#adCarBrand').focus();
             alert("Please Enter adminCarBrand");
             return false;
         }
     } else {
+        $('#adCarId').css({
+            'border': '2px #FF0000FF solid'
+        });
+        $('#adCarId').focus();
         alert("Please Enter adminCarId");
         return false;
     }

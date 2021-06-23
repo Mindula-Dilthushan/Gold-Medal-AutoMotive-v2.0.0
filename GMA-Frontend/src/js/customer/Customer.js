@@ -20,34 +20,66 @@ function checkValidationCustomerProfile() {
                                 if (cPassword) {
                                     return true;
                                 } else {
+                                    $('#custPassword').css({
+                                        'border': '2px #FF0000FF solid'
+                                    });
+                                    $('#custPassword').focus();
                                     alert("Please Enter Password");
                                     return false;
                                 }
                             } else {
+                                $('#custContact').css({
+                                    'border': '2px #FF0000FF solid'
+                                });
+                                $('#custContact').focus();
                                 alert("Please Enter Contact");
                                 return false;
                             }
                         } else {
+                            $('#custDl').css({
+                                'border': '2px #FF0000FF solid'
+                            });
+                            $('#custDl').focus();
                             alert("Please Enter Driver License");
                             return false;
                         }
                     } else {
+                        $('#custNic').css({
+                            'border': '2px #FF0000FF solid'
+                        });
+                        $('#custNic').focus();
                         alert("Please Enter Nic");
                         return false;
                     }
                 } else {
+                    $('#custEmail').css({
+                        'border': '2px #FF0000FF solid'
+                    });
+                    $('#custEmail').focus();
                     alert("Please Enter Email");
                     return false;
                 }
             } else {
+                $('#custAddress').css({
+                    'border': '2px #FF0000FF solid'
+                });
+                $('#custAddress').focus();
                 alert("Please Enter Address");
                 return false;
             }
         } else {
+            $('#custName').css({
+                'border': '2px #FF0000FF solid'
+            });
+            $('#custName').focus();
             alert("Please Enter Name");
             return false;
         }
     } else {
+        $('#custId').css({
+            'border': '2px #FF0000FF solid'
+        });
+        $('#custId').focus();
         alert("Please Enter Id");
         return false;
     }
