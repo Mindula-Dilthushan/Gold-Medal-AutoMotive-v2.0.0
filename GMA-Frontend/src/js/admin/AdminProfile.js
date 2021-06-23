@@ -14,26 +14,49 @@ function checkValidationAdminProfile() {
                     if (confPassword) {
                         return true;
                     } else {
-                        alert("Please Enter Confirm Password");
+                        $('#adminConfirmPassword').css({
+                            'border': '2px #FF0000FF solid'
+                        });
+                        $('#adminConfirmPassword').focus();
+                        // alert("Please Enter Confirm Password");
                         return false;
+
                     }
                 } else {
-                    alert("Please Enter Password");
+                    $('#adminPassword').css({
+                        'border': '2px #FF0000FF solid'
+                    });
+                    $('#adminPassword').focus();
+                    // alert("Please Enter Password");
                     return false;
                 }
             } else {
-                alert("Please Enter Name");
+                $('#adminName').css({
+                    'border': '2px #FF0000FF solid'
+                });
+                $('#adminName').focus();
+                // alert("Please Enter Name");
                 return false;
             }
         } else {
-            alert("Please Enter Email");
+            $('#adminEmail').css({
+                'border': '2px #FF0000FF solid'
+            });
+            $('#adminEmail').focus();
+            // alert("Please Enter Email");
             return false;
         }
     } else {
-        alert("Please Enter Id");
+        $('#adminID').css({
+            'border': '2px #FF0000FF solid'
+        });
+        $('#adminID').focus();
+        // alert("Please Enter Id");
         return false;
+        // alert("Please Enter Confirm Password");
     }
 }
+
 //End Admin Validation Section
 
 //Start Admin Save Section

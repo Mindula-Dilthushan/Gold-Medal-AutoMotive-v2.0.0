@@ -2,9 +2,13 @@ $('#btn_Login').click(function () {
     let email = $('#txtEmail').val();
     let password = $('#txtPassword').val();
     if (email == ""){
-        alert('Enter Email..!');
+        // alert('Enter Email..!');
+        // $('#txtEmail').css({
+        //     'border': '2px #FF0000FF solid'
+        // });
+        // $('#txtEmail').focus();
     }else if(password == ""){
-        alert('Enter Password..!');
+        // alert('Enter Password..!');
     }else{
         $.ajax({
             method: "GET",
