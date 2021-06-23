@@ -74,11 +74,12 @@ function checkValidationAdminCustomer() {
         return false;
     }
 }
+
 //End Admin Customer Validation Section
 
 
 //Start Admin Save Section
-$('#btnAdminCustomerSave').click(() => {
+$('#btnAdminCustomerSave').click(function () {
 
     if (checkValidationAdminCustomer()) {
         let custId = $('#adCustId').val();
@@ -91,22 +92,22 @@ $('#btnAdminCustomerSave').click(() => {
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/GMA/v2/customer",
-            data: JSON.stringify({
-                "customerId": custId,
-                "customerName": custName,
-                "customerAddress": custAdd,
-                "customerEmail": custEmail,
-                "customerNIC": custNic,
-                "customerDrivingLIC": custDl,
-                "customerContact": custContact
-            }),
+            url: "http://localhost:8080/GMA_Backend_war_exploded/v2/customer",
             dataType: 'Json',
-            contentType: "application/json; charset=utf-8",
+            async: true,
+            contentType: "application/json",
+            data: JSON.stringify({
+                customerId: custId,
+                customerName: custName,
+                customerAddress: custAdd,
+                customerEmail: custEmail,
+                customerNIC: custNic,
+                customerDrivingLIC: custDl,
+                customerContact: custContact
+            }),
             success: function (res) {
-                if (res.message == 'Success') {
-                    loadAllCustomer();
-                }
+                loadAllCustomer();
+
             },
             error: function (ob, textStatus, error) {
             }
@@ -120,8 +121,10 @@ $('#btnAdminCustomerSave').click(() => {
 function loadAllCustomer() {
     $('#tblCustomerBody').empty();
     $.ajax({
-        url: 'http://localhost:8080/GMA/v2/customer',
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer',
         method: 'GET',
+        async: false,
+        dataType: 'json',
         success: function (res) {
             let values = res.data;
             for (i in values) {
@@ -133,9 +136,17 @@ function loadAllCustomer() {
                 let cDLIC = values[i].customerDrivingLIC;
                 let cContact = values[i].customerContact;
 
-                $('#tblCustomerBody').append(`<tr><th>${cID}</th><td>${cNIC}</td><td>${cNAME}</td><td>${cAddress}</td><td>${cEmail}</td><td>${cDLIC}</td><td>${cContact}</td></tr>`)
+                $('#tblCustomerBody').append(`<tr><td>${cID}</td><td>${cNIC}</td><td>${cNAME}</td><td>${cAddress}</td><td>${cEmail}</td><td>${cDLIC}</td><td>${cContact}</td></tr>`)
             }
         }
     });
 }
+
+
+$('#btnAdminCustomerGetAll').click(function () {
+    loadAllCustomer();
+});
+
+
+
 //End Get Admin Customer Section

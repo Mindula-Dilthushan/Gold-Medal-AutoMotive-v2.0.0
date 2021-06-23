@@ -19,8 +19,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("v2/customer")
 @CrossOrigin
-@RequestMapping("/v2/customer")
 public class CustomerController {
 
     @Autowired
@@ -66,7 +66,7 @@ public class CustomerController {
     public ResponseEntity getAllCustomers() {
         ArrayList<CustomerDTO> customerDTOArrayList = customerService.getAllCustomers();
         System.out.println("all " + customerDTOArrayList);
-        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+        return new ResponseEntity(new StandardResponse("200", "Done", customerDTOArrayList), HttpStatus.OK);
     }
 
     @GetMapping(path = "/{customerEmail}/{customerPassword}")
