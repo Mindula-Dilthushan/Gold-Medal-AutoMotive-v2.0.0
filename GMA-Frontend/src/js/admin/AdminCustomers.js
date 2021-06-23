@@ -142,11 +142,53 @@ function loadAllCustomer() {
     });
 }
 
+//Admin Customer Delete
+$('#btnAdminCustomerDelete').click(() => {
+    let customId = $('#adCustId').val();
+    $.ajax({
+        method: "delete",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/?customerId=' + customId,
+        async: true,
+        success: function (response) {
+        },
+        error: function (response) {
+        }
+    });
+});
 
 $('#btnAdminCustomerGetAll').click(function () {
     loadAllCustomer();
 });
 
+$('#btnAdminCustomerUpdate').click(() => {
 
+    let custId = $('#adCustId').val();
+    let custName = $('#adCustName').val();
+    let custAdd = $('#adCustAddress').val();
+    let custEmail = $('#adCustEmail').val();
+    let custNic = $('#adCustNic').val();
+    let custDl = $('#adCustDl').val();
+    let custContact = $('#adCustContact').val();
 
+    $.ajax({
+        method: "POST",
+        url: "http://localhost:8080/GMA_Backend_war_exploded/v2/customer",
+        contentType: "application/json",
+        async: true,
+        data: JSON.stringify(
+            {
+                customerId: custId,
+                customerName: custName,
+                customerAddress: custAdd,
+                customerEmail: custEmail,
+                customerNIC: custNic,
+                customerDrivingLIC: custDl,
+                customerContact: custContact
+            }
+        ),
+        success: function (data) {
+            loadAllCustomer();
+        }
+    });
+});
 //End Get Admin Customer Section

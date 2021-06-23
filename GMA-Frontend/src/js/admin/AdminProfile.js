@@ -18,7 +18,6 @@ function checkValidationAdminProfile() {
                             'border': '2px #FF0000FF solid'
                         });
                         $('#adminConfirmPassword').focus();
-                        // alert("Please Enter Confirm Password");
                         return false;
 
                     }
@@ -27,7 +26,6 @@ function checkValidationAdminProfile() {
                         'border': '2px #FF0000FF solid'
                     });
                     $('#adminPassword').focus();
-                    // alert("Please Enter Password");
                     return false;
                 }
             } else {
@@ -35,7 +33,6 @@ function checkValidationAdminProfile() {
                     'border': '2px #FF0000FF solid'
                 });
                 $('#adminName').focus();
-                // alert("Please Enter Name");
                 return false;
             }
         } else {
@@ -43,7 +40,7 @@ function checkValidationAdminProfile() {
                 'border': '2px #FF0000FF solid'
             });
             $('#adminEmail').focus();
-            // alert("Please Enter Email");
+
             return false;
         }
     } else {
@@ -51,13 +48,21 @@ function checkValidationAdminProfile() {
             'border': '2px #FF0000FF solid'
         });
         $('#adminID').focus();
-        // alert("Please Enter Id");
         return false;
-        // alert("Please Enter Confirm Password");
     }
 }
 
 //End Admin Validation Section
+
+//Clear Text Fields
+function clear() {
+    $('#adminID').val();
+    $('#adminEmail').val();
+    $('#adminName').val();
+    $('#adminPassword').val();
+    $('#adminConfirmPassword').val();
+}
+
 
 //Start Admin Save Section
 $('#btnAdminSave').click(() => {
@@ -70,7 +75,7 @@ $('#btnAdminSave').click(() => {
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/GMA/v2/admin",
+            url: "http://localhost:8080/GMA_Backend_war_exploded/v2/admin",
             data: JSON.stringify({
                 "adminId": admin_id,
                 "adminEmail": admin_email,
@@ -81,11 +86,12 @@ $('#btnAdminSave').click(() => {
             contentType: "application/json; charset=utf-8",
             success: function (res) {
                 if (res.message == 'Success') {
-
+                    clear();
                 }
             },
             error: function (ob, textStatus, error) {
                 if (res.message != 'Success') {
+                    clear();
                 }
             }
         });
