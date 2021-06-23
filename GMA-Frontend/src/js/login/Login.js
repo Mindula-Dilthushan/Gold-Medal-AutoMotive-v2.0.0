@@ -8,29 +8,23 @@ $('#btn_Login').click(function () {
     }else{
         $.ajax({
             method: "GET",
-            url: 'http://localhost:8080/GMA/v2/customer'+email+'/'+password,
+            data:JSON,
+            url: 'http://localhost:8080/GMA/v2/login',
             success:function (res) {
                 if(res.message == 'customer'){
-                    document.cookie = "email="+res.data.customerEmail;
-                    document.cookie = "password="+res.data.customerPassword;
-                    window.location.replace("src/common/customer.html");
-                // }else if(res.message == 'driver'){
-                //     document.cookie = "user="+res.data.name;
-                //     document.cookie = "userID="+res.data.DriverID;
-                //     localStorage.setItem('loggedUser', res);
-                //     window.location.replace("DriverDashboard.html");
-                // }else if(res.message == 'admin'){
-                //     document.cookie = "user="+res.data.name;
-                //     document.cookie = "userID="+res.data.adminID;
-                //     localStorage.setItem('loggedUser', res);
-                //     window.location.replace("AdminDashboard.html");
-                // }
+                    // document.cookie = "customerEmail="+res.data.email;
+                    // document.cookie = "customerPassword="+res.data.password;
+                    // window.location.replace("common/customer.html");
+                    console.log(email);
+                    console.log(password);
                     }
             },
             error:function (ob, textStatus, error) {
                 console.log("error from : " + error);
             }
         });
+        console.log(email);
+        console.log(password);
     }
 
 });

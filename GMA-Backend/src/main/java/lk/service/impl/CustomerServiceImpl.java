@@ -73,6 +73,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO customerLogin(String custEmail, String custPassword) {
         Customer customer = customerRepo.customerLogin(custEmail,custPassword);
+        System.out.println(custEmail);
+        System.out.println(custPassword);
         if (customer == null){
             return null;
         }

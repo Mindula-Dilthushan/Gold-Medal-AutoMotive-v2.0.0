@@ -13,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -70,10 +69,8 @@ public class CustomerController {
         return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:63342/")
-    @GetMapping(path = "/{custEmail}/{custPassword}")
-    public ResponseEntity login(@PathVariable("custEmail") String val1, @PathVariable("custPassword") String val2) {
-        val2 = hashPassword(val2);
+    @GetMapping(path = "/{customerEmail}/{customerPassword}")
+    public ResponseEntity login(@PathVariable("customerEmail") String val1, @PathVariable("customerPassword") String val2) {
         CustomerDTO customerDTO = customerService.customerLogin(val1,val2);
         if ( customerDTO!= null) {
             customerDTO.setCustomerPassword("");
@@ -83,28 +80,6 @@ public class CustomerController {
             StandardResponse response = new StandardResponse("500", "Error", null);
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-    }
-    private String hashPassword(String password) {
-
-        String generatedPassword = null;
-
-        try {
-
-            MessageDigest md = MessageDigest.getInstance("SHA-512");
-            byte[] bytes = md.digest(password.getBytes());
-            BigInteger no = new BigInteger(1, bytes);
-            String hashtext = no.toString(16);
-            while (hashtext.length() < 32) {
-                hashtext = "0" + hashtext;
-            }
-            generatedPassword = hashtext;
-
-        }catch (NoSuchAlgorithmException ex){
-            System.out.println(ex);
-        }
-
-        return generatedPassword;
 
     }
 }
