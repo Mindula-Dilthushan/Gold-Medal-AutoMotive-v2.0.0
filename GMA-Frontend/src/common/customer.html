@@ -156,7 +156,9 @@
     <!--End Customer Page-->
 
     <!--  Start Customer Car Page-->
-    <div style="display: none" id="customer_Car_Page" class="p-1">
+    <div style="display: block" id="customer_Car_Page" class="p-1">
+        <h3 class="text-dark mt-3 mb-3" style="left: 44%; position: relative">All Cars</h3>
+        <button class="btn text-white" id="btnCarsRefresh" style="background-color: #16a085; position: fixed; left: 90%; top: 14%" ><img class="mr-2"  style="width: 25px; height: 25px;" src="../assets/icon/icons8_refresh_32.png"> Refresh </button>
         <div class="container-fluid">
             <div class="table-box" style="height: 250px; overflow: no-display">
                 <div class="table-responsive-lg">
@@ -164,7 +166,6 @@
                         <thead class="text-white" id="tblCarHeader">
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Reg No</th>
                             <th scope="col">Brand</th>
                             <th scope="col">No Of Passengers</th>
                             <th scope="col">Transmission</th>

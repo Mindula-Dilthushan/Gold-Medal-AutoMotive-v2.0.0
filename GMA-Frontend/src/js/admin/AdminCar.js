@@ -144,9 +144,25 @@ function checkValidationAdminCar() {
         return false;
     }
 }
-
 //End Admin Car Validation Section
 
+
+function clearCarFields() {
+    $('#adCarId').val("");
+    $('#adCarBrand').val("");
+    $('#adCarColor').val("");
+    $('#adCarType').val("");
+    $('#adCarPassengers').val("");
+    $('#adCarTransmission').val("");
+    $('#adCarFuel').val("");
+    $('#adCarExtraKm').val("");
+    $('#adCarRegistration').val("");
+    $('#adCarDamage').val("");
+    $('#adCarDailyRate').val("");
+    $('#adCarMonthlyRate').val("");
+    $('#adCarMillagePrice').val("");
+    $('#adCarDuration').val("");
+}
 
 //Start Admin Car Save Section
 $('#btnAdminCarSave').click(() => {
@@ -190,8 +206,10 @@ $('#btnAdminCarSave').click(() => {
             }),
 
             success: function (res) {
+                loadAllCars();
+                clearCarFields();
                 if (res.message == 'Success') {
-                    loadAllCars();
+
                 }
             },
             error: function (ob, textStatus, error) {
@@ -199,8 +217,11 @@ $('#btnAdminCarSave').click(() => {
         });
     }
 });
+//End Admin Car Save Section
+
 $('#btnAdminCarGetAll').click(function () {
     loadAllCars();
+    clearCarFields();
 });
 
 function loadAllCars() {
@@ -222,12 +243,9 @@ function loadAllCars() {
                 let adminCarColor = values[i].carColour;
                 let adminCarFuel = values[i].carFuelType;
 
-                console.log(adminCarId);
                 $('#tblCarBody').append(`<tr><td>${adminCarId}</td><td>${adminCarReg}</td><td>${adminCarBrand}</td><td>${adminCarPass}</td><td>${adminCarTran}</td><td>${adminCarType}</td><td>${adminCarColor}</td><td>${adminCarFuel}</td></tr>`)
             }
         }
     });
 }
 
-
-//End Admin Car Save Section

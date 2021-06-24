@@ -87,7 +87,7 @@ function checkValidationCustomerProfile() {
 
 //End Customer Validation Section
 
-
+//Start Customer Save Section
 $('#btnCustSave').click(() => {
 
     if (checkValidationCustomerProfile()) {
@@ -111,7 +111,7 @@ $('#btnCustSave').click(() => {
                 "customerNIC": cNic,
                 "customerDrivingLIC": cDl,
                 "customerContact": cContact,
-                "customerPassword":cPassword
+                "customerPassword": cPassword
             }),
             dataType: 'Json',
             contentType: "application/json; charset=utf-8",
@@ -125,3 +125,43 @@ $('#btnCustSave').click(() => {
     }
 });
 //End Customer Save Section
+
+//Start Customer get all car Section
+$('#btnCarsRefresh').click(function () {
+    loadAllCars();
+});
+
+function loadAllCars() {
+    $('#tblCarBody').empty();
+    $.ajax({
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car',
+        method: 'GET',
+        async: false,
+        dataType: 'json',
+        success: function (res) {
+            let values = res.data;
+            for (i in values) {
+                let adminCarId = values[i].carId;
+                let adminCarBrand = values[i].carBrand;
+                let adminCarPass = values[i].carNmbOfPassengers;
+                let adminCarTran = values[i].carTransmissionType;
+                let adminCarType = values[i].carType;
+                let adminCarColor = values[i].carColour;
+                let adminCarFuel = values[i].carFuelType;
+
+                $('#tblCarBody').append(`<tr>
+                                            <td>${adminCarId}</td>
+                                            <td>${adminCarBrand}</td>
+                                            <td>${adminCarPass}</td>
+                                            <td>${adminCarTran}</td>
+                                            <td>${adminCarType}</td>
+                                            <td>${adminCarColor}</td>
+                                            <td>${adminCarFuel}</td>
+                                       
+                                            </tr>`)
+            }
+        }
+    });
+}
+
+//End Customer get all car Section
