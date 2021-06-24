@@ -169,7 +169,9 @@ $('#btnAdminCarSave').click(() => {
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/GMA/v2/car",
+            url: "http://localhost:8080/GMA_Backend_war_exploded/v2/car",
+            dataType: 'Json',
+            contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
                 "carId": adminCarId,
                 "carBrand": adminCarBrand,
@@ -186,11 +188,10 @@ $('#btnAdminCarSave').click(() => {
                 "carFreeMillagePrice": adminCarMPrice,
                 "carFreeMillageDuration": adminCarDuration
             }),
-            dataType: 'Json',
-            contentType: "application/json; charset=utf-8",
+
             success: function (res) {
                 if (res.message == 'Success') {
-                    loadCustomers();
+                    loadAllCars();
                 }
             },
             error: function (ob, textStatus, error) {
@@ -198,5 +199,35 @@ $('#btnAdminCarSave').click(() => {
         });
     }
 });
+$('#btnAdminCarGetAll').click(function () {
+    loadAllCars();
+});
+
+function loadAllCars() {
+    $('#tblCarBody').empty();
+    $.ajax({
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car',
+        method: 'GET',
+        async: false,
+        dataType: 'json',
+        success: function (res) {
+            let values = res.data;
+            for (i in values) {
+                let adminCarId = values[i].carId;
+                let adminCarReg = values[i].carRegistrationNumber;
+                let adminCarBrand = values[i].carBrand;
+                let adminCarPass = values[i].carNmbOfPassengers;
+                let adminCarTran = values[i].carTransmissionType;
+                let adminCarType = values[i].carType;
+                let adminCarColor = values[i].carColour;
+                let adminCarFuel = values[i].carFuelType;
+
+                console.log(adminCarId);
+                $('#tblCarBody').append(`<tr><td>${adminCarId}</td><td>${adminCarReg}</td><td>${adminCarBrand}</td><td>${adminCarPass}</td><td>${adminCarTran}</td><td>${adminCarType}</td><td>${adminCarColor}</td><td>${adminCarFuel}</td></tr>`)
+            }
+        }
+    });
+}
+
 
 //End Admin Car Save Section

@@ -59,7 +59,7 @@ public class CarController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllCars() {
         ArrayList<CarDTO> carDTOArrayList = carServices.getAllCars();
-        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+        return new ResponseEntity(new StandardResponse("200", "Done", carDTOArrayList), HttpStatus.OK);
     }
 
 }

@@ -59,6 +59,6 @@ public class DriverController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllDrivers() {
         ArrayList<DriverDTO> driverDTOArrayList = driverService.getAllDrivers();
-        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+        return new ResponseEntity(new StandardResponse("200", "Done", driverDTOArrayList), HttpStatus.OK);
     }
 }

@@ -13,7 +13,6 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,13 +70,39 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDTO customerLogin(String custEmail, String custPassword) {
-        Customer customer = customerRepo.customerLogin(custEmail, custPassword);
-        System.out.println(custEmail);
-        System.out.println(custPassword);
-        if (customer == null) {
+    public String getLastLoginID() {
+        String lastID = customerRepo.getCustomerLastID();
+        if (lastID != null) {
+            String[] split = lastID.split("C");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if (id < 10) return "C00" + id;
+            else if (id < 100) return "C0" + id;
+            else return "C" + id;
+        }else{
+            return "C001";
+        }
+    }
+
+    @Override
+    public CustomerDTO login(String userName, String password) {
+        Customer customer = customerRepo.login(userName, password);
+        if (customer == null){
             return null;
         }
-        return modelMapper.map(customer, CustomerDTO.class);
+        return modelMapper.map(customer,CustomerDTO.class);
+    }
+
+    @Override
+    public void verifyCustomer(String id) {
+        Optional<Customer> customerOptional = customerRepo.findById(id);
+        if (customerOptional.isPresent()) {
+            Customer customer1 = customerOptional.get();
+            customer1.setVerified(1);
+            customer1.setCustomerId(id);
+            customerRepo.save(customer1);
+        } else {
+            throw new RuntimeException("No Customer for id : " + id);
+        }
     }
 }

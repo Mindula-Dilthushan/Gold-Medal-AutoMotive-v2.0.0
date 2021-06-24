@@ -10,10 +10,11 @@
 </head>
 <body>
 
-<div class="navbar m-0 p-0 bg-danger">
+<div class="navbar m-0 p-0" style="background-color: #16a085">
     <div class="m-0 p-0 ml-2"><img id="admin_logo" src="../assets/img/logo.png"></div>
     <div class="text-white position-absolute" id="title">Gold Medal AutoMotive</div>
     <div><a href="" class="text-white" id="btnCustProfile">Profile</a></div>
+    <div><a href="" class="text-white" id="btnCustCars">Cars</a></div>
     <div><a href="" class="text-white" id="btnCustOrders">Orders</a></div>
     <div><a href="" class="text-white" id="btnCustPay">Payments</a></div>
     <div><a href="" class="text-white" id="btnCustLogOut">Log Out</a></div>
@@ -22,9 +23,9 @@
 <div class="main-panel bg-light m-0 p-0 ">
 
     <!--Start Customer Page-->
-    <div style="display: block" id="custProfilePage" class="p-1">
+    <div style="display: none" id="custProfilePage" class="p-1">
         <div class="container-fluid mt-1">
-            <h3 class="text-dark">My Profile</h3>
+            <h3 class="text-dark mt-3 mb-3" style="left: 42%; position: relative">My Profile</h3>
             <div class="col-lg-12 p-0">
                 <div class="row">
                     <div class="col">
@@ -123,27 +124,67 @@
                                         </div>
                                     </div>
                                     <div class="form-group mb-2">
-                                        <button id="btnCustSave" class="btn  btn-sm" type="button">Save
+                                        <button id="btnCustSave" class="btn ml-2 btn-sm text-white" type="button" style="background-color: #16a085">Save
                                         </button>
-                                        <button id="btnCustomerUpdate" class="btn  btn-sm" type="button">
+                                        <button id="btnCustomerUpdate" class="btn  ml-2 btn-sm text-white" type="button" style="background-color: #16a085">
                                             Update
-                                        </button>
-                                        <button id="btnCustomerDelete" class="btn  btn-sm" type="button">
-                                            Delete
                                         </button>
                                     </div>
                                 </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card mb-3">
+                            <div class="card-body text-center shadow">
+                                <img class="rounded-circle mb-3 mt-3" src="../assets/img/me/me.jpg" width="170" height="170"/>
+                                <div class="mb-3">
+                                    <button class="btn btn-sm mb-2 mt-2 text-white" type="button" style="background-color: #16a085" id=btn_customer_change_pic">
+                                        Change Photo
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
     </div>
     <!--End Customer Page-->
 
+    <!--  Start Customer Car Page-->
+    <div style="display: none" id="customer_Car_Page" class="p-1">
+        <div class="container-fluid">
+            <div class="table-box" style="height: 250px; overflow: no-display">
+                <div class="table-responsive-lg">
+                    <table class="table table-hover">
+                        <thead class="text-white" id="tblCarHeader">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Reg No</th>
+                            <th scope="col">Brand</th>
+                            <th scope="col">No Of Passengers</th>
+                            <th scope="col">Transmission</th>
+                            <th scope="col">Car Type</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Fuel Type</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblCarBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  End Customer Car Page-->
+
     <!--Start Customer Order Page-->
-    <div style="display: block" id="custOrderPage" class="p-1">
+    <div style="display: none" id="custOrderPage" class="p-1">
         <div class="container-fluid mt-1">
             <h3 class="text-dark">My Orders</h3>
 
@@ -183,11 +224,10 @@
                         <input class="form-control" type="text" placeholder="Car ID" id="carid" readonly>
                     </div>
                 </div>
-
             </div>
 
 
-            <div class="table-box p-1" style="height: 540px; overflow: no-display">
+            <div class="table-box p-1" style="height: auto; overflow: no-display">
                 <div class="table-responsive-lg">
                     <table class="table table-hover">
                         <thead class="text-white" id="tblCustOrder">
@@ -206,6 +246,11 @@
 
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div>
+                <div style="width: 100%; text-align: right">
+                    <button class=" btn text-white" id="btnPlaceOrder" style="background-color: #16a085">Place Order </button>
                 </div>
             </div>
         </div>

@@ -58,6 +58,6 @@ public class AdminController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllAdmin() {
         ArrayList<AdminDTO> adminDTOArrayList = adminService.getAllAdmin();
-        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+        return new ResponseEntity(new StandardResponse("200", "Done", adminDTOArrayList), HttpStatus.OK);
     }
 }

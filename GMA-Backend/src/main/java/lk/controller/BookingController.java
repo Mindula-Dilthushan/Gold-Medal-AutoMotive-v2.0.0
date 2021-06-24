@@ -68,6 +68,6 @@ public class BookingController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllBooking() {
         ArrayList<BookingDTO> bookingDTOArrayList = bookingService.getAllBooking();
-        return new ResponseEntity(new StandardResponse("200", "Done", null), HttpStatus.OK);
+        return new ResponseEntity(new StandardResponse("200", "Done", bookingDTOArrayList), HttpStatus.OK);
     }
 }

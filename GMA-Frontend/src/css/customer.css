@@ -9,6 +9,13 @@
 #btnCustProfile{
     position: fixed;
     top: 3.4%;
+    left: 58%;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+#btnCustCars{
+    position: fixed;
+    top: 3.4%;
     left: 67%;
     font-size: 1.2rem;
     text-decoration: none;
@@ -35,10 +42,14 @@
     text-decoration: none;
 }
 #tblOrders{
-    background-color: #f39c12;
+    background-color: #16a085;
     color: white;
 }
 #tblCustOrder {
-    background-color: #f39c12;
+    background-color: #16a085;
+    color: white;
+}
+#tblCarHeader{
+    background-color: #16a085;
     color: white;
 }

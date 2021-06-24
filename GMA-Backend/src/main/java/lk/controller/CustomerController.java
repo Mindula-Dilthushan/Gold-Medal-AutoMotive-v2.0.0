@@ -69,17 +69,41 @@ public class CustomerController {
         return new ResponseEntity(new StandardResponse("200", "Done", customerDTOArrayList), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/{customerEmail}/{customerPassword}")
-    public ResponseEntity login(@PathVariable("customerEmail") String val1, @PathVariable("customerPassword") String val2) {
-        CustomerDTO customerDTO = customerService.customerLogin(val1,val2);
+    @GetMapping(path = "/{userName}/{password}")
+    public ResponseEntity login(@PathVariable("userName") String val1, @PathVariable("password") String val2) {
+        val2 = hashPassword(val2);
+        CustomerDTO customerDTO = customerService.login(val1,val2);
+
+        System.out.println(val1);
+        System.out.println(val2);
+
         if ( customerDTO!= null) {
-            customerDTO.setCustomerPassword("");
+            customerDTO.setPassword("");
             StandardResponse response = new StandardResponse("200", "customer", customerDTO);
             return new ResponseEntity(response, HttpStatus.OK);
         } else {
             StandardResponse response = new StandardResponse("500", "Error", null);
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+    }
+    private String hashPassword(String password) {
+        String generatedPassword = null;
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-512");
+            byte[] bytes = md.digest(password.getBytes());
+            BigInteger no = new BigInteger(1, bytes);
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            generatedPassword = hashtext;
+
+        }catch (NoSuchAlgorithmException ex){
+            System.out.println(ex);
+        }
+
+        return generatedPassword;
 
     }
 }

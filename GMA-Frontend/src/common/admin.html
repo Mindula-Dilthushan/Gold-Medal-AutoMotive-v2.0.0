@@ -550,13 +550,13 @@
                                             <div class="form-group mb-2">
                                                 <button id="btnAdminCarSave" class="btn  btn-sm" type="button">Save
                                                 </button>
-                                                <button id="btnAdminCarUpdate" class="btn  btn-sm" type="submit">
+                                                <button id="btnAdminCarUpdate" class="btn  btn-sm" type="button">
                                                     Update
                                                 </button>
-                                                <button id="btnAdminCarDelete" class="btn  btn-sm" type="submit">
+                                                <button id="btnAdminCarDelete" class="btn  btn-sm" type="button">
                                                     Delete
                                                 </button>
-                                                <button id="btnAdminCarGetAll" class="btn  btn-sm" type="submit"> Get
+                                                <button id="btnAdminCarGetAll" class="btn  btn-sm" type="button"> Get
                                                     All
                                                 </button>
                                             </div>
@@ -582,6 +582,9 @@
                                     <th scope="col">Fuel Type</th>
                                 </tr>
                                 </thead>
+                                <tbody id="tblCarBody">
+
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -687,8 +690,9 @@
                                 <thead class="text-white" id="tblDriver">
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">NIC</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">NIC</th>
+                                    <th scope="col">Contact</th>
                                     <th scope="col">Email</th>
                                 </tr>
                                 </thead>

@@ -70,7 +70,7 @@ $('#btnAdminDriverSave').click(() => {
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:80f80/GMA/v2/driver",
+            url: "http://localhost:8080/GMA_Backend_war_exploded/v2/driver",
             data: JSON.stringify({
                 "driverId": adminDriverId,
                 "driverName": adminDriverName,
@@ -82,7 +82,7 @@ $('#btnAdminDriverSave').click(() => {
             contentType: "application/json; charset=utf-8",
             success: function (res) {
                 if (res.message == 'Success') {
-                    loadCustomers();
+                    loadAllDriver();
                 }
             },
             error: function (ob, textStatus, error) {
@@ -90,4 +90,30 @@ $('#btnAdminDriverSave').click(() => {
         });
     }
 });
+
+$('#btnAdminDriverGetAll').click(function () {
+    loadAllDriver();
+});
+
+function loadAllDriver() {
+    $('#tblDriverBody').empty();
+    $.ajax({
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/driver',
+        method: 'GET',
+        async: false,
+        dataType: 'json',
+        success: function (res) {
+            let values = res.data;
+            for (i in values) {
+                let adminDriverId = values[i].driverId;
+                let adminDriverName = values[i].driverName;
+                let adminDriverNic = values[i].driverNIC;
+                let adminDriverContact = values[i].driverContact;
+                let adminDriverEmail = values[i].driverEmail;
+
+                $('#tblDriverBody').append(`<tr><td>${adminDriverId}</td><td>${adminDriverName}</td><td>${adminDriverNic}</td><td>${adminDriverContact}</td><td>${adminDriverEmail}</td></tr>`)
+            }
+        }
+    });
+}
 //End Admin Driver Save Section
