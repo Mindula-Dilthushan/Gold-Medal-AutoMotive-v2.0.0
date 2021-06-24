@@ -74,9 +74,17 @@ function checkValidationAdminCustomer() {
         return false;
     }
 }
-
 //End Admin Customer Validation Section
 
+function clearCustomerFields() {
+    $('#adCustId').val(null);
+    $('#adCustName').val("");
+    $('#adCustAddress').val("");
+    $('#adCustEmail').val("");
+    $('#adCustNic').val("");
+    $('#adCustDl').val("");
+    $('#adCustContact').val("");
+}
 
 //Start Admin Save Section
 $('#btnAdminCustomerSave').click(function () {
@@ -107,6 +115,7 @@ $('#btnAdminCustomerSave').click(function () {
             }),
             success: function (res) {
                 loadAllCustomer();
+                clearCustomerFields();
 
             },
             error: function (ob, textStatus, error) {
@@ -158,6 +167,7 @@ $('#btnAdminCustomerDelete').click(() => {
 
 $('#btnAdminCustomerGetAll').click(function () {
     loadAllCustomer();
+    clearCustomerFields();
 });
 
 $('#btnAdminCustomerUpdate').click(() => {

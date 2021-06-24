@@ -185,16 +185,17 @@
     <!--  End Customer Car Page-->
 
     <!--Start Customer Order Page-->
-    <div style="display: none" id="custOrderPage" class="p-1">
+    <div style="display: block" id="custOrderPage" class="p-1">
         <div class="container-fluid mt-1">
-            <h3 class="text-dark">My Orders</h3>
+            <h3 class="text-dark mt-3 mb-4" style="left: 44%; position: relative">My Orders</h3>
 
             <div class="row">
                 <div class="col-2">
                     <select class="custom-select mb-3" id="driver">
-                        <option selected>Do You Want Driver</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option selected>Driver</option>
+                        <option value="DR-001">DR-001</option>
+                        <option value="DR-002">DR-002</option>
+                        <option value="DR-003">DR-003</option>
                     </select>
                 </div>
                 <label class="mt-2" style="margin-right: 5px; margin-left: 10px">Pickup Date</label>
@@ -222,7 +223,7 @@
 
                 <div class="col-2">
                     <div style="width: 100%; text-align: right">
-                        <input class="form-control" type="text" placeholder="Car ID" id="carid" readonly>
+                        <input class="form-control" type="text" placeholder="Car ID" id="carid">
                     </div>
                 </div>
             </div>

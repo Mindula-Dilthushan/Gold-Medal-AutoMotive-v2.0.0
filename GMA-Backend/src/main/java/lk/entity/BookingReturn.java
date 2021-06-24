@@ -23,9 +23,9 @@ public class BookingReturn {
     private Date bookingReturnDate;
     private double bookingReturnNoOfKm;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "bookingid",referencedColumnName = "bookingId",nullable = false)
-//    private Booking booking;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bookingid",referencedColumnName = "bookingId",nullable = false)
+    private Booking booking;
 //
 //    @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
 //    private Payment payment;

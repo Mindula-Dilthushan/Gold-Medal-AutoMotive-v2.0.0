@@ -25,30 +25,30 @@ public class Booking {
     private String bookingNote;
     private String bookingReturnDate;
 
-//    @ManyToOne
-//    @JoinColumn(name = "custid", referencedColumnName = "CustomerId", nullable = false)
-//    private Customer customer;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "carid", referencedColumnName = "carId", nullable = false)
-//    private Car car;
-//
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "driverid", referencedColumnName = "DriverId",nullable = false)
-//    private Driver driver;
-//
-//    @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
-//    private BookingReturn bookingReturn;
-//
-//    public Booking(String bookingId, String bookingDate, String bookingPickDate, String bookingStatus, String bookingNote, String bookingReturnDate, Customer customer, Car car, Driver driver) {
-//        this.bookingId = bookingId;
-//        this.bookingDate = bookingDate;
-//        this.bookingPickDate = bookingPickDate;
-//        this.bookingStatus = bookingStatus;
-//        this.bookingNote = bookingNote;
-//        this.bookingReturnDate = bookingReturnDate;
-//        this.customer = customer;
-//        this.car = car;
-//        this.driver = driver;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "customerId", referencedColumnName = "customerId", nullable = false)
+    private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name = "carId", referencedColumnName = "carId", nullable = false)
+    private Car car;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "driverId", referencedColumnName = "driverId",nullable = false)
+    private Driver driver;
+
+    @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
+    private BookingReturn bookingReturn;
+
+    public Booking(String bookingId, String bookingDate, String bookingPickDate, String bookingStatus, String bookingNote, String bookingReturnDate, Customer customer, Car car, Driver driver) {
+        this.bookingId = bookingId;
+        this.bookingDate = bookingDate;
+        this.bookingPickDate = bookingPickDate;
+        this.bookingStatus = bookingStatus;
+        this.bookingNote = bookingNote;
+        this.bookingReturnDate = bookingReturnDate;
+        this.customer = customer;
+        this.car = car;
+        this.driver = driver;
+    }
 }

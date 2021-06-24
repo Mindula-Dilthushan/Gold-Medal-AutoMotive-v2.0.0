@@ -165,3 +165,80 @@ function loadAllCars() {
 }
 
 //End Customer get all car Section
+
+//Start Customer PlaceOrder Section
+$('#btnPlaceOrder').click(function () {
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = mm + '-' + dd + '-' + yyyy;
+
+    let pickupDate = $('#pickUpDate').val();
+    let returnDate = $('#returnDate').val();
+    let cusID = "C001";
+    let driverId = "D001";
+    let carID = $('#carid').val();
+    let bookingId="B001";
+
+    let customer;
+    let car;
+    let driver;
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/' + cusID,
+        async: false,
+        success: function (res) {
+            customer = res.data;
+        }
+    });
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/' + carID,
+        async: false,
+        success: function (res) {
+            car = res.data;
+        }
+    });
+
+    $.ajax({
+        method: 'GET',
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/driver/' +driverId,
+        async: false,
+        success: function (res) {
+            driver = res.data;
+        }
+    });
+
+    console.log(customer);
+    console.log(car);
+    console.log(driver);
+
+    $.ajax({
+        method: 'POST',
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/booking',
+        data: JSON.stringify({
+            "bookingId": bookingId,
+            "bookingDate": today,
+            "bookingPickDate": pickupDate,
+            "bookingStatus": "Ordered",
+            "bookingNote": "normal",
+            "bookingReturnDate": returnDate,
+            "customerDTO": customer,
+            "carDTO": car,
+            "driverDTO": driver
+        }),
+        async: false,
+        dataType: 'Json',
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            if (res.message == 'Success') {
+                alert('Booking successFul..!');
+            }
+        }
+    });
+});
+//End Customer PlaceOrder Section

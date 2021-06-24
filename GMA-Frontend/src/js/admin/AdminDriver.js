@@ -54,9 +54,16 @@ function checkValidationAdminDriver() {
         return false;
     }
 }
-
 //End Admin Driver Validation Section
 
+
+function clearDriverFields() {
+    $('#adDriverId').val("");
+    $('#adDriverName').val("");
+    $('#adDriverNIC').val("");
+    $('#adDriverContact').val("");
+    $('#adDriverEmail').val("");
+}
 
 //Start Admin Driver Save Section
 $('#btnAdminDriverSave').click(() => {
@@ -81,8 +88,9 @@ $('#btnAdminDriverSave').click(() => {
             dataType: 'Json',
             contentType: "application/json; charset=utf-8",
             success: function (res) {
+                loadAllDriver();
+                clearDriverFields();
                 if (res.message == 'Success') {
-                    loadAllDriver();
                 }
             },
             error: function (ob, textStatus, error) {
@@ -93,6 +101,7 @@ $('#btnAdminDriverSave').click(() => {
 
 $('#btnAdminDriverGetAll').click(function () {
     loadAllDriver();
+    clearDriverFields();
 });
 
 function loadAllDriver() {

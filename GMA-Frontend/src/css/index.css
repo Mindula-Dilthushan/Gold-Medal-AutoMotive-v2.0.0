@@ -30,17 +30,17 @@
     top: 2.6%;
     margin: 0;
     padding: 0;
-
+    background-color: transparent;
 }
 
 #db_btn_sign_a {
     text-decoration: none;
-    color: #f39c12;
+color: white;
 }
 
 #db_btn_regi_a {
     text-decoration: none;
-    color: #f39c12;
+    color: white;
 }
 
 #db_btn_regi {
@@ -51,6 +51,7 @@
     top: 2.6%;
     margin: 0;
     padding: 0;
+    background-color: transparent;
 }
 
 .caption {

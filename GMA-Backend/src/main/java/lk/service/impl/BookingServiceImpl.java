@@ -31,11 +31,28 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void saveBooking(BookingDTO bookingDTO) {
-        if (bookingRepo.existsById(bookingDTO.getBookingId())) {
-            throw new ValidateException("BookingReturn Already Exist");
-        }
-        System.out.println(bookingDTO);
-        bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
+//        if (bookingRepo.existsById(bookingDTO.getBookingId())) {
+//            throw new ValidateException("BookingReturn Already Exist");
+//        }
+//        System.out.println(bookingDTO);
+//        bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
+
+
+        Booking booking = modelMapper.map(bookingDTO, Booking.class);
+        booking.setBookingId(getLastBookingID());
+
+        Booking booking1 = new Booking(
+                booking.getBookingId(),
+                booking.getBookingDate(),
+                booking.getBookingPickDate(),
+                booking.getBookingStatus(),
+                booking.getBookingNote(),
+                booking.getBookingReturnDate(),
+                booking.getCustomer(),
+                booking.getCar(),
+                booking.getDriver()
+        );
+        bookingRepo.save(booking1);
     }
 
     @Override
@@ -67,5 +84,20 @@ public class BookingServiceImpl implements BookingService {
         List<Booking> bookingList = bookingRepo.findAll();
         return modelMapper.map(bookingList, new TypeToken<ArrayList<BookingDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public String getLastBookingID() {
+        String lastID = bookingRepo.getLastBookingID();
+        if (lastID != null) {
+            String[] split = lastID.split("B");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if (id < 10) return "B00" + id;
+            else if (id < 100) return "B0" + id;
+            else return "B" + id;
+        }else{
+            return "B001";
+        }
     }
 }

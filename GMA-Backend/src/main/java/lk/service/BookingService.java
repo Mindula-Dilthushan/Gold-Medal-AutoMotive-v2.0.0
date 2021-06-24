@@ -13,4 +13,6 @@ public interface BookingService {
     void deleteBooking(String id);
     BookingDTO searchBooking(String id);
     ArrayList<BookingDTO>getAllBooking();
+    String getLastBookingID();
+
 }
