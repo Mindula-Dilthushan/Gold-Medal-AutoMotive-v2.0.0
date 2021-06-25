@@ -4,7 +4,7 @@
 // 21-06-25
 // Complete
 $("#btn_Login").click(function () {
-        let userName = $('#txtEmail').val();
+        let userName = $('#txtUserName').val();
         let password = $('#txtPassword').val();
 
         if (userName != "") {

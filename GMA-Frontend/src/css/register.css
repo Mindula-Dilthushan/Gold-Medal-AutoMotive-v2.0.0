@@ -16,3 +16,17 @@ body {
     text-decoration: none;
     color: white;
 }
+#circle {
+    width: 230px;
+    height: 230px;
+    line-height: 200px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-align: center;
+    background-color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 auto 40px;
+}
