@@ -146,7 +146,6 @@ function checkValidationAdminCar() {
 }
 //End Admin Car Validation Section
 
-
 function clearCarFields() {
     $('#adCarId').val("");
     $('#adCarBrand').val("");

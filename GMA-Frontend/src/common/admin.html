@@ -1,3 +1,7 @@
+<!--Alpha X Software Company-->
+<!--Mindula Dilthushan-->
+<!--GMA v2.0.3-->
+<!--21-06-25 Complete-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,16 +22,20 @@
                 <div class="sidebar-brand-text">Gold Medal<br>AutoMotive</div>
             </a>
             <ul class="nav navbar-nav mt-3">
-                <li class="nav-item"><a class="text-white nav-link btn-custom btn-custom-selected" href=""
-                                        id="btn_mainPage">Dashboard</a></li>
-                <li class="nav-item"><a class="text-white nav-link btn-custom" href="#admin_profile_Page" id="btn_ProfilePage"><span>Profile</span></a>
-                </li>
-                <li class="nav-item"><a class="text-white nav-link btn-custom" href="#admin_Customer_Page" id="btn_CustomerPage"><span>Customers</span></a>
-                </li>
-                <li class="nav-item"><a class="text-white nav-link" href="#admin_Car_Page"><span>Cars</span></a></li>
-                <li class="nav-item"><a class="text-white nav-link" href="#admin_Driver_Page"><span>Drivers</span></a></li>
-                <li class="nav-item"><a class="text-white nav-link" href="#admin_Order_Page"><span>Orders</span></a></li>
-                <li class="nav-item"><a class="text-white nav-link" href="#"><span>Payments</span></a></li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_mainPage" style="cursor: pointer">Dashboard</a></li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_ProfilePage" style="cursor: pointer">Profile</a></li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_CustomerPage" style="cursor: pointer">Customers</a></li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_CarPage" style="cursor: pointer">Car</a></li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_DriverPage" style="cursor: pointer">Drivers</a></li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_OrderPage" style="cursor: pointer">Orders</a></li>
+                <li class="nav-item">
+                    <a class="text-white nav-link" id="btn_PaymentPage" style="cursor: pointer">Payments</a></li>
             </ul>
         </div>
     </nav>
@@ -59,7 +67,8 @@
         <div class="main-panel bg-light m-0 p-0 ">
 
             <!--  Start Admin Home Page-->
-            <div style="display: none" id="admin_Home_Page">
+            <div style="display: block" id="admin_Home_Page">
+                <h3 class="text-dark mb-4 mt-4 ml-4">Dashboard</h3>
                 <div class="container-fluid">
                     <div class="row mt-4">
                         <div class="col-md-6 col-xl-3 mb-4">
@@ -228,8 +237,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group mb-2">
-                                                    <button id="btnAdminSave" class="btn  btn-sm" type="button">Save</button>
-                                                    <button id="btnAdminUpdate" class="btn  btn-sm" type="button">Update</button>
+                                                    <button id="btnAdminSave" class="btn  btn-sm" type="button">Save
+                                                    </button>
+                                                    <button id="btnAdminUpdate" class="btn  btn-sm" type="button">
+                                                        Update
+                                                    </button>
                                                 </div>
                                             </form>
                                         </div>
@@ -335,10 +347,18 @@
                                                 </div>
                                             </div>
                                             <div class="form-group mb-2">
-                                                <button id="btnAdminCustomerSave" class="btn  btn-sm" type="button">Save</button>
-                                                <button id="btnAdminCustomerUpdate" class="btn  btn-sm" type="button">Update</button>
-                                                <button id="btnAdminCustomerDelete" class="btn  btn-sm" type="button">Delete</button>
-                                                <button id="btnAdminCustomerGetAll" class="btn  btn-sm" type="button">Get All</button>
+                                                <button id="btnAdminCustomerSave" class="btn  btn-sm" type="button">
+                                                    Save
+                                                </button>
+                                                <button id="btnAdminCustomerUpdate" class="btn  btn-sm" type="button">
+                                                    Update
+                                                </button>
+                                                <button id="btnAdminCustomerDelete" class="btn  btn-sm" type="button">
+                                                    Delete
+                                                </button>
+                                                <button id="btnAdminCustomerGetAll" class="btn  btn-sm" type="button">
+                                                    Get All
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
@@ -710,10 +730,15 @@
             <!--  End Admin Customer Page-->
 
             <!-- Start Admin Driver Page -->
-            <div style="display: block" id="admin_Order_Page">
+            <div style="display: none" id="admin_Order_Page">
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4 mt-4">Orders</h3>
-                    <button class="btn text-white" id="btnOrdersRefresh" style="background-color: #f39c12; position: fixed; left: 90%; top: 14%;"><img class="mr-2"  style="width: 25px; height: 25px;" src="../assets/icon/icons8_refresh_32.png"> Refresh </button>
+                    <button class="btn text-white" id="btnOrdersRefresh"
+                            style="background-color: #f39c12; position: fixed; left: 90%; top: 14%;"><img class="mr-2"
+                                                                                                          style="width: 25px; height: 25px;"
+                                                                                                          src="../assets/icon/icons8_refresh_32.png">
+                        Refresh
+                    </button>
                     <div class="table-box" style="height: 250px; overflow: no-display">
                         <div class="table-responsive-lg">
                             <table class="table table-hover">
