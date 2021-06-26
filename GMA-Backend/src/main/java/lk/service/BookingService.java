@@ -14,5 +14,6 @@ public interface BookingService {
     BookingDTO searchBooking(String id);
     ArrayList<BookingDTO>getAllBooking();
     String getLastBookingID();
+    int getBookingCount();
 
 }

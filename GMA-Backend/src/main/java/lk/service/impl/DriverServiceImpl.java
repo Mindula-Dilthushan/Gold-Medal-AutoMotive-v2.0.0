@@ -68,4 +68,9 @@ public class DriverServiceImpl implements DriverService {
         return modelMapper.map(driverList,new TypeToken<ArrayList<DriverDTO>>(){
         }.getType());
     }
+
+    @Override
+    public int getDriverCount() {
+        return driverRepo.getDriverCount();
+    }
 }

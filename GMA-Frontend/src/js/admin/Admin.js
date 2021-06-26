@@ -1,3 +1,9 @@
+$(document).ready(function () {
+    getCustomerCount();
+    getCarCount();
+    getOrderCount();
+    getDriverCount();
+});
 $('#btn_mainPage').click(function () {
     $('#admin_Home_Page').css({
         'display': 'block'
@@ -20,6 +26,10 @@ $('#btn_mainPage').click(function () {
     $('#admin_Payment_Page').css({
         'display': 'none'
     });
+    getCustomerCount();
+    getCarCount();
+    getDriverCount();
+    getOrderCount();
 });
 
 $('#btn_ProfilePage').click(function () {
@@ -194,3 +204,57 @@ $('#btnAdminProfile').click(function () {
     });
 });
 
+//get count customer
+function getCustomerCount() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/customerCount',
+        async: true,
+        success: function (response) {
+            var resp = response.data;
+            console.log(resp);
+            $('#TxtCustomerCount').text(resp);
+        }
+
+    });
+}
+
+function getCarCount() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/carCount',
+        async: true,
+        success: function (response) {
+            var resp = response.data;
+            console.log(resp);
+            $('#txtCarCount').text(resp);
+        }
+
+    });
+}
+function getOrderCount() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/booking/bookingCount',
+        async: true,
+        success: function (response) {
+            var resp = response.data;
+            console.log(resp);
+            $('#txtOrderCount').text(resp);
+        }
+
+    });
+}
+function getDriverCount() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/driver/driverCount',
+        async: true,
+        success: function (response) {
+            var resp = response.data;
+            console.log(resp);
+            $('#txtDriverCount').text(resp);
+        }
+
+    });
+}

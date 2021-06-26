@@ -13,4 +13,5 @@ public interface CarServices {
     void updateCars(CarDTO adminDTO);
     void deleteCars(String id);
     ArrayList<CarDTO> getAllCars();
+    int getCarCount();
 }

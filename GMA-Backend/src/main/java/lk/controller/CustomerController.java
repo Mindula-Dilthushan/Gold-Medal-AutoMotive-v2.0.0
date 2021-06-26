@@ -13,9 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 @RestController
@@ -69,21 +66,9 @@ public class CustomerController {
         return new ResponseEntity(new StandardResponse("200", "Done", customerDTOArrayList), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/{userName}/{password}")
-    public ResponseEntity login(@PathVariable("userName") String val1, @PathVariable("password") String val2) {
-        CustomerDTO customerDTO = customerService.login(val1,val2);
-
-        System.out.println(val1);
-        System.out.println(val2);
-
-        if ( customerDTO!= null) {
-            customerDTO.setPassword("");
-            StandardResponse response = new StandardResponse("200", "customer", customerDTO);
-            return new ResponseEntity(response, HttpStatus.OK);
-        } else {
-            StandardResponse response = new StandardResponse("500", "Error", null);
-            return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
+    @GetMapping("customerCount")
+    public ResponseEntity getCustomerCount(){
+        int count = customerService.getCustomerCount();
+        return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
     }
 }

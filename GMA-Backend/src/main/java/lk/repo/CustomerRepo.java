@@ -14,9 +14,6 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     @Query(value = "SELECT customerId FROM customer ORDER BY customerId DESC LIMIT 1", nativeQuery = true)
     String getCustomerLastID();
 
-    @Query(value = "SELECT * FROM customer WHERE userName=:userName AND password=:password",nativeQuery = true)
-    Customer login(@Param("userName") String userName,@Param("password") String password);
-
-    @Query(value = "UPDATE customer SET verified='1' WHERE customerId=:id",nativeQuery = true)
-    void verify(@Param("id") String id);
+    @Query(value = "SELECT COUNT(customerId) FROM Customer ",nativeQuery = true)
+    int getCustomerCount();
 }

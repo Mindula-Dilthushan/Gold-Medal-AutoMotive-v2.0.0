@@ -61,5 +61,9 @@ public class CarController {
         ArrayList<CarDTO> carDTOArrayList = carServices.getAllCars();
         return new ResponseEntity(new StandardResponse("200", "Done", carDTOArrayList), HttpStatus.OK);
     }
-
+    @GetMapping("carCount")
+    public ResponseEntity getCustomerCount(){
+        int count = carServices.getCarCount();
+        return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
+    }
 }

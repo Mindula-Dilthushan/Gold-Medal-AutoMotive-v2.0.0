@@ -67,4 +67,9 @@ public class CarServiceImpl implements CarServices {
         return modelMapper.map(carList, new TypeToken<ArrayList<CarDTO>>() {
         }.getType());
     }
+
+    @Override
+    public int getCarCount() {
+        return carRepo.getCarCount();
+    }
 }

@@ -12,4 +12,8 @@ public interface BookingRepo extends JpaRepository<Booking,String> {
 
     @Query(value = "SELECT bookingId FROM booking ORDER BY bookingId DESC LIMIT 1", nativeQuery = true)
     String getLastBookingID();
+
+    @Query(value = "SELECT COUNT(bookingId) FROM booking ",nativeQuery = true)
+    int getBookingCount();
+
 }

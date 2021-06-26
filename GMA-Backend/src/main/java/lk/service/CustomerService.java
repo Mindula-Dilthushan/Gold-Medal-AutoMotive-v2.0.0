@@ -14,6 +14,5 @@ public interface CustomerService {
     CustomerDTO searchCustomer(String id);
     ArrayList<CustomerDTO>getAllCustomers();
     String getLastLoginID();
-    CustomerDTO login(String userName, String password);
-    void verifyCustomer(String id);
+    int getCustomerCount();
 }

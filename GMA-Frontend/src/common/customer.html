@@ -17,17 +17,17 @@
 <div class="navbar m-0 p-0" style="background-color: #16a085">
     <div class="m-0 p-0 ml-2"><img id="admin_logo" src="../assets/img/logo.png"></div>
     <div class="text-white position-absolute" id="title">Gold Medal AutoMotive</div>
-    <div><a href="" class="text-white" id="btnCustProfile">Profile</a></div>
-    <div><a href="" class="text-white" id="btnCustCars">Cars</a></div>
-    <div><a href="" class="text-white" id="btnCustOrders">Orders</a></div>
-    <div><a href="" class="text-white" id="btnCustPay">Payments</a></div>
-    <div><a href="" class="text-white" id="btnCustLogOut">Log Out</a></div>
+    <div><a class="text-white" id="btnCustProfile" style="cursor: pointer">Profile</a></div>
+    <div><a class="text-white" id="btnCustCars" style="cursor: pointer">Cars</a></div>
+    <div><a class="text-white" id="btnCustOrders" style="cursor: pointer">Orders</a></div>
+    <div><a class="text-white" id="btnCustPay" style="cursor: pointer">Payments</a></div>
+    <div><a class="text-white" id="btnCustLogOut" href="../index.html" style="cursor: pointer">Log Out</a></div>
 </div>
 
 <div class="main-panel bg-light m-0 p-0 ">
 
     <!--Start Customer Page-->
-    <div style="display: none" id="custProfilePage" class="p-1">
+    <div style="display: block" id="custProfilePage" class="p-1">
         <div class="container-fluid mt-1">
             <h3 class="text-dark mt-3 mb-3" style="left: 42%; position: relative">My Profile</h3>
             <div class="col-lg-12 p-0">
@@ -128,8 +128,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group mb-2">
-                                        <button id="btnCustSave" class="btn ml-2 btn-sm text-white" type="button" style="background-color: #16a085">Save
-                                        </button>
                                         <button id="btnCustomerUpdate" class="btn  ml-2 btn-sm text-white" type="button" style="background-color: #16a085">
                                             Update
                                         </button>
@@ -160,7 +158,7 @@
     <!--End Customer Page-->
 
     <!--  Start Customer Car Page-->
-    <div style="display: block" id="customer_Car_Page" class="p-1">
+    <div style="display: none" id="customer_Car_Page" class="p-1">
         <h3 class="text-dark mt-3 mb-3" style="left: 44%; position: relative">All Cars</h3>
         <button class="btn text-white" id="btnCarsRefresh" style="background-color: #16a085; position: fixed; left: 90%; top: 14%" ><img class="mr-2"  style="width: 25px; height: 25px;" src="../assets/icon/icons8_refresh_32.png"> Refresh </button>
         <div class="container-fluid">
@@ -189,7 +187,7 @@
     <!--  End Customer Car Page-->
 
     <!--Start Customer Order Page-->
-    <div style="display: block" id="custOrderPage" class="p-1">
+    <div style="display: none" id="custOrderPage" class="p-1">
         <div class="container-fluid mt-1">
             <h3 class="text-dark mt-3 mb-4" style="left: 44%; position: relative">My Orders</h3>
 
@@ -262,6 +260,32 @@
         </div>
     </div>
     <!--End Customer Order Page-->
+
+    <!--  Start Customer Car Page-->
+    <div style="display: none" id="customer_Pay_Page" class="p-1">
+        <h3 class="text-dark mt-3 mb-3" style="left: 44%; position: relative">Payments</h3>
+        <button class="btn text-white" id="btnPayRefresh" style="background-color: #16a085; position: fixed; left: 90%; top: 14%" ><img class="mr-2"  style="width: 25px; height: 25px;" src="../assets/icon/icons8_refresh_32.png"> Refresh </button>
+        <div class="container-fluid">
+            <div class="table-box" style="height: 250px; overflow: no-display">
+                <div class="table-responsive-lg">
+                    <table class="table table-hover">
+                        <thead class="text-white" id="tblPayHeader">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblPayBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  End Customer Car Page-->
 </div>
 
 <script src="../js/jquery.min.js"></script>

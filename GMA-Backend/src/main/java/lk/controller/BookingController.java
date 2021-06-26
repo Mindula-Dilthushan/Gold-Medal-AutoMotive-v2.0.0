@@ -61,4 +61,9 @@ public class BookingController {
         ArrayList<BookingDTO> bookingDTOArrayList = bookingService.getAllBooking();
         return new ResponseEntity(new StandardResponse("200", "Done", bookingDTOArrayList), HttpStatus.OK);
     }
+    @GetMapping("bookingCount")
+    public ResponseEntity getCustomerCount(){
+        int count = bookingService.getBookingCount();
+        return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
+    }
 }

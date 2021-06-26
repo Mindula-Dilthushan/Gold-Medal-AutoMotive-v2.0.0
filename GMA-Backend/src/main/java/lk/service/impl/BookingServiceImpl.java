@@ -94,4 +94,9 @@ public class BookingServiceImpl implements BookingService {
             return "B001";
         }
     }
+
+    @Override
+    public int getBookingCount() {
+        return bookingRepo.getBookingCount();
+    }
 }

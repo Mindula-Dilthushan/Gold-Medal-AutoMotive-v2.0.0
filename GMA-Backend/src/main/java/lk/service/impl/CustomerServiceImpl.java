@@ -85,24 +85,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDTO login(String userName, String password) {
-        Customer customer = customerRepo.login(userName, password);
-        if (customer == null){
-            return null;
-        }
-        return modelMapper.map(customer,CustomerDTO.class);
+    public int getCustomerCount() {
+        return customerRepo.getCustomerCount();
     }
 
-    @Override
-    public void verifyCustomer(String id) {
-        Optional<Customer> customerOptional = customerRepo.findById(id);
-        if (customerOptional.isPresent()) {
-            Customer customer1 = customerOptional.get();
-            customer1.setVerified(1);
-            customer1.setCustomerId(id);
-            customerRepo.save(customer1);
-        } else {
-            throw new RuntimeException("No Customer for id : " + id);
-        }
-    }
 }

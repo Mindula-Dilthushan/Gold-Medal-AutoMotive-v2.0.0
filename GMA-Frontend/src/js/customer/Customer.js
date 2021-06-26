@@ -84,7 +84,6 @@ function checkValidationCustomerProfile() {
         return false;
     }
 }
-
 //End Customer Validation Section
 
 //Start Customer Save Section
@@ -163,7 +162,6 @@ function loadAllCars() {
         }
     });
 }
-
 //End Customer get all car Section
 
 //Start Customer PlaceOrder Section
@@ -242,3 +240,62 @@ $('#btnPlaceOrder').click(function () {
     });
 });
 //End Customer PlaceOrder Section
+
+$('#btnCustProfile').click(function () {
+    $('#custProfilePage').css({
+        'display': 'block'
+    });
+    $('#customer_Car_Page').css({
+        'display': 'none'
+    });
+    $('#custOrderPage').css({
+        'display': 'none'
+    });
+    $('#customer_Pay_Page').css({
+        'display': 'none'
+    });
+});
+
+$('#btnCustCars').click(function () {
+    $('#custProfilePage').css({
+        'display': 'none'
+    });
+    $('#customer_Car_Page').css({
+        'display': 'block'
+    });
+    $('#custOrderPage').css({
+        'display': 'none'
+    });
+    $('#customer_Pay_Page').css({
+        'display': 'none'
+    });
+});
+
+$('#btnCustOrders').click(function () {
+    $('#custProfilePage').css({
+        'display': 'none'
+    });
+    $('#customer_Car_Page').css({
+        'display': 'none'
+    });
+    $('#custOrderPage').css({
+        'display': 'block'
+    });
+    $('#customer_Pay_Page').css({
+        'display': 'none'
+    });
+});
+$('#btnCustPay').click(function () {
+    $('#custProfilePage').css({
+        'display': 'none'
+    });
+    $('#customer_Car_Page').css({
+        'display': 'none'
+    });
+    $('#custOrderPage').css({
+        'display': 'none'
+    });
+    $('#customer_Pay_Page').css({
+        'display': 'block'
+    });
+});

@@ -61,4 +61,9 @@ public class DriverController {
         ArrayList<DriverDTO> driverDTOArrayList = driverService.getAllDrivers();
         return new ResponseEntity(new StandardResponse("200", "Done", driverDTOArrayList), HttpStatus.OK);
     }
+    @GetMapping("driverCount")
+    public ResponseEntity getCustomerCount(){
+        int count = driverService.getDriverCount();
+        return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
+    }
 }
