@@ -31,12 +31,6 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void saveBooking(BookingDTO bookingDTO) {
-//        if (bookingRepo.existsById(bookingDTO.getBookingId())) {
-//            throw new ValidateException("BookingReturn Already Exist");
-//        }
-//        System.out.println(bookingDTO);
-//        bookingRepo.save(modelMapper.map(bookingDTO, Booking.class));
-
 
         Booking booking = modelMapper.map(bookingDTO, Booking.class);
         booking.setBookingId(getLastBookingID());

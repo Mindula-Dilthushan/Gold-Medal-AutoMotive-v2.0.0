@@ -26,18 +26,6 @@ public class BookingController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity saveBooking(@RequestBody BookingDTO bookingDTO){
-//        if (bookingDTO.getBookingId().trim().length() <=0){
-//            throw new NotFoundException("Booking Id cannot be Empty");
-//        }
-//        bookingService.saveBooking(bookingDTO);
-//        return new ResponseEntity(
-//                new StandardResponse(
-//                        "201",
-//                        "Done",
-//                        bookingDTO
-//                ),
-//                HttpStatus.CREATED
-//        );
         bookingService.saveBooking(bookingDTO);
         StandardResponse response = new StandardResponse("200", "Success", null);
         return new ResponseEntity(response, HttpStatus.CREATED);

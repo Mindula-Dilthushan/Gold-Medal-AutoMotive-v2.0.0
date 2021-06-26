@@ -202,3 +202,29 @@ $('#btnAdminCustomerUpdate').click(() => {
     });
 });
 //End Get Admin Customer Section
+
+
+//Start Admin Delete Section
+$('#btnAdminCustomerDelete').click(function () {
+
+        let custId = $('#adCustId').val();
+
+        $.ajax({
+            method: "delete",
+            url: "http://localhost:8080/GMA_Backend_war_exploded/v2/customer",
+            dataType: 'Json',
+            async: true,
+            contentType: "application/json",
+            data: JSON.stringify({
+                customerId: custId
+            }),
+            success: function (res) {
+                loadAllCustomer();
+                clearCustomerFields();
+            },
+            error: function (ob, textStatus, error) {
+            }
+        });
+
+});
+//End Admin Delete Section

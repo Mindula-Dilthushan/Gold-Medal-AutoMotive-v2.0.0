@@ -11,45 +11,56 @@
     <link rel="icon" href="../assets/img/logo.png">
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../testing/testing.css">
 </head>
 <body>
 <div id="wrapper">
     <nav class="navbar  align-items-start sidebar accordion p-0">
         <div class="container-fluid d-flex flex-column p-0">
-            <div class="m-0 p-0"><img style="top: 20px;position: relative" id="admin_logo" src="../assets/img/logo.png"></div>
+            <div class="m-0 p-0"><img style="top: 20px;position: relative" id="admin_logo" src="../assets/img/logo.png">
+            </div>
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0 p-0"
                href="admin.html">
-                <div class="sidebar-brand-text" style="position: relative; bottom: 10px; font-size: 0.9rem">Gold Medal AutoMotive</div>
+                <div class="sidebar-brand-text" style="position: relative; bottom: 10px; font-size: 0.9rem">Gold Medal
+                    AutoMotive
+                </div>
             </a>
-           <div style="background-color: white; position: absolute; top: 165px; width: 220px; height: 2px;"></div>
+            <div style="background-color: white; position: absolute; top: 165px; width: 220px; height: 2px;"></div>
             <ul class="nav navbar-nav mt-5">
                 <li class="nav-item">
-                    <a class="text-white nav-link" id="btn_mainPage" style="cursor: pointer">Dashboard</a> 
-                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;" src="../assets/icon/admin/icons8_home_64.png">
+                    <a class="text-white nav-link" id="btn_mainPage" style="cursor: pointer">Dashboard</a>
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_home_64.png">
                 </li>
                 <li class="nav-item">
                     <a class="text-white nav-link" id="btn_ProfilePage" style="cursor: pointer">Profile</a>
-                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;" src="../assets/icon/admin/icons8_profile_64.png">
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_profile_64.png">
                 </li>
                 <li class="nav-item">
                     <a class="text-white nav-link" id="btn_CustomerPage" style="cursor: pointer">Customers</a>
-                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;" src="../assets/icon/admin/icons8_customer_64.png">
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_customer_64.png">
                 </li>
                 <li class="nav-item">
                     <a class="text-white nav-link" id="btn_CarPage" style="cursor: pointer">Car</a>
-                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;" src="../assets/icon/admin/icons8_car_64.png">
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_car_64.png">
                 </li>
                 <li class="nav-item">
                     <a class="text-white nav-link" id="btn_DriverPage" style="cursor: pointer">Drivers</a>
-                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;" src="../assets/icon/admin/icons8_driver_64.png">
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_driver_64.png">
                 </li>
                 <li class="nav-item">
                     <a class="text-white nav-link" id="btn_OrderPage" style="cursor: pointer">Orders</a>
-                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;" src="../assets/icon/admin/icons8_Create_Order_64.png">
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_Create_Order_64.png">
                 </li>
                 <li class="nav-item">
                     <a class="text-white nav-link" id="btn_PaymentPage" style="cursor: pointer">Payments</a>
-                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;" src="../assets/icon/admin/icons8_payment_history_64.png">
+                    <img style="position:absolute; top: 7px; left: 125px; width: 30px; height: 30px;"
+                         src="../assets/icon/admin/icons8_payment_history_64.png">
                 </li>
             </ul>
         </div>
@@ -69,10 +80,17 @@
                             </div>
                         </div>
                     </form>
-                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
-                                                               aria-expanded="false" href="#">
-                        <span class="d-none d-lg-inline mr-2 text-gray-600 small" style="font-size: 1rem">Mindula Dilthushan</span>
-                        <img class="rounded-circle img-profile" src="../assets/icon/icons8_businessman_32.png"></a>
+                    <div class="nav-item dropdown no-arrow">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+                            <span class="d-none d-lg-inline mr-2 text-gray-600 small" style="font-size: 1rem">Mindula Dilthushan</span>
+                            <img class="rounded-circle img-profile" src="../assets/icon/icons8_businessman_32.png"></a>
+                        <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
+                            <a class="dropdown-item" role="presentation" style="cursor: pointer" id="btnAdminProfile">Profile</a>
+                            <div class="dropdown-divider">
+                            </div>
+                            <a class="dropdown-item" href="../index.html" role="presentation" style="cursor: pointer"
+                               id="btnAdminLogout">Logout</a></div>
+
                     </div>
                 </div>
             </nav>
@@ -159,6 +177,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <!--  End Admin Home Page-->
@@ -780,6 +799,37 @@
             </div>
             <!--  End Admin Customer Page-->
 
+            <!-- Start Admin Driver Page -->
+            <div style="display: none" id="admin_Payment_Page">
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4 mt-4">Payments</h3>
+                    <button class="btn text-white" id="btnPaymentRefresh"
+                            style="background-color: #f39c12; position: fixed; left: 90%; top: 14%;"><img class="mr-2"
+                                                                                                          style="width: 25px; height: 25px;"
+                                                                                                          src="../assets/icon/icons8_refresh_32.png">
+                        Refresh
+                    </button>
+                    <div class="table-box" style="height: 250px; overflow: no-display">
+                        <div class="table-responsive-lg">
+                            <table class="table table-hover">
+                                <thead class="text-white" id="tblPayment">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tblPaymentBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  End Admin Customer Page-->
+
         </div>
     </div>
 
@@ -794,5 +844,6 @@
 <script src="../js/admin/AdminCar.js"></script>
 <script src="../js/admin/AdminDriver.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../testing/testing.js"></script>
 </body>
 </html>
