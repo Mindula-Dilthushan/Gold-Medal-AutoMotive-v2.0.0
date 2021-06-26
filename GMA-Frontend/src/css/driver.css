@@ -9,14 +9,25 @@
 #btnDriverProfile{
     position: fixed;
     top: 3.4%;
-    left: 67%;
+    left: 75%;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+#btnDriverSchedule{
+    position: fixed;
+    top: 3.4%;
+    left: 83%;
     font-size: 1.2rem;
     text-decoration: none;
 }
 #btnDriverLogOut{
     position: fixed;
     top: 3.4%;
-    left: 93%;
+    left: 92%;
     font-size: 1.2rem;
     text-decoration: none;
+}
+#tblDriverSchedule{
+    background-color: #0097e6;
+    color: white;
 }

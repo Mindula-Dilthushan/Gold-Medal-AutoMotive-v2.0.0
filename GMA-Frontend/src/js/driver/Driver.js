@@ -64,10 +64,10 @@ function checkValidationDriverProfile() {
         return false;
     }
 }
-
 //End Driver Validation Section
+
 //Start Driver Save Section
-$('#btnDriverSave').click(() => {
+$('#btnDriverUpdate').click(() => {
 
     if (checkValidationDriverProfile()) {
         let driverProfileId = $('#DriverID').val();
@@ -78,7 +78,7 @@ $('#btnDriverSave').click(() => {
         let driverProfileContact = $('#DriverContact').val();
 
         $.ajax({
-            method: "POST",
+            method: "PUT",
             url: "http://localhost:8080/GMA/v2/driver",
             data: JSON.stringify({
                 "driverId": driverProfileId,
@@ -101,3 +101,20 @@ $('#btnDriverSave').click(() => {
     }
 });
 //End Driver Save Section
+
+$('#btnDriverProfile').click(function () {
+    $('#driverProfile').css({
+        'display': 'block'
+    });
+    $('#driverSchedule').css({
+        'display': 'none'
+    });
+});
+$('#btnDriverSchedule').click(function () {
+    $('#driverProfile').css({
+        'display': 'none'
+    });
+    $('#driverSchedule').css({
+        'display': 'block'
+    });
+});
