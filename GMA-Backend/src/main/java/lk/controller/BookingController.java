@@ -66,4 +66,10 @@ public class BookingController {
         int count = bookingService.getBookingCount();
         return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
     }
+    @GetMapping("getBookingLastID")
+    public ResponseEntity getBookingId(){
+        String id = bookingService.getLastBookingID();
+        return new ResponseEntity(
+                new StandardResponse("200","Done",id),HttpStatus.OK);
+    }
 }

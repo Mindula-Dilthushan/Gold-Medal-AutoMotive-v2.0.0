@@ -24,31 +24,34 @@ public class Booking {
     private String bookingStatus;
     private String bookingNote;
     private String bookingReturnDate;
+    private String customerId;
+    private String carId;
+    private String driverId;
 
-    @ManyToOne
-    @JoinColumn(name = "customerId", referencedColumnName = "customerId", nullable = false)
-    private Customer customer;
+//    @ManyToOne
+//    @JoinColumn(name = "customerId", referencedColumnName = "customerId", nullable = false)
+//    private Customer customer;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "carId", referencedColumnName = "carId", nullable = false)
+//    private Car car;
+//
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "driverId", referencedColumnName = "driverId",nullable = false)
+//    private Driver driver;
 
-    @ManyToOne
-    @JoinColumn(name = "carId", referencedColumnName = "carId", nullable = false)
-    private Car car;
+//    @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
+//    private BookingReturn bookingReturn;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "driverId", referencedColumnName = "driverId",nullable = false)
-    private Driver driver;
-
-    @OneToOne(mappedBy = "booking",cascade = CascadeType.ALL)
-    private BookingReturn bookingReturn;
-
-    public Booking(String bookingId, String bookingDate, String bookingPickDate, String bookingStatus, String bookingNote, String bookingReturnDate, Customer customer, Car car, Driver driver) {
-        this.bookingId = bookingId;
-        this.bookingDate = bookingDate;
-        this.bookingPickDate = bookingPickDate;
-        this.bookingStatus = bookingStatus;
-        this.bookingNote = bookingNote;
-        this.bookingReturnDate = bookingReturnDate;
-        this.customer = customer;
-        this.car = car;
-        this.driver = driver;
-    }
+//    public Booking(String bookingId, String bookingDate, String bookingPickDate, String bookingStatus, String bookingNote, String bookingReturnDate, Customer customer, Car car, Driver driver) {
+//        this.bookingId = bookingId;
+//        this.bookingDate = bookingDate;
+//        this.bookingPickDate = bookingPickDate;
+//        this.bookingStatus = bookingStatus;
+//        this.bookingNote = bookingNote;
+//        this.bookingReturnDate = bookingReturnDate;
+//        this.customer = customer;
+//        this.car = car;
+//        this.driver = driver;
+//    }
 }

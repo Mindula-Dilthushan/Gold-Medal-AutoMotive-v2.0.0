@@ -1,6 +1,7 @@
 $('#btnOrdersRefresh').click(function () {
     loadAllOrders();
 });
+
 function loadAllOrders() {
     $('#tblOrderBody').empty();
     $.ajax({
@@ -11,28 +12,30 @@ function loadAllOrders() {
         success: function (res) {
             let values = res.data;
             for (i in values) {
-                let bookId = values[i].bookingId;
-                let bookCarId = values[i].carId;
-                let bookDriverId = values[i].driverId;
-                let bookCustId = values[i].customerId;
-                let bookDate = values[i].bookingDate;
-                let bookNote = values[i].bookingNote;
-                let bookPickDate = values[i].bookingPickDate;
-                let bookReturnDate = values[i].bookingReturnDate;
-                let bookStatus = values[i].bookingStatus;
+                let id = values[i].bookingId;
+                let date = values[i].bookingDate;
+                let note = values[i].bookingNote;
+                let pickdate = values[i].bookingPickDate;
+                let returndate = values[i].bookingReturnDate;
+                let status = values[i].bookingStatus;
+                let car = values[i].carId;
+                let customer = values[i].customerId;
+                let driver = values[i].driverId;
 
-                $('#tblOrderBody').append(`<tr>
-                    <td>${bookId}</td>
-                    <td>${bookCarId}</td>
-                    <td>${bookDriverId}</td>
-                    <td>${bookCustId}</td>
-                    <td>${bookDate}</td>
-                    <td>${bookNote}</td>
-                    <td>${bookPickDate}</td>
-                    <td>${bookReturnDate}</td>
-                    <td>${bookStatus}</td>
-                </tr>`)
+
+                $('#tblOrderBody').append(`<tr><td>${id}</td>
+<td>${car}</td>
+<td>${customer}</td>
+<td>${driver}</td>
+<td>${date}</td>
+<td>${note}</td>
+<td>${pickdate}</td>
+<td>${returndate}</td>
+<td>${status}</td>
+
+</tr>`)
             }
         }
     });
+
 }

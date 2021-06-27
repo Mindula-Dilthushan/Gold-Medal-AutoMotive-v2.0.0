@@ -80,6 +80,7 @@ $('#btn_CustomerPage').click(function () {
     });
     loadAllCustomer();
     getLastCustomerId();
+    // getCustomerDLIC();
 });
 
 $('#btn_CarPage').click(function () {
@@ -107,6 +108,7 @@ $('#btn_CarPage').click(function () {
     loadAllCars();
     getLastCarId();
     getCarRegNo();
+
 });
 
 $('#btn_DriverPage').click(function () {

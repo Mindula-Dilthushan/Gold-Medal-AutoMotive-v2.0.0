@@ -48,8 +48,9 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void deleteCustomer(String id) {
         if (!customerRepo.existsById(id)) {
-            throw new ValidateException("No Customer for Delete..!");
+            throw new ValidateException("No customer for Delete..!");
         }
+        customerRepo.deleteById(id);
     }
 
     @Override
@@ -87,6 +88,21 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public int getCustomerCount() {
         return customerRepo.getCustomerCount();
+    }
+
+    @Override
+    public String getCustomerDLIC() {
+        String lastID = customerRepo.getCustomerDLIC();
+        if (lastID != null) {
+            String[] split = lastID.split("DL");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if (id < 10) return "DL00" + id;
+            else if (id < 100) return "DL0" + id;
+            else return "C" + id;
+        }else{
+            return "DL001";
+        }
     }
 
 }

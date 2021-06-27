@@ -77,6 +77,12 @@ public class CustomerController {
         return new ResponseEntity(
                 new StandardResponse("200","Done",id),HttpStatus.OK);
     }
+    @GetMapping("custDLIC")
+    public ResponseEntity getLastCustomerDLIC(){
+        String id = customerService.getCustomerDLIC();
+        return new ResponseEntity(
+                new StandardResponse("200","Done",id),HttpStatus.OK);
+    }
 
 
 }

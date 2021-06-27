@@ -20,7 +20,7 @@ public class BookingDTO {
     private String bookingStatus;
     private String bookingNote;
     private String bookingReturnDate;
-    private CustomerDTO customerDTO;
-    private CarDTO carDTO;
-    private DriverDTO driverDTO;
+    private String customerId;
+    private String carId;
+    private String driverId;
 }

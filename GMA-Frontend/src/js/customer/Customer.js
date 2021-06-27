@@ -84,6 +84,7 @@ function checkValidationCustomerProfile() {
         return false;
     }
 }
+
 //End Customer Validation Section
 
 //Start Customer Save Section
@@ -162,6 +163,7 @@ function loadAllCars() {
         }
     });
 }
+
 //End Customer get all car Section
 
 //Start Customer PlaceOrder Section
@@ -177,9 +179,8 @@ $('#btnPlaceOrder').click(function () {
     let returnDate = $('#returnDate').val();
     let cusID = "C001";
     let driverId = "D001";
-    let carID = $('#carid').val();
-    let bookingId="B001";
-
+    let carid = "CR001";
+    let bookingId = "B001";
     let customer;
     let car;
     let driver;
@@ -195,7 +196,7 @@ $('#btnPlaceOrder').click(function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/' + carID,
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/' + carid,
         async: false,
         success: function (res) {
             car = res.data;
@@ -204,7 +205,7 @@ $('#btnPlaceOrder').click(function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/driver/' +driverId,
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/driver/' + driverId,
         async: false,
         success: function (res) {
             driver = res.data;
@@ -225,9 +226,9 @@ $('#btnPlaceOrder').click(function () {
             "bookingStatus": "Ordered",
             "bookingNote": "normal",
             "bookingReturnDate": returnDate,
-            "customerDTO": customer,
-            "carDTO": car,
-            "driverDTO": driver
+            "customerId": cusID,
+            "carId": carid,
+            "driverId": driverId
         }),
         async: false,
         dataType: 'Json',
@@ -235,11 +236,37 @@ $('#btnPlaceOrder').click(function () {
         success: function (res) {
             if (res.message == 'Success') {
                 alert('Booking successFul..!');
+                $("#tblOrderBody").empty();
+                clearOrderPage();
+                getBookingID();
             }
         }
     });
 });
 //End Customer PlaceOrder Section
+
+function clearOrderPage(){
+    $('#driver').val("");
+    $('#pickUpDate').val("");
+    $('#returnDate').val("");
+    $('#carType').val("");
+    $('#carid').val("");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 $('#btnCustProfile').click(function () {
     $('#custProfilePage').css({
@@ -255,7 +282,6 @@ $('#btnCustProfile').click(function () {
         'display': 'none'
     });
 });
-
 $('#btnCustCars').click(function () {
     $('#custProfilePage').css({
         'display': 'none'
@@ -270,7 +296,6 @@ $('#btnCustCars').click(function () {
         'display': 'none'
     });
 });
-
 $('#btnCustOrders').click(function () {
     $('#custProfilePage').css({
         'display': 'none'
@@ -284,6 +309,7 @@ $('#btnCustOrders').click(function () {
     $('#customer_Pay_Page').css({
         'display': 'none'
     });
+    getBookingID();
 });
 $('#btnCustPay').click(function () {
     $('#custProfilePage').css({
@@ -299,3 +325,129 @@ $('#btnCustPay').click(function () {
         'display': 'block'
     });
 });
+//Start Search Customer Section
+function searchCustomerProfile() {
+    // $("#tblCustomerBody").empty();
+    let id = $("#custId").val();
+    if (id != "") {
+        $.ajax({
+            method: "get",
+            url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/' + id,
+            async: true,
+            dataType: 'json',
+            success: function (response) {
+                var data = response.data;
+
+                $('#custId').val(data.customerId);
+                $('#custName').val(data.customerName);
+                $('#custAddress').val(data.customerAddress);
+                $('#custEmail').val(data.customerEmail);
+                $('#custNic').val(data.customerNIC);
+                $('#custDl').val(data.customerDrivingLIC);
+                $('#custContact').val(data.customerContact);
+                $('#custPassword').val(data.customerPassword);
+            }
+        });
+    } else {
+    }
+}
+//End Search Customer Section
+//Start Customer Update
+$('#btnAdminCustomerUpdate').click(() => {
+    updateCustomer();
+});
+function updateCustomer() {
+    if (checkValidationAdminCustomer()) {
+        let custId = $('#custId').val();
+        let custName = $('#custName').val();
+        let custAdd = $('#custAddress').val();
+        let custEmail = $('#custEmail').val();
+        let custNic = $('#custNic').val();
+        let custDl = $('#custDl').val();
+        let custContact = $('#custContact').val();
+        let custPassword = $('#custPassword').val();
+
+        $.ajax({
+            method: "put",
+            url: "http://localhost:8080/GMA_Backend_war_exploded/v2/customer",
+            contentType: "application/json",
+            async: false,
+            data: JSON.stringify(
+                {
+                    "customerId": custId,
+                    "customerName": custName,
+                    "customerAddress": custAdd,
+                    "customerEmail": custEmail,
+                    "customerNIC": custNic,
+                    "customerDrivingLIC": custDl,
+                    "customerContact": custContact
+                    // "password":custPassword
+                }
+            ),
+            success: function (data) {
+                return true;
+            }
+        });
+    }
+}
+//End Customer Update
+function searchCustomerCar() {
+    let bookingId = $('#custBookingID').val();
+    let id = $("#carid").val();
+    if (id != "") {
+        $.ajax({
+            method: "GET",
+            url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/' + id,
+            async: true,
+            dataType: 'json',
+            success: function (response) {
+                var data = response.data;
+
+                $('#carid').val(data.carId);
+                $('#carType').val(data.carType);
+                $('#carPrice').val(data.car)
+                $('#tblOrderBody').append(`<tr>
+                                      
+                                  <td>${bookingId}</td>
+                                  <td>${data.carBrand}</td>
+                                  <td>${data.carNmbOfPassengers}</td>
+                                  <td>${data.carTransmissionType}</td>
+                                  <td>${data.carType}</td>
+                                  <td>${data.carColour}</td>
+                                  <td>${data.carFuelType}</td>
+                               
+                                     </tr>`)
+
+                let getPickDate = $('#pickUpDate').val();
+                let getReturn = $('#returnDate').val();
+
+
+                let tot = $('carPrice').val();
+                let time = getReturn - getPickDate;
+                let price = tot * time;
+                console.log(price);
+            }
+        });
+    } else {
+    }
+}
+// function total(){
+//
+// }
+
+
+function getBookingID() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/booking/getBookingLastID',
+        async: false,
+        success: function (response) {
+            var data = response.data;
+            console.log("data" + data);
+            $('#custBookingID').val(data)
+            console.log($('#custBookingID').val());
+        }
+
+    });
+}
+

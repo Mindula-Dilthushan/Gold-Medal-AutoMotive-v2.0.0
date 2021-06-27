@@ -15,4 +15,5 @@ public interface CustomerService {
     ArrayList<CustomerDTO>getAllCustomers();
     String getLastCustomerID();
     int getCustomerCount();
+    String getCustomerDLIC();
 }

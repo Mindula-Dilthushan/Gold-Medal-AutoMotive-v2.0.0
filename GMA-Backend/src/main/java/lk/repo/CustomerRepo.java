@@ -15,4 +15,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
 
     @Query(value = "SELECT COUNT(customerId) FROM Customer ",nativeQuery = true)
     int getCustomerCount();
+
+    @Query(value = "SELECT customerDrivingLIC FROM customer ORDER BY customerDrivingLIC DESC LIMIT 1", nativeQuery = true)
+    String getCustomerDLIC();
 }

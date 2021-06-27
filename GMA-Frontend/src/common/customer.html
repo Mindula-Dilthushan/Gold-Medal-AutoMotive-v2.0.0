@@ -47,7 +47,9 @@
                                                        class="form-control"
                                                        type="text"
                                                        placeholder="C###"
-                                                       name="id">
+                                                       name="id"
+                                                       onkeypress="searchCustomerProfile();"
+                                                >
                                             </div>
                                         </div>
 
@@ -92,7 +94,7 @@
                                                 <input id="custNic"
                                                        class="form-control"
                                                        type="text"
-                                                       placeholder="user.nic"
+                                                       placeholder="customer.nic"
                                                        name="nic">
                                             </div>
                                         </div>
@@ -128,7 +130,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group mb-2">
-                                        <button id="btnCustomerUpdate" class="btn  ml-2 btn-sm text-white" type="button" style="background-color: #16a085">
+                                        <button id="btnCustomerUpdate" class="btn  ml-2 btn-sm text-white" type="button"
+                                                style="background-color: #16a085">
                                             Update
                                         </button>
                                     </div>
@@ -140,9 +143,11 @@
                     <div class="col-3">
                         <div class="card mb-3">
                             <div class="card-body text-center shadow">
-                                <img class="rounded-circle mb-3 mt-3" src="../assets/img/me/me.jpg" width="170" height="170"/>
+                                <img class="rounded-circle mb-3 mt-3" src="../assets/img/me/me.jpg" width="170"
+                                     height="170"/>
                                 <div class="mb-3">
-                                    <button class="btn btn-sm mb-2 mt-2 text-white" type="button" style="background-color: #16a085" id=btn_customer_change_pic">
+                                    <button class="btn btn-sm mb-2 mt-2 text-white" type="button"
+                                            style="background-color: #16a085" id=btn_customer_change_pic">
                                         Change Photo
                                     </button>
                                 </div>
@@ -160,7 +165,12 @@
     <!--  Start Customer Car Page-->
     <div style="display: none" id="customer_Car_Page" class="p-1">
         <h3 class="text-dark mt-3 mb-3" style="left: 44%; position: relative">All Cars</h3>
-        <button class="btn text-white" id="btnCarsRefresh" style="background-color: #16a085; position: fixed; left: 90%; top: 14%" ><img class="mr-2"  style="width: 25px; height: 25px;" src="../assets/icon/icons8_refresh_32.png"> Refresh </button>
+        <button class="btn text-white" id="btnCarsRefresh"
+                style="background-color: #16a085; position: fixed; left: 90%; top: 14%"><img class="mr-2"
+                                                                                             style="width: 25px; height: 25px;"
+                                                                                             src="../assets/icon/icons8_refresh_32.png">
+            Refresh
+        </button>
         <div class="container-fluid">
             <div class="table-box" style="height: 250px; overflow: no-display">
                 <div class="table-responsive-lg">
@@ -193,11 +203,22 @@
 
             <div class="row">
                 <div class="col-2">
+                    <div class="form-group">
+                        <label><strong>Bokking ID</strong></label>
+                        <input
+                                id="custBookingID"
+                                class="form-control"
+                                type="text"
+                                placeholder="B###"
+                                name="id">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
                     <select class="custom-select mb-3" id="driver">
                         <option selected>Driver</option>
-                        <option value="DR-001">DR-001</option>
-                        <option value="DR-002">DR-002</option>
-                        <option value="DR-003">DR-003</option>
+                        <option value="DR-001">D-001</option>
                     </select>
                 </div>
                 <label class="mt-2" style="margin-right: 5px; margin-left: 10px">Pickup Date</label>
@@ -217,15 +238,16 @@
                 <div class="col-2" style="margin-right:20px">
                     <select class="custom-select mb-3" id="carType">
                         <option selected>Car Type</option>
-                        <option value="1">General</option>
-                        <option value="2">Premium</option>
-                        <option value="3">Luxury</option>
+                        <option value="General">General</option>
+                        <option value="Premium">Premium</option>
+                        <option value="Luxury">Luxury</option>
                     </select>
                 </div>
 
                 <div class="col-2">
                     <div style="width: 100%; text-align: right">
-                        <input class="form-control" type="text" placeholder="Car ID" id="carid">
+                        <input class="form-control" type="text" placeholder="CR###" id="carid"
+                               onkeypress="searchCustomerCar(this);">
                     </div>
                 </div>
             </div>
@@ -243,7 +265,6 @@
                             <th scope="col">Car Type</th>
                             <th scope="col">Color</th>
                             <th scope="col">Fuel Type</th>
-                            <th scope="col">Image</th>
                         </tr>
                         </thead>
                         <tbody id="tblOrderBody">
@@ -252,9 +273,35 @@
                     </table>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-2" style="display: none">
+                    <div class="form-group" >
+                        <label><strong>Total</strong></label>
+                        <input
+                                id="Total"
+                                class="form-control"
+                                type="text"
+                                placeholder="Rs."
+                                name="total">
+                    </div>
+                </div>
+                <div class="col-2" style="display: none" >
+                    <div class="form-group">
+                        <label><strong>carPrice</strong></label>
+                        <input
+                                id="carPrice"
+                                class="form-control"
+                                type="text"
+                                placeholder="Rs."
+                                name="total">
+                    </div>
+                </div>
+            </div>
+
             <div>
                 <div style="width: 100%; text-align: right">
-                    <button class=" btn text-white" id="btnPlaceOrder" style="background-color: #16a085">Place Order </button>
+                    <button class=" btn text-white" id="btnPlaceOrder" style="background-color: #16a085">Place Order
+                    </button>
                 </div>
             </div>
         </div>
@@ -264,7 +311,12 @@
     <!--  Start Customer Car Page-->
     <div style="display: none" id="customer_Pay_Page" class="p-1">
         <h3 class="text-dark mt-3 mb-3" style="left: 44%; position: relative">Payments</h3>
-        <button class="btn text-white" id="btnPayRefresh" style="background-color: #16a085; position: fixed; left: 90%; top: 14%" ><img class="mr-2"  style="width: 25px; height: 25px;" src="../assets/icon/icons8_refresh_32.png"> Refresh </button>
+        <button class="btn text-white" id="btnPayRefresh"
+                style="background-color: #16a085; position: fixed; left: 90%; top: 14%"><img class="mr-2"
+                                                                                             style="width: 25px; height: 25px;"
+                                                                                             src="../assets/icon/icons8_refresh_32.png">
+            Refresh
+        </button>
         <div class="container-fluid">
             <div class="table-box" style="height: 250px; overflow: no-display">
                 <div class="table-responsive-lg">

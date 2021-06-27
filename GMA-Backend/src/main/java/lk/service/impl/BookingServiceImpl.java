@@ -42,9 +42,9 @@ public class BookingServiceImpl implements BookingService {
                 booking.getBookingStatus(),
                 booking.getBookingNote(),
                 booking.getBookingReturnDate(),
-                booking.getCustomer(),
-                booking.getCar(),
-                booking.getDriver()
+                booking.getCustomerId(),
+                booking.getCarId(),
+                booking.getDriverId()
         );
         bookingRepo.save(booking1);
     }

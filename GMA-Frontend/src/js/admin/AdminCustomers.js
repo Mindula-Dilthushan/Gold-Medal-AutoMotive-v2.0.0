@@ -74,6 +74,7 @@ function checkValidationAdminCustomer() {
         return false;
     }
 }
+
 //End Admin Customer Validation Section
 
 function clearCustomerFields() {
@@ -125,7 +126,6 @@ $('#btnAdminCustomerSave').click(function () {
 });
 //End Admin Save Section
 
-
 //Start Get Admin Customer Section
 function loadAllCustomer() {
     $('#tblCustomerBody').empty();
@@ -151,80 +151,114 @@ function loadAllCustomer() {
     });
 }
 
-//Admin Customer Delete
-$('#btnAdminCustomerDelete').click(() => {
-    let customId = $('#adCustId').val();
-    $.ajax({
-        method: "delete",
-        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/?customerId=' + customId,
-        async: true,
-        success: function (response) {
-        },
-        error: function (response) {
-        }
-    });
-});
-
 $('#btnAdminCustomerGetAll').click(function () {
     loadAllCustomer();
     clearCustomerFields();
 });
-
-$('#btnAdminCustomerUpdate').click(() => {
-
-    let custId = $('#adCustId').val();
-    let custName = $('#adCustName').val();
-    let custAdd = $('#adCustAddress').val();
-    let custEmail = $('#adCustEmail').val();
-    let custNic = $('#adCustNic').val();
-    let custDl = $('#adCustDl').val();
-    let custContact = $('#adCustContact').val();
-
-    $.ajax({
-        method: "POST",
-        url: "http://localhost:8080/GMA_Backend_war_exploded/v2/customer",
-        contentType: "application/json",
-        async: true,
-        data: JSON.stringify(
-            {
-                customerId: custId,
-                customerName: custName,
-                customerAddress: custAdd,
-                customerEmail: custEmail,
-                customerNIC: custNic,
-                customerDrivingLIC: custDl,
-                customerContact: custContact
-            }
-        ),
-        success: function (data) {
-            loadAllCustomer();
-        }
-    });
-});
 //End Get Admin Customer Section
 
-
-//Start Admin Delete Section
-$('#btnAdminCustomerDelete').click(function () {
-
+//Start Admin Customer Update
+$('#btnAdminCustomerUpdate').click(() => {
+    updateCustomer();
+});
+function updateCustomer() {
+    if (checkValidationAdminCustomer()) {
         let custId = $('#adCustId').val();
+        let custName = $('#adCustName').val();
+        let custAdd = $('#adCustAddress').val();
+        let custEmail = $('#adCustEmail').val();
+        let custNic = $('#adCustNic').val();
+        let custDl = $('#adCustDl').val();
+        let custContact = $('#adCustContact').val();
 
         $.ajax({
-            method: "delete",
+            method: "put",
             url: "http://localhost:8080/GMA_Backend_war_exploded/v2/customer",
-            dataType: 'Json',
-            async: true,
             contentType: "application/json",
-            data: JSON.stringify({
-                customerId: custId
-            }),
-            success: function (res) {
+            async: false,
+            data: JSON.stringify(
+                {
+                    "customerId": custId,
+                    "customerName": custName,
+                    "customerAddress": custAdd,
+                    "customerEmail": custEmail,
+                    "customerNIC": custNic,
+                    "customerDrivingLIC": custDl,
+                    "customerContact": custContact
+                }
+            ),
+            success: function (data) {
                 loadAllCustomer();
                 clearCustomerFields();
-            },
-            error: function (ob, textStatus, error) {
+                getLastCustomerId();
+                return true;
             }
         });
+    }
+}
+//End Admin Customer Update
+
+//Start Delete Customer Section
+$('#btnAdminCustomerDelete').click(function () {
+    let id = $("#adCustId").val();
+    if (id != "") {
+        $.ajax({
+            method: "delete",
+            url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/?id=' + id,
+            async: true,
+            success: function (response) {
+                loadAllCustomer();
+                getLastCustomerId();
+                clearCustomerFields();
+                console.log("deleted")
+            },
+            error: function (response) {
+            }
+        });
+    }
 
 });
-//End Admin Delete Section
+//End Delete Customer Section
+
+//Start Search Customer Section
+function searchCustomer() {
+    $("#tblCustomerBody").empty();
+    let id = $("#adCustId").val();
+    if (id != "") {
+        $.ajax({
+            method: "get",
+            url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/' + id,
+            async: true,
+            dataType: 'json',
+            success: function (response) {
+                var data = response.data;
+
+                $('#adCustId').val(data.customerId);
+                $('#adCustName').val(data.customerName);
+                $('#adCustAddress').val( data.customerAddress);
+                $('#adCustEmail').val(data.customerEmail);
+                $('#adCustNic').val(data.customerNIC);
+                $('#adCustDl').val(data.customerDrivingLIC);
+                $('#adCustContact').val(data.customerContact);
+                loadAllCustomer();
+            }
+        });
+    } else {
+    }
+}
+//End Search Customer Section
+
+function getCustomerDLIC() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/custDLIC',
+        async: false,
+        success: function (response) {
+            var data = response.data;
+            console.log("data" + data);
+            $('#adCustDl').val(data)
+            console.log($('#adCustDl').val());
+        }
+
+    });
+}
