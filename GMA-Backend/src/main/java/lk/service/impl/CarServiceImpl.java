@@ -72,4 +72,34 @@ public class CarServiceImpl implements CarServices {
     public int getCarCount() {
         return carRepo.getCarCount();
     }
+
+    @Override
+    public String getLastCarID() {
+        String lastID = carRepo.getCarLastID();
+        if (lastID != null) {
+            String[] split = lastID.split("CR");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if (id < 10) return "CR00" + id;
+            else if (id < 100) return "CR0" + id;
+            else return "CR" + id;
+        }else{
+            return "CR001";
+        }
+    }
+
+    @Override
+    public String getCarRegNo() {
+        String lastID = carRepo.getCarRegNoID();
+        if (lastID != null) {
+            String[] split = lastID.split("CRN");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if (id < 10) return "CRN00" + id;
+            else if (id < 100) return "CRN0" + id;
+            else return "CRN" + id;
+        } else {
+            return "CRN001";
+        }
+    }
 }

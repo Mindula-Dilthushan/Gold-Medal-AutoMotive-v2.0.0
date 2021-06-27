@@ -207,6 +207,7 @@ $('#btnAdminCarSave').click(() => {
             success: function (res) {
                 loadAllCars();
                 clearCarFields();
+                getLastCarId();
                 if (res.message == 'Success') {
 
                 }
@@ -218,11 +219,11 @@ $('#btnAdminCarSave').click(() => {
 });
 //End Admin Car Save Section
 
+//Start Get All Car
 $('#btnAdminCarGetAll').click(function () {
     loadAllCars();
     clearCarFields();
 });
-
 function loadAllCars() {
     $('#tblCarBody').empty();
     $.ajax({
@@ -247,4 +248,118 @@ function loadAllCars() {
         }
     });
 }
+//End Get All Car
 
+//Start Car Update Section
+$('#btnAdminCarUpdate').click(function () {
+    updateCar();
+});
+function updateCar() {
+    if (checkValidationAdminCar()) {
+        let adminCarId = $('#adCarId').val();
+        let adminCarBrand = $('#adCarBrand').val();
+        let adminCarColor = $('#adCarColor').val();
+        let adminCarType = $('#adCarType').val();
+        let adminCarPass = $('#adCarPassengers').val();
+        let adminCarTran = $('#adCarTransmission').val();
+        let adminCarFuel = $('#adCarFuel').val();
+        let adminCarExKm = $('#adCarExtraKm').val();
+        let adminCarReg = $('#adCarRegistration').val();
+        let adminCarDam = $('#adCarDamage').val();
+        let adminCarDRate = $('#adCarDailyRate').val();
+        let adminCarMRate = $('#adCarMonthlyRate').val();
+        let adminCarMPrice = $('#adCarMillagePrice').val();
+        let adminCarDuration = $('#adCarDuration').val();
+
+        $.ajax({
+            method: "put",
+            url: "http://localhost:8080/GMA_Backend_war_exploded/v2/car",
+            contentType: "application/json",
+            async: false,
+            data: JSON.stringify(
+                {
+                    "carId": adminCarId,
+                    "carBrand": adminCarBrand,
+                    "carColour": adminCarColor,
+                    "carType": adminCarType,
+                    "carNmbOfPassengers": adminCarPass,
+                    "carTransmissionType": adminCarTran,
+                    "carFuelType": adminCarFuel,
+                    "carPriceForExtraKM": adminCarExKm,
+                    "carRegistrationNumber": adminCarReg,
+                    "carLossDamageWaiver": adminCarDam,
+                    "carDailyRate": adminCarDRate,
+                    "carMonthlyRate": adminCarMRate,
+                    "carFreeMillagePrice": adminCarMPrice,
+                    "carFreeMillageDuration": adminCarDuration
+                }
+            ),
+            success: function (data) {
+                loadAllCars();
+                clearCarFields();
+                getLastCarId();
+                getCarRegNo();
+                return true;
+            }
+        });
+    }
+}
+//End Car Update Section
+
+//Start Delete Car Section
+$('#btnAdminCarDelete').click(function () {
+    let id = $("#adCarId").val();
+    if (id != "") {
+        $.ajax({
+            method: "delete",
+            url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/?id=' + id,
+            async: true,
+            success: function (response) {
+                loadAllCars();
+                getCarRegNo();
+                getLastCarId();
+                clearCarFields();
+            },
+            error: function (response) {
+            }
+        });
+    }
+
+});
+//End Delete Car Section
+
+//Start Search Car Section
+function searchCar() {
+    $("#tblCarBody").empty();
+    let id = $("#adCarId").val();
+    if (id != "") {
+        $.ajax({
+            method: "get",
+            url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/' + id,
+            async: true,
+            dataType: 'json',
+            success: function (response) {
+                var data = response.data;
+
+                $('#adCarId').val(data.carId);
+                $('#adCarBrand').val(data.carBrand);
+                $('#adCarColor').val( data.carColour);
+                $('#adCarType').val(data.carType);
+                $('#adCarPassengers').val(data.carNmbOfPassengers);
+                $('#adCarTransmission').val(data.carTransmissionType);
+                $('#adCarFuel').val(data.carFuelType);
+                $('#adCarExtraKm').val(data.carPriceForExtraKM);
+                $('#adCarRegistration').val(data.carRegistrationNumber);
+                $('#adCarDamage').val(data.carLossDamageWaiver);
+                $('#adCarDailyRate').val(data.carDailyRate);
+                $('#adCarMonthlyRate').val(data.carMonthlyRate);
+                $('#adCarMillagePrice').val(data.carFreeMillagePrice);
+                $('#adCarDuration').val(data.carFreeMillageDuration);
+
+                loadAllCars();
+            }
+        });
+    } else {
+    }
+}
+//End Search Car Section

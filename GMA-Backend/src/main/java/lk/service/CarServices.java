@@ -14,4 +14,6 @@ public interface CarServices {
     void deleteCars(String id);
     ArrayList<CarDTO> getAllCars();
     int getCarCount();
+    String getLastCarID();
+    String getCarRegNo();
 }

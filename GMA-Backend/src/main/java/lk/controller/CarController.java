@@ -66,4 +66,16 @@ public class CarController {
         int count = carServices.getCarCount();
         return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
     }
+    @GetMapping("lastCarId")
+    public ResponseEntity getLastCarId(){
+        String id = carServices.getLastCarID();
+        return new ResponseEntity(
+                new StandardResponse("200","Done",id),HttpStatus.OK);
+    }
+    @GetMapping("lastCarRegNo")
+    public ResponseEntity getCarRegNo(){
+        String id = carServices.getCarRegNo();
+        return new ResponseEntity(
+                new StandardResponse("200","Done",id),HttpStatus.OK);
+    }
 }

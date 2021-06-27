@@ -71,4 +71,12 @@ public class CustomerController {
         int count = customerService.getCustomerCount();
         return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
     }
+    @GetMapping("lastCustomerId")
+    public ResponseEntity getLastCustomerId(){
+        String id = customerService.getLastCustomerID();
+        return new ResponseEntity(
+                new StandardResponse("200","Done",id),HttpStatus.OK);
+    }
+
+
 }

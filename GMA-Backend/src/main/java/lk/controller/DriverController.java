@@ -66,4 +66,10 @@ public class DriverController {
         int count = driverService.getDriverCount();
         return new ResponseEntity(new StandardResponse("200","Done",count),HttpStatus.OK);
     }
+    @GetMapping("lastDriverId")
+    public ResponseEntity getLastCarId(){
+        String id = driverService.getLastDriverID();
+        return new ResponseEntity(
+                new StandardResponse("200","Done",id),HttpStatus.OK);
+    }
 }

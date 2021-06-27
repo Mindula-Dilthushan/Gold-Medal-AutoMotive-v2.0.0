@@ -448,18 +448,27 @@
                                                                 class="form-control"
                                                                 type="text"
                                                                 placeholder="C###"
-                                                                name="id">
+                                                                name="id"
+                                                                onkeypress="searchCar(this)">
                                                     </div>
                                                 </div>
 
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label><strong>Brand</strong></label>
-                                                        <input class="form-control"
-                                                               id="adCarBrand"
-                                                               type="text"
-                                                               placeholder="car.brand"
-                                                               name="brand">
+
+                                                        <select class="custom-select mb-3" id="adCarBrand">
+                                                            <option selected>Car Brand</option>
+                                                            <option value="Dodge">Dodge</option>
+                                                            <option value="Chevrolet">Chevrolet</option>
+                                                            <option value="BM2">BM2</option>
+                                                            <option value="Hyundai">Hyundai</option>
+                                                            <option value="Mazda">Mazda</option>
+                                                            <option value="Toyota">Toyota</option>
+                                                            <option value="Volvo">Volvo</option>
+                                                            <option value="Tesla">Tesla</option>
+                                                            <option value="Audi">Audi</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
@@ -491,11 +500,12 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label><strong>Passengers</strong></label>
-                                                        <input class="form-control"
-                                                               type="text"
-                                                               id="adCarPassengers"
-                                                               placeholder="car.passengers"
-                                                               name="passengers">
+                                                        <select class="custom-select mb-3" id="adCarPassengers">
+                                                            <option selected>Passengers</option>
+                                                            <option value=2>2</option>
+                                                            <option value=4>4</option>
+                                                            <option value=5>5</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -505,22 +515,22 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label><strong>Transmission Type</strong></label>
-                                                        <input class="form-control"
-                                                               type="text"
-                                                               id="adCarTransmission"
-                                                               placeholder="car.transmission"
-                                                               name="transmission">
+                                                        <select class="custom-select mb-3" id="adCarTransmission">
+                                                            <option selected>Transmission</option>
+                                                            <option value="Manual">Manual</option>
+                                                            <option value="Auto">Auto</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label><strong>Fuel Type</strong></label>
-                                                        <input class="form-control"
-                                                               type="text"
-                                                               id="adCarFuel"
-                                                               placeholder="car.fuel type"
-                                                               name="fuel">
+                                                        <select class="custom-select mb-3" id="adCarFuel">
+                                                            <option selected>Fuel</option>
+                                                            <option value="Diesel">Diesel</option>
+                                                            <option value="prechtel">prechtel</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 

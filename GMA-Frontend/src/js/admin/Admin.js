@@ -79,6 +79,7 @@ $('#btn_CustomerPage').click(function () {
         'display': 'none'
     });
     loadAllCustomer();
+    getLastCustomerId();
 });
 
 $('#btn_CarPage').click(function () {
@@ -104,6 +105,8 @@ $('#btn_CarPage').click(function () {
         'display': 'none'
     });
     loadAllCars();
+    getLastCarId();
+    getCarRegNo();
 });
 
 $('#btn_DriverPage').click(function () {
@@ -129,6 +132,7 @@ $('#btn_DriverPage').click(function () {
         'display': 'none'
     });
     loadAllDriver();
+    getLastDriverId();
 });
 
 $('#btn_OrderPage').click(function () {
@@ -254,6 +258,63 @@ function getDriverCount() {
             var resp = response.data;
             console.log(resp);
             $('#txtDriverCount').text(resp);
+        }
+
+    });
+}
+
+function getLastCustomerId() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/customer/lastCustomerId',
+        async: false,
+        success: function (response) {
+            var data = response.data;
+            console.log("data" + data);
+            $('#adCustId').val(data)
+            console.log($('#adCustId').val());
+        }
+
+    });
+}
+function getLastCarId() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/lastCarId',
+        async: false,
+        success: function (response) {
+            var data = response.data;
+            console.log("data" + data);
+            $('#adCarId').val(data)
+            console.log($('#adCarId').val());
+        }
+
+    });
+}
+function getLastDriverId() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/driver/lastDriverId',
+        async: false,
+        success: function (response) {
+            var data = response.data;
+            console.log("data" + data);
+            $('#adDriverId').val(data)
+            console.log($('#adDriverId').val());
+        }
+
+    });
+}
+function getCarRegNo() {
+    $.ajax({
+        method: "get",
+        url: 'http://localhost:8080/GMA_Backend_war_exploded/v2/car/lastCarRegNo',
+        async: false,
+        success: function (response) {
+            var data = response.data;
+            console.log("data" + data);
+            $('#adCarRegistration').val(data)
+            console.log($('#adCarRegistration').val());
         }
 
     });

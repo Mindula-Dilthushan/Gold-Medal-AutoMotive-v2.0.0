@@ -70,7 +70,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public String getLastLoginID() {
+    public String getLastCustomerID() {
         String lastID = customerRepo.getCustomerLastID();
         if (lastID != null) {
             String[] split = lastID.split("C");

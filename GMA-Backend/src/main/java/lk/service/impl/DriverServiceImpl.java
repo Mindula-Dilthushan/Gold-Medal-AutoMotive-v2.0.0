@@ -73,4 +73,19 @@ public class DriverServiceImpl implements DriverService {
     public int getDriverCount() {
         return driverRepo.getDriverCount();
     }
+
+    @Override
+    public String getLastDriverID() {
+        String lastID = driverRepo.getDriverLastID();
+        if (lastID != null) {
+            String[] split = lastID.split("D");
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if (id < 10) return "D00" + id;
+            else if (id < 100) return "D0" + id;
+            else return "D" + id;
+        }else{
+            return "D001";
+        }
+    }
 }

@@ -7,7 +7,6 @@ package lk.repo;
 import lk.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 public interface CustomerRepo extends JpaRepository<Customer,String> {
 
