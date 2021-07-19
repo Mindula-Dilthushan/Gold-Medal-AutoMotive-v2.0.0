@@ -30,17 +30,30 @@
     top: 2.6%;
     margin: 0;
     padding: 0;
-    background-color: transparent;
+    border-color: white;
+}
+
+#db_btn_signIn:hover {
+    background-color: white;
+    color: #f39c12;
 }
 
 #db_btn_sign_a {
     text-decoration: none;
-color: white;
+    color: white;
+}
+
+#db_btn_sign_a:hover {
+    color: #f39c12;
 }
 
 #db_btn_regi_a {
     text-decoration: none;
     color: white;
+}
+
+#db_btn_regi_a:hover {
+    color: #f39c12;
 }
 
 #db_btn_regi {
@@ -51,7 +64,13 @@ color: white;
     top: 2.6%;
     margin: 0;
     padding: 0;
-    background-color: transparent;
+    color: #f39c12;
+    border-color: white;
+}
+
+#db_btn_regi:hover {
+    background-color: white;
+    color: #f39c12;
 }
 
 .caption {

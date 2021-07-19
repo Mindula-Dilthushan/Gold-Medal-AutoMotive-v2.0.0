@@ -4,6 +4,10 @@
 .sidebar-brand-text{
     color: white;
 }
+.adminHomePageSection{
+    width: 100%;
+    height: 430px;
+}
 #admin_Btn_Cars{
     color: white;
 }

@@ -54,6 +54,7 @@ $('#btn_ProfilePage').click(function () {
     $('#admin_Payment_Page').css({
         'display': 'none'
     });
+    getAdmin();
 });
 
 $('#btn_CustomerPage').click(function () {
@@ -209,6 +210,10 @@ $('#btnAdminProfile').click(function () {
         'display': 'none'
     });
 });
+
+function getAdmin(){
+    console.log("hello");
+}
 
 //get count customer
 function getCustomerCount() {
