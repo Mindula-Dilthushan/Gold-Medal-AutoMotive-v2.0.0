@@ -2,7 +2,7 @@
 //Mindula Dilthushan
 //GMA v2.0.3
 package lk.service.impl;
-
+//eka object ekak thawa object ekakata
 import lk.dto.AdminDTO;
 import lk.entity.Admin;
 import lk.exeption.ValidateException;
@@ -22,6 +22,7 @@ import java.util.Optional;
 public class AdminServiceImpl implements AdminService {
 
     @Autowired
+    //di parts
     private AdminRepo adminRepo;
 
     @Autowired
